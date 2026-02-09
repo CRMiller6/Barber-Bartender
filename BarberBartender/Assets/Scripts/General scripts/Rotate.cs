@@ -1,14 +1,14 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public sealed class Drag : MonoBehaviour
+public sealed class ThrowAndRotate : MonoBehaviour
 {
     private Rigidbody2D rb;
     private Camera mainCamera;
 
-    private bool isDragging;
     private Vector2 lastMousePosition;
     private Vector2 throwVelocity;
+    private bool isDragging;
 
     [SerializeField] private float throwMultiplier = 4f;
     [SerializeField] private float rotateSpeed = 180f;
@@ -21,10 +21,6 @@ public sealed class Drag : MonoBehaviour
 
     private void OnMouseDown()
     {
-        rb.linearVelocity = Vector2.zero;
-        rb.angularVelocity = 0f;
-        rb.freezeRotation = true;
-
         isDragging = true;
         lastMousePosition = GetMouseWorldPosition();
         throwVelocity = Vector2.zero;
@@ -33,7 +29,6 @@ public sealed class Drag : MonoBehaviour
     private void OnMouseUp()
     {
         isDragging = false;
-        rb.freezeRotation = false;
         rb.linearVelocity = throwVelocity * throwMultiplier;
     }
 
@@ -42,8 +37,6 @@ public sealed class Drag : MonoBehaviour
         if (!isDragging) return;
 
         Vector2 mousePos = GetMouseWorldPosition();
-
-        // Cache throw velocity once per frame (cheaper & more stable)
         throwVelocity = (mousePos - lastMousePosition) / Time.deltaTime;
         lastMousePosition = mousePos;
     }
@@ -52,14 +45,10 @@ public sealed class Drag : MonoBehaviour
     {
         if (!isDragging) return;
 
-        rb.MovePosition(lastMousePosition);
-
         float rotationInput = GetRotationInput();
         if (rotationInput != 0f)
         {
-            rb.MoveRotation(
-                rb.rotation + rotationInput * rotateSpeed * Time.fixedDeltaTime
-            );
+            rb.MoveRotation(rb.rotation + rotationInput * rotateSpeed * Time.fixedDeltaTime);
         }
     }
 

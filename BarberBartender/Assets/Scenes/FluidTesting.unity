@@ -261,6 +261,7 @@ GameObject:
   - component: {fileID: 726250159}
   - component: {fileID: 726250158}
   - component: {fileID: 726250162}
+  - component: {fileID: 726250163}
   m_Layer: 0
   m_Name: Square (1)
   m_TagString: Untagged
@@ -280,8 +281,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebb4b9a546538144fadcc0820ee80dfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DragThrowRotate2D
-  throwMultiplier: 4
-  rotateSpeed: 180
 --- !u!50 &726250159
 Rigidbody2D:
   serializedVersion: 5
@@ -430,6 +429,20 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 0.97438073}
   m_EdgeRadius: 0
+--- !u!114 &726250163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 726250156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 226c30badbce7d34c91668c996fdc32b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ThrowAndRotate
+  throwMultiplier: 4
+  rotateSpeed: 180
 --- !u!1 &1002431346
 GameObject:
   m_ObjectHideFlags: 0

@@ -25,10 +25,10 @@ public class Scissors : MonoBehaviour
             mousePos.z = 0; 
             transform.position = mousePos;
         }
-        else if (Input.GetMouseButtonUP(0))
-        {
-            Vector3 goHome = startingPoint;
-            transform.position = goHome;
-        }
+        // else if (Input.GetMouseButtonUP(0))
+        // {
+        //     Vector3 goHome = startingPoint;
+        //     transform.position = goHome;
+        // }
     }
 }

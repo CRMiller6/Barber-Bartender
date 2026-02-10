@@ -4,31 +4,12 @@ using UnityEngine.InputSystem;
 
 public class Scissors : MonoBehaviour
 {
-    public GameObject startingPoint;
-
-    void Start()
+    private void OnCollisionEnter2D (Collision2D collision2D)
     {
-        
-    }
-
-    void Update()
-    {
-        PickedUp();
-    }
-
-    public void PickedUp()
-    {
-        if (Input.GetMouseButton(0)) 
+        if (collision2D.gameObject.CompareTag("Cutable"))
         {
-            Debug.Log("Left mouse button is being held!");
-            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            mousePos.z = 0; 
-            transform.position = mousePos;
+            Destroy(collision2D.gameObject);
+            Debug.Log("Object Cut!");
         }
-        // else if (Input.GetMouseButtonUP(0))
-        // {
-        //     Vector3 goHome = startingPoint;
-        //     transform.position = goHome;
-        // }
     }
 }

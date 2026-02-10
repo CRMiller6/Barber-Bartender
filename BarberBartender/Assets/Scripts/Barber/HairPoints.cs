@@ -1,5 +1,5 @@
 using UnityEngine;
-using System.Linq;
+
 
 public class HairPoints : MonoBehaviour
 {
@@ -8,7 +8,7 @@ public class HairPoints : MonoBehaviour
     public int falseCount;
 
 
-    public void PointsReceived()
+    public void PossiblePoints()
     {
         WantToBeCut[] childScripts = GetComponentsInChildren<WantToBeCut>(true);
 
@@ -30,5 +30,7 @@ public class HairPoints : MonoBehaviour
         Debug.Log($"results - True {trueCount}, False: {falseCount}");
     }
 
-    public int QuickTrueTally => GetComponentsInChildren<WantToBeCut>().Count(s => s.wantCutting);
+    
+
+
 }

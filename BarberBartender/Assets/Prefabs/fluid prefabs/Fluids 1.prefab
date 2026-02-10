@@ -169,6 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bbd42c35f2e39342b90387c86883c0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WaterParticle
+  lifetime: 7
   stickDistance: 0.3
   stickStrength: 5
   maxVelocity: 5

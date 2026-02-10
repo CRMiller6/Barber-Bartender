@@ -55,16 +55,16 @@ Material:
     m_Ints: []
     m_Floats:
     - _EnableExternalAlpha: 0
-    - _FoamThickness: 1000
+    - _FoamThickness: 10
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Thickness: 0.8
+    - _Thickness: 0.5
     - _ZWrite: 0
     - _thickness: 0.75
     m_Colors:
     - White: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 0.8867924, g: 0.42910653, b: 0, a: 0.83137256}
-    - _FoamColor: {r: 1825.2128, g: 1825.2128, b: 1825.2128, a: 0}
+    - _FoamColor: {r: 1212.3518, g: 949.9503, b: 714.8301, a: 0}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

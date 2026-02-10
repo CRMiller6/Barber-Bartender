@@ -8,8 +8,6 @@ public sealed class waterSpawner : MonoBehaviour
     [SerializeField] private int spawnCount = 1;
     [SerializeField] private float minSpawnInterval = 0.2f;
     [SerializeField] private float maxSpawnInterval = 1.2f;
-    [SerializeField] private float spawnedObjectLifetime = 4f;
-
     [Header("Tilt Thresholds (Degrees)")]
     [SerializeField] private float uprightThreshold = 45f;
 
@@ -74,7 +72,6 @@ public sealed class waterSpawner : MonoBehaviour
         for (int i = 0; i < spawnCount; i++)
         {
             GameObject obj = Instantiate(prefabToSpawn, pos, Quaternion.identity);
-            Destroy(obj, spawnedObjectLifetime);
         }
     }
 }

@@ -3,6 +3,10 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D), typeof(CircleCollider2D))]
 public sealed class FluidBehavior : MonoBehaviour
 {
+    [Header("Lifetime")]
+    [SerializeField] private float lifetime = 4f;
+
+    [Header("Fluid Settings")]
     [SerializeField] private float stickDistance = 0.3f;
     [SerializeField] private float stickStrength = 5f;
     [SerializeField] private float maxVelocity = 5f;
@@ -12,6 +16,9 @@ public sealed class FluidBehavior : MonoBehaviour
     private Collider2D col;
     private int instanceId;
     private int updateOffset;
+
+    private float lifeTimer;
+    private bool lifetimePaused;
 
     private static readonly Collider2D[] overlapBuffer = new Collider2D[12];
     private static ContactFilter2D contactFilter;
@@ -27,12 +34,22 @@ public sealed class FluidBehavior : MonoBehaviour
 
         updateOffset = instanceId & 1;
 
-        // Configure once � no allocations, no layer checks
         contactFilter = new ContactFilter2D
         {
             useLayerMask = false,
             useTriggers = true
         };
+    }
+
+    private void Update()
+    {
+        if (lifetimePaused)
+            return;
+
+        lifeTimer += Time.deltaTime;
+
+        if (lifeTimer >= lifetime)
+            Destroy(gameObject);
     }
 
     private void FixedUpdate()
@@ -94,5 +111,21 @@ public sealed class FluidBehavior : MonoBehaviour
         }
 
         rb.linearVelocity = Vector2.ClampMagnitude(velocity, maxVelocity);
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("cup"))
+        {
+            lifetimePaused = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("cup"))
+        {
+            lifetimePaused = false;
+        }
     }
 }

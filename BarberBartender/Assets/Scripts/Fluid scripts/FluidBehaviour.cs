@@ -9,7 +9,7 @@ public sealed class FluidBehavior : MonoBehaviour
     [Header("Fluid Settings")]
     [SerializeField] private float stickDistance = 0.3f;
     [SerializeField] private float stickStrength = 5f;
-    [SerializeField] private float maxVelocity = 5f;
+    [SerializeField] public float maxVelocity = 5f;
     [SerializeField] private int minConnections = 4;
 
     private Rigidbody2D rb;

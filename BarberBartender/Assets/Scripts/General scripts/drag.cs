@@ -6,6 +6,7 @@ public sealed class Drag : MonoBehaviour
     private Rigidbody2D rb;
     private Camera mainCamera;
     private bool isDragging;
+    private Vector3 dragOffset; // Offset between mouse and object center
 
     private void Awake()
     {
@@ -15,9 +16,14 @@ public sealed class Drag : MonoBehaviour
 
     private void OnMouseDown()
     {
+        // Stop any current movement
         rb.linearVelocity = Vector2.zero;
         rb.angularVelocity = 0f;
         rb.freezeRotation = true;
+
+        // Calculate offset
+        Vector3 mousePos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
+        dragOffset = transform.position - new Vector3(mousePos.x, mousePos.y, transform.position.z);
 
         isDragging = true;
     }
@@ -33,6 +39,7 @@ public sealed class Drag : MonoBehaviour
         if (!isDragging) return;
 
         Vector3 mousePos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
-        rb.MovePosition(new Vector2(mousePos.x, mousePos.y));
+        Vector3 targetPos = new Vector3(mousePos.x, mousePos.y, transform.position.z) + dragOffset;
+        rb.MovePosition(targetPos);
     }
 }

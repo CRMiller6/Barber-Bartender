@@ -7,6 +7,7 @@ TagManager:
   - camera
   - Cutable
   - cup
+  - Mixable
   layers:
   - Default
   - TransparentFX
@@ -14,7 +15,7 @@ TagManager:
   - Fluid
   - Water
   - UI
-  - 
+  - mix
   - 
   - 
   - 

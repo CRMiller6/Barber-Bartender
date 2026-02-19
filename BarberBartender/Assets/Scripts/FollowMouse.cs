@@ -2,17 +2,39 @@ using UnityEngine;
 
 public class FollowMouse : MonoBehaviour
 {
+    public float edgeThreshold = 50f; // Pixels from edge to trigger movement
+    public float moveSpeed = 5f;      // Units per second
+    
+    private Camera _mainCamera;
+
+    void Start()
+    {
+        _mainCamera = Camera.main;
+    }
+
     void Update()
     {
-        // 1. Get mouse position in screen pixels
         Vector3 mousePos = Input.mousePosition;
 
-        // 2. Convert to World Space using the Main Camera
-        // Note: Z must be set to the distance from the camera (usually its Z depth)
-        mousePos.z = -Camera.main.transform.position.z; 
-        Vector3 worldPos = Camera.main.ScreenToWorldPoint(mousePos);
+        // Check if mouse is near any of the four edges
+        bool isNearEdge = mousePos.x < edgeThreshold || 
+                          mousePos.x > Screen.width - edgeThreshold || 
+                          mousePos.y < edgeThreshold || 
+                          mousePos.y > Screen.height - edgeThreshold;
 
-        // 3. Apply position (keeping Z at 0 for 2D)
-        transform.position = new Vector3(worldPos.x, worldPos.y, 0);
+        if (isNearEdge)
+        {
+            // Calculate target world position
+            mousePos.z = Mathf.Abs(_mainCamera.transform.position.z);
+            Vector3 targetWorldPos = _mainCamera.ScreenToWorldPoint(mousePos);
+            targetWorldPos.z = 0; // Lock to 2D plane
+
+            // Move towards target smoothly at a constant speed
+            transform.position = Vector3.MoveTowards(
+                transform.position, 
+                targetWorldPos, 
+                moveSpeed * Time.deltaTime
+            );
+        }
     }
 }

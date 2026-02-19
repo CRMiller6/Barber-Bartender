@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 4310990303383132133}
   - component: {fileID: 4830135790951468375}
   - component: {fileID: 203614282394217628}
-  - component: {fileID: 3017426112220416514}
-  m_Layer: 3
-  m_Name: Fluids 1
+  - component: {fileID: 1839042859531070043}
+  m_Layer: 6
+  m_Name: Fluids 3
   m_TagString: Mixable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -175,7 +175,7 @@ MonoBehaviour:
   stickStrength: 10
   maxVelocity: 1000
   minConnections: 4
---- !u!114 &3017426112220416514
+--- !u!114 &1839042859531070043
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -187,4 +187,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 998415a34de553047a8c2ac9bb91d9de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MixableObject
-  objectID: 1
+  objectID: 3

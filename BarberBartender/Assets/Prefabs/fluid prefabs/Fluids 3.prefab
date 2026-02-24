@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1839042859531070043}
   m_Layer: 6
   m_Name: Fluids 3
-  m_TagString: Mixable
+  m_TagString: Drink
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -1,50 +1,64 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class MixManager : MonoBehaviour
 {
+    public static MixManager Instance;
+
     [Header("Mix Recipes")]
     public List<MixRecipe> recipes = new List<MixRecipe>();
 
-    private Dictionary<string, GameObject> mixDict = new Dictionary<string, GameObject>();
+    [Header("Delay Between Spawns (seconds)")]
+    public float spawnDelay = 0.1f; // tiny delay to avoid crash when many objects mix
 
     void Awake()
     {
-        foreach (var recipe in recipes)
-        {
-            string key1 = GetKey(recipe.objectAID, recipe.objectBID);
-            string key2 = GetKey(recipe.objectBID, recipe.objectAID);
-
-            if (!mixDict.ContainsKey(key1)) mixDict.Add(key1, recipe.result);
-            if (!mixDict.ContainsKey(key2)) mixDict.Add(key2, recipe.result);
-        }
+        if (Instance == null)
+            Instance = this;
+        else
+            Destroy(gameObject);
     }
 
-    string GetKey(string idA, string idB)
-    {
-        return idA + "+" + idB;
-    }
-
-    public static void TryMix(Mixable a, Mixable b)
+    public void TryMix(Mixable a, Mixable b)
     {
         if (a == null || b == null) return;
 
-        MixManager mixManager = Object.FindFirstObjectByType<MixManager>();
-        if (mixManager == null) return;
-
-        string key = mixManager.GetKey(a.objectID, b.objectID);
-
-        if (mixManager.mixDict.ContainsKey(key))
+        foreach (var recipe in recipes)
         {
-            GameObject resultPrefab = mixManager.mixDict[key];
-
-            // Spawn the result at each object's position
-            Instantiate(resultPrefab, a.transform.position, Quaternion.identity);
-            Instantiate(resultPrefab, b.transform.position, Quaternion.identity);
-
-            Destroy(a.gameObject);
-            Destroy(b.gameObject);
+            if (Matches(recipe, a.objectID, b.objectID))
+            {
+                StartCoroutine(MixWithDelay(a, b, recipe.result));
+                return;
+            }
         }
+    }
+
+    bool Matches(MixRecipe recipe, string idA, string idB)
+    {
+        return (recipe.objectAID == idA && recipe.objectBID == idB) ||
+               (recipe.objectAID == idB && recipe.objectBID == idA);
+    }
+
+    IEnumerator MixWithDelay(Mixable a, Mixable b, GameObject resultPrefab)
+    {
+        if (a == null || b == null || resultPrefab == null)
+            yield break;
+
+        // Cache positions before destroying
+        Vector3 posA = a.transform.position;
+        Vector3 posB = b.transform.position;
+
+        // Destroy originals immediately
+        Destroy(a.gameObject);
+        Destroy(b.gameObject);
+
+        // Spawn a result at a's position
+        Instantiate(resultPrefab, posA, Quaternion.identity);
+        yield return new WaitForSeconds(spawnDelay);
+
+        // Spawn a result at b's position
+        Instantiate(resultPrefab, posB, Quaternion.identity);
     }
 }
 

@@ -7,7 +7,7 @@ public sealed class Drag : MonoBehaviour
     private Camera mainCamera;
     private bool isDragging;
     private Vector3 dragOffset; // Offset between mouse and object center
-
+    public bool IsDragging => isDragging;
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();

@@ -1,52 +1,62 @@
 using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
 
 public class SpawnHairStyle : MonoBehaviour
 {
-    public HairPoints hairP;
-
-    public int trueCountStart;
-    public int falseCountStart;
-
-    public int trueCountEnd;
-    public int falseCountEnd;
-
     public List<GameObject> hairStyles = new List<GameObject>();
+    public int totalPoints = 0;
+    
+    private GameObject currentHairInstance;
 
-
-    public void OnSpawn()
+    void Start()
     {
-        if (hairStyles != null && hairStyles.Count > 0)
-        {
-            int randomIndex = Random.Range(0, hairStyles.Count);
-            Debug.Log(randomIndex);
-
-            GameObject prefabHairToSpawn = hairStyles[randomIndex];
-            Debug.Log(prefabHairToSpawn);
-
-            Instantiate(prefabHairToSpawn, transform.position, transform.rotation);
-            Debug.Log(hairStyles);
-        }
-
-        if (hairP != null)
-        {
-            hairP.PossiblePoints();
-            trueCountStart = hairP.trueCount;
-            falseCountStart = hairP.falseCount;
-            
-            Debug.Log($"SHS results - True {trueCountStart}, False: {falseCountStart}");
-        }
+        StartCoroutine(HairCycleRoutine());
     }
 
-    public void AtEnd()
+    IEnumerator HairCycleRoutine()
     {
-        if (hairP != null)
+        float startTime = Time.time;
+        float durationLimit = 300f; 
+
+        while (Time.time < startTime + durationLimit) 
         {
-            hairP.PossiblePoints();
-            trueCountEnd = hairP.trueCount;
-            falseCountEnd = hairP.falseCount;
-            
-            Debug.Log($"SHS results - True {trueCountEnd}, False: {falseCountEnd}");
+            if (hairStyles.Count > 0)
+            {
+                int randomIndex = Random.Range(0, hairStyles.Count);
+                currentHairInstance = Instantiate(hairStyles[randomIndex], transform.position, transform.rotation);
+                
+                int startTrue, startFalse;
+                CountBools(currentHairInstance, out startTrue, out startFalse);
+
+                yield return new WaitForSeconds(30f);
+
+                int endTrue, endFalse;
+                CountBools(currentHairInstance, out endTrue, out endFalse);
+
+                totalPoints += (startTrue - endTrue);
+                Destroy(currentHairInstance);
+            }
+
+            if (Time.time >= startTime + durationLimit) break;
+
+            Debug.Log("Waiting 10s for next round...");
+            yield return new WaitForSeconds(10f);
+        }
+
+        Debug.Log("5 minutes are up! Final Score: " + totalPoints);
+    }
+
+    void CountBools(GameObject parent, out int trues, out int falses)
+    {
+        trues = 0; falses = 0;
+        if (parent == null) return;
+
+        WantToBeCut[] scripts = parent.GetComponentsInChildren<WantToBeCut>(true);
+        foreach (var script in scripts)
+        {
+            if (script.wantCutting) trues++;
+            else falses++;
         }
     }
 }

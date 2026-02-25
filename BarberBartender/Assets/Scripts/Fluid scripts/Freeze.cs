@@ -13,13 +13,7 @@ public class FreezeInZone : MonoBehaviour
     [Header("Indicator to show when a cup is frozen")]
     public GameObject frozenIndicator;
 
-    private void UpdateIndicator()
-    {
-        if (frozenIndicator != null)
-        {
-            frozenIndicator.SetActive(frozenCups.Count > 0);
-        }
-    }
+
 
     private void OnTriggerStay2D(Collider2D other)
     {
@@ -59,7 +53,6 @@ public class FreezeInZone : MonoBehaviour
                         }
                     }
 
-                    UpdateIndicator(); // Turn on indicator
                 }
                 else
                 {
@@ -79,7 +72,6 @@ public class FreezeInZone : MonoBehaviour
                     }
                     frozenDrinks.Clear();
 
-                    UpdateIndicator(); // Turn off indicator if no frozen cups
                 }
             }
         }
@@ -110,7 +102,6 @@ public class FreezeInZone : MonoBehaviour
             }
             frozenDrinks.Clear();
 
-            UpdateIndicator(); // Turn off indicator if no frozen cups
         }
         else if (other.CompareTag("Drink"))
         {

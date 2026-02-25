@@ -1,17 +1,19 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Collider2D))]
 public class Mixable : MonoBehaviour
 {
-    [Header("Unique ID for Mixing")]
-    public string objectID; // e.g., "Apple", "Banana"
+    public string objectID;
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionStay2D(Collision2D collision)
     {
-        // Get the Mixable component from the object we collided with
-        Mixable otherMixable = collision.gameObject.GetComponent<Mixable>();
-        if (otherMixable == null) return;
+        Mixable other = collision.gameObject.GetComponent<Mixable>();
+        if (other == null) return;
 
-        // Attempt to mix
-        MixManager.TryMix(this, otherMixable);
+        // Only one object per pair triggers the mix
+        if (GetInstanceID() > other.GetInstanceID())
+            return;
+
+        MixManager.Instance.TryMix(this, other);
     }
 }

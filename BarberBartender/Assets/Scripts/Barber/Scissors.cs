@@ -9,7 +9,7 @@ public class Scissors : MonoBehaviour
         if (collision2D.gameObject.CompareTag("Cutable"))
         {
             Destroy(collision2D.gameObject);
-            Debug.Log("Object Cut!");
+            // Debug.Log("Object Cut!");
         }
     }
 }

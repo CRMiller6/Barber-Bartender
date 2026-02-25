@@ -2,23 +2,39 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 [RequireComponent(typeof(Collider2D))]
+[RequireComponent(typeof(SpriteRenderer))]
 public class DrinkDeleteButton : MonoBehaviour, IPointerClickHandler
 {
     [Header("Zone to check for drinks")]
-    public Collider2D zoneCollider; // Assign the FreezeInZone collider
+    public Collider2D zoneCollider;
 
-    [Header("Points per drink ID")]
-    public int defaultPoints = 1; // Points if no specific mapping
-    public DrinkPointMapping[] drinkPoints; // Assign specific points per drink ID
+    [Header("Drink Definitions")]
+    public DrinkDefinition[] possibleDrinks;
 
-    [Header("Score tracking")]
-    public int currentScore = 0; // Total score tracked locally
+    [Header("Scoring")]
+    public int correctPoints = 2;
+    public int wrongPoints = -1;
+
+    public int currentScore = 0;
+
+    private string currentTargetDrinkID;
+    private SpriteRenderer spriteRenderer;
 
     [System.Serializable]
-    public struct DrinkPointMapping
+    public struct DrinkDefinition
     {
-        public string objectID; // From Mixable
-        public int points;      // Points to award for any drink in the zone
+        public string objectID;
+        public Color displayColor;
+    }
+
+    private void Awake()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+
+    private void Start()
+    {
+        PickNewTargetDrink();
     }
 
     public void OnPointerClick(PointerEventData eventData)
@@ -29,10 +45,11 @@ public class DrinkDeleteButton : MonoBehaviour, IPointerClickHandler
             return;
         }
 
-        DeleteDrinksAndAwardPoints();
+        HandleSubmission();
+        PickNewTargetDrink();
     }
 
-    private void DeleteDrinksAndAwardPoints()
+    private void HandleSubmission()
     {
         Collider2D[] overlapping = Physics2D.OverlapBoxAll(
             zoneCollider.bounds.center,
@@ -40,9 +57,8 @@ public class DrinkDeleteButton : MonoBehaviour, IPointerClickHandler
             0f
         );
 
-        int pointsToAdd = defaultPoints; // Default if no drinks matched
+        string submittedDrinkID = null;
 
-        // Look for the first drink in the zone to determine points
         foreach (var col in overlapping)
         {
             if (col.CompareTag("Drink"))
@@ -50,22 +66,33 @@ public class DrinkDeleteButton : MonoBehaviour, IPointerClickHandler
                 Mixable mixable = col.GetComponent<Mixable>();
                 if (mixable != null)
                 {
-                    // Check if there is a specific point mapping
-                    foreach (var mapping in drinkPoints)
-                    {
-                        if (mapping.objectID == mixable.objectID)
-                        {
-                            pointsToAdd = mapping.points;
-                            break;
-                        }
-                    }
+                    submittedDrinkID = mixable.objectID;
                 }
-                // We only care about the first drink for points
                 break;
             }
         }
 
-        // Delete all drinks in the zone
+        if (submittedDrinkID != null)
+        {
+            if (submittedDrinkID == currentTargetDrinkID)
+            {
+                currentScore += correctPoints;
+                Debug.Log($"Correct! +{correctPoints} points.");
+            }
+            else
+            {
+                currentScore += wrongPoints;
+                Debug.Log($"Wrong drink! {wrongPoints} points.");
+            }
+        }
+        else
+        {
+            Debug.Log("No drink submitted.");
+        }
+
+        Debug.Log($"Current Score: {currentScore}");
+
+        // Delete all drinks
         foreach (var col in overlapping)
         {
             if (col.CompareTag("Drink"))
@@ -73,9 +100,22 @@ public class DrinkDeleteButton : MonoBehaviour, IPointerClickHandler
                 Destroy(col.gameObject);
             }
         }
+    }
 
-        // Award points once per button press
-        currentScore += pointsToAdd;
-        Debug.Log($"Button pressed! Awarded {pointsToAdd} points. Current score: {currentScore}");
+    private void PickNewTargetDrink()
+    {
+        if (possibleDrinks == null || possibleDrinks.Length == 0)
+        {
+            Debug.LogWarning("No drinks assigned!");
+            return;
+        }
+
+        int randomIndex = Random.Range(0, possibleDrinks.Length);
+        currentTargetDrinkID = possibleDrinks[randomIndex].objectID;
+
+        // Change sprite color
+        spriteRenderer.color = possibleDrinks[randomIndex].displayColor;
+
+        Debug.Log($"New Order: {currentTargetDrinkID}");
     }
 }

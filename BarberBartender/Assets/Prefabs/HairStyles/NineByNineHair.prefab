@@ -151,7 +151,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7333bd19873c44baa6cc68c8895d115, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WantToBeCut
-  wantCutting: 0
+  wantCutting: 1
+  duration: 30
 --- !u!1 &2071456860400878869
 GameObject:
   m_ObjectHideFlags: 0
@@ -304,6 +305,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WantToBeCut
   wantCutting: 0
+  duration: 30
 --- !u!1 &2456208519923457792
 GameObject:
   m_ObjectHideFlags: 0
@@ -509,6 +511,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WantToBeCut
   wantCutting: 0
+  duration: 30
 --- !u!1 &4249368474355769001
 GameObject:
   m_ObjectHideFlags: 0
@@ -660,7 +663,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7333bd19873c44baa6cc68c8895d115, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WantToBeCut
-  wantCutting: 0
+  wantCutting: 1
+  duration: 30
 --- !u!1 &6573240604756359352
 GameObject:
   m_ObjectHideFlags: 0
@@ -1088,7 +1092,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7333bd19873c44baa6cc68c8895d115, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WantToBeCut
-  wantCutting: 0
+  wantCutting: 1
+  duration: 30
 --- !u!1 &8252765651646763359
 GameObject:
   m_ObjectHideFlags: 0
@@ -1379,3 +1384,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WantToBeCut
   wantCutting: 0
+  duration: 30

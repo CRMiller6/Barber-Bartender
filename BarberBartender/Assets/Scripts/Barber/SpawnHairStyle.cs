@@ -1,23 +1,27 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 
 public class SpawnHairStyle : MonoBehaviour
 {
     public List<GameObject> hairStyles = new List<GameObject>();
     public int totalPoints = 0;
+    public TMP_Text cutScore;
     
     private GameObject currentHairInstance;
 
     void Start()
     {
+
         StartCoroutine(HairCycleRoutine());
     }
 
     IEnumerator HairCycleRoutine()
     {
+        yield return new WaitForSeconds(40f);
         float startTime = Time.time;
-        float durationLimit = 300f; 
+        float durationLimit = 300f;
 
         while (Time.time < startTime + durationLimit) 
         {
@@ -26,25 +30,29 @@ public class SpawnHairStyle : MonoBehaviour
                 int randomIndex = Random.Range(0, hairStyles.Count);
                 currentHairInstance = Instantiate(hairStyles[randomIndex], transform.position, transform.rotation);
                 
-                int startTrue, startFalse;
-                CountBools(currentHairInstance, out startTrue, out startFalse);
+                CountBools(currentHairInstance, out int startTrue, out int startFalse);
 
                 yield return new WaitForSeconds(30f);
 
-                int endTrue, endFalse;
-                CountBools(currentHairInstance, out endTrue, out endFalse);
+                CountBools(currentHairInstance, out int endTrue, out int endFalse);
 
-                totalPoints += (startTrue - endTrue);
+                int correctCuts = startTrue - endTrue;
+                int wrongCuts = startFalse - endFalse;
+                
+                int roundScore = (correctCuts * 1) - (wrongCuts * 2);
+                totalPoints += roundScore;
+
+                Debug.Log($"Round Over! Correct: {correctCuts}, Wrong: {wrongCuts}. Points added: {roundScore}");
+                
                 Destroy(currentHairInstance);
             }
 
             if (Time.time >= startTime + durationLimit) break;
 
-            Debug.Log("Waiting 10s for next round...");
             yield return new WaitForSeconds(10f);
         }
 
-        Debug.Log("5 minutes are up! Final Score: " + totalPoints);
+        Debug.Log("Game Over! Final Score: " + totalPoints);
     }
 
     void CountBools(GameObject parent, out int trues, out int falses)
@@ -59,5 +67,9 @@ public class SpawnHairStyle : MonoBehaviour
             else falses++;
         }
     }
+
+    void Update()
+    {
+        cutScore.text = "Haircut Score: " + totalPoints;
+    }
 }
-//ahhhhhh

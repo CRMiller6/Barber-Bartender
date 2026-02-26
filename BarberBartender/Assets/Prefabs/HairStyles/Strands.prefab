@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7838475647534444802}
   - component: {fileID: 2043322883632865644}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Strands
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53,8 +53,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 041589a6a3be04679ad4a7dcee327503, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HairPoints
-  trueCount: 0
-  falseCount: 0
 --- !u!1 &1962528867217272322
 GameObject:
   m_ObjectHideFlags: 0
@@ -67,7 +65,7 @@ GameObject:
   - component: {fileID: 4165696279763771639}
   - component: {fileID: 1809344493096629874}
   - component: {fileID: 3380663713301737806}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Square (6)
   m_TagString: Cutable
   m_Icon: {fileID: 0}
@@ -219,7 +217,7 @@ GameObject:
   - component: {fileID: 119783850625719744}
   - component: {fileID: 1617963997975043657}
   - component: {fileID: 4881399438590558855}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Square (8)
   m_TagString: Cutable
   m_Icon: {fileID: 0}
@@ -371,7 +369,7 @@ GameObject:
   - component: {fileID: 3175568088298609638}
   - component: {fileID: 2010648868981705852}
   - component: {fileID: 8111598076951924582}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Square (7)
   m_TagString: Cutable
   m_Icon: {fileID: 0}
@@ -522,7 +520,7 @@ GameObject:
   - component: {fileID: 7895607360977288882}
   - component: {fileID: 8758755507238344482}
   - component: {fileID: 2355817935764080228}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Square (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -660,7 +658,7 @@ GameObject:
   - component: {fileID: 3798017812267704455}
   - component: {fileID: 4139503574277129124}
   - component: {fileID: 377405224230952629}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Square (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -798,7 +796,7 @@ GameObject:
   - component: {fileID: 6534207936022001415}
   - component: {fileID: 2542399493352342446}
   - component: {fileID: 6753266177367864945}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -937,7 +935,7 @@ GameObject:
   - component: {fileID: 7858284115510519366}
   - component: {fileID: 6689583878596356260}
   - component: {fileID: 2749065106953854450}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Square (4)
   m_TagString: Cutable
   m_Icon: {fileID: 0}
@@ -1089,7 +1087,7 @@ GameObject:
   - component: {fileID: 2346057969811292934}
   - component: {fileID: 4279654391398546441}
   - component: {fileID: 5107888870584516020}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Square (3)
   m_TagString: Cutable
   m_Icon: {fileID: 0}
@@ -1241,7 +1239,7 @@ GameObject:
   - component: {fileID: 6449324454530629675}
   - component: {fileID: 8713914262057498433}
   - component: {fileID: 4371634919282847210}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Square (5)
   m_TagString: Cutable
   m_Icon: {fileID: 0}

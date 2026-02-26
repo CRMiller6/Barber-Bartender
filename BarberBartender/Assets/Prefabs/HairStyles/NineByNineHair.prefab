@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2056083880657395923}
   - component: {fileID: 4747840623732760709}
   - component: {fileID: 8707516109107821683}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Square (6)
   m_TagString: Cutable
   m_Icon: {fileID: 0}
@@ -151,7 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7333bd19873c44baa6cc68c8895d115, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WantToBeCut
-  wantcutting: 1
+  wantCutting: 0
 --- !u!1 &2071456860400878869
 GameObject:
   m_ObjectHideFlags: 0
@@ -164,7 +164,7 @@ GameObject:
   - component: {fileID: 8584426380198982803}
   - component: {fileID: 289783685615183996}
   - component: {fileID: 6813929528738015405}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Square (7)
   m_TagString: Cutable
   m_Icon: {fileID: 0}
@@ -303,7 +303,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7333bd19873c44baa6cc68c8895d115, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WantToBeCut
-  wantcutting: 0
+  wantCutting: 0
 --- !u!1 &2456208519923457792
 GameObject:
   m_ObjectHideFlags: 0
@@ -314,7 +314,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2234303632115259669}
   - component: {fileID: 9165358014850819377}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: NineByNineHair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -369,7 +369,7 @@ GameObject:
   - component: {fileID: 3877868650925372461}
   - component: {fileID: 4731797322784610302}
   - component: {fileID: 2092690780382553958}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Square (3)
   m_TagString: Cutable
   m_Icon: {fileID: 0}
@@ -508,7 +508,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7333bd19873c44baa6cc68c8895d115, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WantToBeCut
-  wantcutting: 0
+  wantCutting: 0
 --- !u!1 &4249368474355769001
 GameObject:
   m_ObjectHideFlags: 0
@@ -521,7 +521,7 @@ GameObject:
   - component: {fileID: 6330969302213070349}
   - component: {fileID: 998873978673632595}
   - component: {fileID: 5340671461510651565}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Square (8)
   m_TagString: Cutable
   m_Icon: {fileID: 0}
@@ -660,7 +660,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7333bd19873c44baa6cc68c8895d115, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WantToBeCut
-  wantcutting: 1
+  wantCutting: 0
 --- !u!1 &6573240604756359352
 GameObject:
   m_ObjectHideFlags: 0
@@ -672,7 +672,7 @@ GameObject:
   - component: {fileID: 8396899977659246462}
   - component: {fileID: 7152908022759598042}
   - component: {fileID: 2679049949783425264}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -810,7 +810,7 @@ GameObject:
   - component: {fileID: 933948971236381038}
   - component: {fileID: 6390771680627335632}
   - component: {fileID: 7263334595451377666}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Square (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -949,7 +949,7 @@ GameObject:
   - component: {fileID: 2135869582348024383}
   - component: {fileID: 8541081607410131201}
   - component: {fileID: 7515858159336932798}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Square (5)
   m_TagString: Cutable
   m_Icon: {fileID: 0}
@@ -1088,7 +1088,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7333bd19873c44baa6cc68c8895d115, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WantToBeCut
-  wantcutting: 1
+  wantCutting: 0
 --- !u!1 &8252765651646763359
 GameObject:
   m_ObjectHideFlags: 0
@@ -1100,7 +1100,7 @@ GameObject:
   - component: {fileID: 5924845917787395151}
   - component: {fileID: 6474367154604104018}
   - component: {fileID: 4844962090282950941}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Square (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1239,7 +1239,7 @@ GameObject:
   - component: {fileID: 5733665613227214912}
   - component: {fileID: 853974702998272243}
   - component: {fileID: 690078204762055409}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Square (4)
   m_TagString: Cutable
   m_Icon: {fileID: 0}
@@ -1378,4 +1378,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7333bd19873c44baa6cc68c8895d115, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WantToBeCut
-  wantcutting: 0
+  wantCutting: 0

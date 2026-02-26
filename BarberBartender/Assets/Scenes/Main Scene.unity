@@ -5154,6 +5154,11 @@ MonoBehaviour:
   - {fileID: 2456208519923457792, guid: bb27b58e6609c407b8be8d97bcbb9198, type: 3}
   - {fileID: 530159867312291710, guid: 987eb6936140046eda2dd19144631fa8, type: 3}
   totalPoints: 0
+--- !u!4 &1561379798 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2234303632115259669, guid: bb27b58e6609c407b8be8d97bcbb9198, type: 3}
+  m_PrefabInstance: {fileID: 263534831}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1565070317
 GameObject:
   m_ObjectHideFlags: 0
@@ -6760,7 +6765,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b953287a59871946b24d9e918595d86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  drinkButton: {fileID: 0}
+  drinkButton: {fileID: 421655142}
 --- !u!114 &2039520721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6984,6 +6989,8 @@ Transform:
   - {fileID: 2006226158}
   - {fileID: 1487893456}
   - {fileID: 517333044}
+  - {fileID: 1561379798}
+  - {fileID: 1044792169}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807

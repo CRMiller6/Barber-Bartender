@@ -13,6 +13,13 @@ public class DrinkSubmissionHandler : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        if (!orderManager || !orderManager.IsDrinkActive)
+        {
+            // No active drink, can't submit
+            Debug.Log("No active drink to submit.");
+            return;
+        }
+
         if (zoneCollider == null)
         {
             Debug.LogWarning("Zone Collider not assigned!");
@@ -21,7 +28,8 @@ public class DrinkSubmissionHandler : MonoBehaviour, IPointerClickHandler
 
         HandleSubmission();
 
-        orderManager?.PickNewTargetDrink();
+        // End the current drink early so the delay timer starts
+        orderManager.EndDrinkEarly();
     }
 
     private void HandleSubmission()

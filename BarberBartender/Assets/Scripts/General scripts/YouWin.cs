@@ -7,8 +7,11 @@ public class GameWinManager : MonoBehaviour
 
     [Header("Win Conditions")]
     public int flavorPointsNeeded = 10; // Minimum Flavor Points needed
-    public int hairPointsNeeded = 5;   // Minimum Hair Points needed
+    public int hairPointsNeeded = 5;    // Minimum Hair Points needed
     public int totalPointsNeeded = 20;  // Minimum total points needed
+
+    [Header("Balance Settings")]
+    public int balanceMargin = 0;       // Difference allowed to consider the work "balanced"
 
     private bool winTriggered = false;
 
@@ -29,9 +32,16 @@ public class GameWinManager : MonoBehaviour
         {
             winTriggered = true;
 
-            string moreOf = flavorPointTotal > hairPointTotal ? "Flavor Points" : "Hair Points";
-
-            Debug.Log($"You won! Flavor Points = {flavorPointTotal}, Hair Points = {hairPointTotal}. You did more {moreOf}!");
+            // Check if work is balanced
+            if (Mathf.Abs(flavorPointTotal - hairPointTotal) <= balanceMargin)
+            {
+                Debug.Log($"You won! Flavor Points = {flavorPointTotal}, Hair Points = {hairPointTotal}. Your work was balanced!");
+            }
+            else
+            {
+                string moreOf = flavorPointTotal > hairPointTotal ? "Flavor Points" : "Hair Points";
+                Debug.Log($"You won! Flavor Points = {flavorPointTotal}, Hair Points = {hairPointTotal}. You did more {moreOf}!");
+            }
         }
     }
 }

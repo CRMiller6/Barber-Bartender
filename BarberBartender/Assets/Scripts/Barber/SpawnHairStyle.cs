@@ -38,8 +38,10 @@ public class SpawnHairStyle : MonoBehaviour
 
                 int correctCuts = startTrue - endTrue;
                 int wrongCuts = startFalse - endFalse;
+                int missedCuts = endTrue;
                 
-                int roundScore = (correctCuts * 1) - (wrongCuts * 2);
+                int roundScore = (correctCuts) - (wrongCuts * 2) - (missedCuts);
+
                 totalPoints += roundScore;
 
                 Debug.Log($"Round Over! Correct: {correctCuts}, Wrong: {wrongCuts}. Points added: {roundScore}");

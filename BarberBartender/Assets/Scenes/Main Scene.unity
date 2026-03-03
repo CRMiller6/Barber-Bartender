@@ -1459,7 +1459,6 @@ GameObject:
   - component: {fileID: 421655140}
   - component: {fileID: 421655141}
   - component: {fileID: 421655143}
-  - component: {fileID: 421655142}
   - component: {fileID: 421655146}
   - component: {fileID: 421655145}
   - component: {fileID: 421655144}
@@ -1535,20 +1534,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 25.396553, y: 32.602314}
   m_EdgeRadius: 0
---- !u!114 &421655142
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 421655139}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f69031135940614089ee373e7e37404, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DrinkDeleteButton
-  correctPoints: 2
-  wrongPoints: -1
 --- !u!212 &421655143
 SpriteRenderer:
   serializedVersion: 2
@@ -1636,7 +1621,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DrinkSubmissionHandler
   zoneCollider: {fileID: 558329487}
   orderManager: {fileID: 421655146}
-  scoreManager: {fileID: 421655142}
+  scoreManager: {fileID: 1731338472}
 --- !u!114 &421655146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5261,6 +5246,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1731338471}
+  - component: {fileID: 1731338473}
+  - component: {fileID: 1731338472}
   m_Layer: 0
   m_Name: Points Manager
   m_TagString: Untagged
@@ -5283,6 +5270,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1731338472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1731338470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f69031135940614089ee373e7e37404, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FlavorPoints
+  correctPoints: 2
+  wrongPoints: -1
+--- !u!114 &1731338473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1731338470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c03c5653a387b1f429dae69323d4b069, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameWinManager
+  flavorPoints: {fileID: 1731338472}
+  hairPoints: {fileID: 1487893457}
+  flavorPointsNeeded: 5
+  hairPointsNeeded: 5
+  totalPointsNeeded: 10
 --- !u!1 &1735265644
 GameObject:
   m_ObjectHideFlags: 0
@@ -6529,7 +6547,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b953287a59871946b24d9e918595d86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  drinkButton: {fileID: 421655142}
+  drinkButton: {fileID: 1731338472}
 --- !u!114 &2039520721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6550,7 +6568,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: 'Drink Score: 0'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

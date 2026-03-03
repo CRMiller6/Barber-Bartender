@@ -4,7 +4,7 @@ using TMPro;
 public class ScoreDisplay : MonoBehaviour
 {
     [Header("Reference to the scoring button")]
-    public DrinkDeleteButton drinkButton;
+    public FlavorPoints drinkButton;
 
     private TMP_Text scoreText;
 
@@ -17,7 +17,7 @@ public class ScoreDisplay : MonoBehaviour
     {
         if (drinkButton != null)
         {
-            scoreText.text = "Drink score: " + drinkButton.currentScore.ToString();
+            scoreText.text = "Drink score: " + drinkButton.CurrentScore.ToString();
         }
     }
 }

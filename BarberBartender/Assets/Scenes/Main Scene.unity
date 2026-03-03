@@ -367,7 +367,7 @@ GameObject:
   m_Component:
   - component: {fileID: 68560190}
   m_Layer: 0
-  m_Name: Square (2)
+  m_Name: submit button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1460,8 +1460,11 @@ GameObject:
   - component: {fileID: 421655141}
   - component: {fileID: 421655143}
   - component: {fileID: 421655142}
+  - component: {fileID: 421655146}
+  - component: {fileID: 421655145}
+  - component: {fileID: 421655144}
   m_Layer: 0
-  m_Name: colorchooser
+  m_Name: ActualButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1544,19 +1547,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f69031135940614089ee373e7e37404, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DrinkDeleteButton
-  zoneCollider: {fileID: 558329487}
-  cupTag: cup
-  possibleDrinks:
-  - objectID: 1
-    displayColor: {r: 1, g: 0, b: 0, a: 0}
-  - objectID: 2
-    displayColor: {r: 0, g: 0.55064845, b: 1, a: 0}
-  - objectID: 3
-    displayColor: {r: 0.5466709, g: 0, b: 1, a: 0}
   correctPoints: 2
   wrongPoints: -1
-  objectToReset: {fileID: 608251475}
-  currentScore: 0
 --- !u!212 &421655143
 SpriteRenderer:
   serializedVersion: 2
@@ -1616,6 +1608,54 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
   m_SpriteSortPoint: 0
+--- !u!114 &421655144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 421655139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0af42c93339d9e44f94a5a848cea54b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ResetObjectsButton
+  objectsToReset:
+  - {fileID: 608251475}
+--- !u!114 &421655145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 421655139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e53c082854a329940bbdd7505e08567d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DrinkSubmissionHandler
+  zoneCollider: {fileID: 558329487}
+  orderManager: {fileID: 421655146}
+  scoreManager: {fileID: 421655142}
+--- !u!114 &421655146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 421655139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e3f9c78c35e4ce40b90717c0e622511, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DrinkOrderManager
+  possibleDrinks:
+  - objectID: 1
+    displayColor: {r: 1, g: 0, b: 0, a: 0}
+  - objectID: 2
+    displayColor: {r: 0, g: 0.54901963, b: 1, a: 0}
+  - objectID: 3
+    displayColor: {r: 0.54509807, g: 0, b: 1, a: 0}
 --- !u!1 &423360105
 GameObject:
   m_ObjectHideFlags: 0
@@ -1786,8 +1826,8 @@ Transform:
   m_GameObject: {fileID: 459626191}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.08, y: -13.22, z: 0}
-  m_LocalScale: {x: 0.32825816, y: 0.32825816, z: 0.32825816}
+  m_LocalPosition: {x: 4.5833, y: -12.511, z: 0}
+  m_LocalScale: {x: 0.24701755, y: 0.24701755, z: 0.24701755}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 30178151}
@@ -2362,7 +2402,7 @@ GameObject:
   - component: {fileID: 558329488}
   - component: {fileID: 558329487}
   m_Layer: 0
-  m_Name: Square (1)
+  m_Name: submit zone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2729,8 +2769,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: 569dfa0311100984c86a7d70b90295a1, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Sprite: {fileID: 21300000, guid: 731c80ff6e0819a4dab564992dd53efa, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.69411767}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -4850,7 +4890,7 @@ GameObject:
   - component: {fileID: 1565070319}
   - component: {fileID: 1565070318}
   m_Layer: 0
-  m_Name: MixManager
+  m_Name: DrinkManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5012,7 +5052,7 @@ Transform:
   m_GameObject: {fileID: 1683022582}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -5127,8 +5167,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: 569dfa0311100984c86a7d70b90295a1, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.57254905}
+  m_Sprite: {fileID: 21300000, guid: abd695c0da9f3f74cb5ee33861c8369a, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.3529412}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -5212,6 +5252,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1690946625}
   m_CullTransparentMesh: 1
+--- !u!1 &1731338470
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1731338471}
+  m_Layer: 0
+  m_Name: Points Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1731338471
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1731338470}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -63.29474, y: -23.23081, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1735265644
 GameObject:
   m_ObjectHideFlags: 0
@@ -5242,8 +5313,8 @@ Transform:
   m_GameObject: {fileID: 1735265644}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 15.228464, y: -13.220001, z: 0}
-  m_LocalScale: {x: 0.32825816, y: 0.32825816, z: 0.32825816}
+  m_LocalPosition: {x: 13.725, y: -12.511, z: 0}
+  m_LocalScale: {x: 0.24701755, y: 0.24701755, z: 0.24701755}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 993407027}
@@ -5983,7 +6054,7 @@ GameObject:
   - component: {fileID: 1947756352}
   - component: {fileID: 1947756353}
   m_Layer: 0
-  m_Name: Mug (1)
+  m_Name: sprite
   m_TagString: cup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6705,3 +6776,4 @@ SceneRoots:
   - {fileID: 1148612106}
   - {fileID: 789243983}
   - {fileID: 1924654568}
+  - {fileID: 1731338471}

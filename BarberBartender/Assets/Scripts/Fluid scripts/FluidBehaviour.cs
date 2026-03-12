@@ -12,6 +12,10 @@ public sealed class FluidBehavior : MonoBehaviour
     [SerializeField] public float maxVelocity = 5f;
     [SerializeField] private int minConnections = 4;
 
+    [Header("Cup Settings")]
+    [SerializeField] private float cupDelay = 1f; // Seconds inside cup before effect
+    [SerializeField] private float cupMaxVelocity = 2f; // Max velocity when inside cup
+
     private Rigidbody2D rb;
     private Collider2D col;
     private int instanceId;
@@ -19,6 +23,9 @@ public sealed class FluidBehavior : MonoBehaviour
 
     private float lifeTimer;
     private bool lifetimePaused;
+
+    private bool insideCup = false;
+    private float insideCupTimer = 0f;
 
     private static readonly Collider2D[] overlapBuffer = new Collider2D[12];
     private static ContactFilter2D contactFilter;
@@ -43,13 +50,18 @@ public sealed class FluidBehavior : MonoBehaviour
 
     private void Update()
     {
-        if (lifetimePaused)
-            return;
+        if (!lifetimePaused)
+        {
+            lifeTimer += Time.deltaTime;
+            if (lifeTimer >= lifetime)
+                Destroy(gameObject);
+        }
 
-        lifeTimer += Time.deltaTime;
-
-        if (lifeTimer >= lifetime)
-            Destroy(gameObject);
+        // Update the timer if inside the cup
+        if (insideCup)
+        {
+            insideCupTimer += Time.deltaTime;
+        }
     }
 
     private void FixedUpdate()
@@ -110,7 +122,14 @@ public sealed class FluidBehavior : MonoBehaviour
                 Time.fixedDeltaTime;
         }
 
-        rb.linearVelocity = Vector2.ClampMagnitude(velocity, maxVelocity);
+        // Use different max velocity if inside cup for more than cupDelay seconds
+        float currentMaxVelocity = maxVelocity;
+        if (insideCup && insideCupTimer >= cupDelay)
+        {
+            currentMaxVelocity = cupMaxVelocity;
+        }
+
+        rb.linearVelocity = Vector2.ClampMagnitude(velocity, currentMaxVelocity);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -118,6 +137,8 @@ public sealed class FluidBehavior : MonoBehaviour
         if (other.CompareTag("cup"))
         {
             lifetimePaused = true;
+            insideCup = true;
+            insideCupTimer = 0f;
         }
     }
 
@@ -126,6 +147,8 @@ public sealed class FluidBehavior : MonoBehaviour
         if (other.CompareTag("cup"))
         {
             lifetimePaused = false;
+            insideCup = false;
+            insideCupTimer = 0f;
         }
     }
 }

@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6428553361217487162}
   - component: {fileID: 4843386216427289074}
-  - component: {fileID: 5984085714407681994}
+  - component: {fileID: 8730001993840804070}
   m_Layer: 0
-  m_Name: Customer
+  m_Name: HairCustomer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -92,7 +92,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &5984085714407681994
+--- !u!114 &8730001993840804070
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -101,12 +101,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5425285987320334390}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b479b4ee9422a4787201e5833b66f3, type: 3}
+  m_Script: {fileID: 11500000, guid: 489c292a7d5ee9f44acf54f327b35798, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CustomerBehavior
-  customerType: 1
-  drinkManager: {fileID: 0}
-  hairSpawner: {fileID: 0}
+  m_EditorClassIdentifier: Assembly-CSharp::HairCustomerBehavior
+  hairBridge: {fileID: 0}
   walkSpeed: 5
   bounceHeight: 0.03
   bounceSpeed: 8

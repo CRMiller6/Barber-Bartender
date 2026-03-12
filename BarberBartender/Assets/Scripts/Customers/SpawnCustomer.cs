@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class CustomerSpawner : MonoBehaviour
 {
@@ -14,27 +15,33 @@ public class CustomerSpawner : MonoBehaviour
     [Header("Stop Positions")]
     public Transform rightStop;  // Drink customers always go here
 
+    [Header("Spawn Delay (randomized)")]
+    public float minSpawnDelay = 1f;
+    public float maxSpawnDelay = 5f;
+
     private CustomerBehavior currentCustomer;
     private bool previousDrinkActive = false;
+    private bool spawnScheduled = false;
 
     void Update()
     {
         if (drinkManager == null) return;
 
-        // Spawn when manager indicates ready and no current customer exists
-        if (drinkManager.ReadyToSpawn && currentCustomer == null)
+        // Schedule spawn if manager is ready and no customer exists
+        if (drinkManager.ReadyToSpawn && currentCustomer == null && !spawnScheduled)
         {
-            SpawnDrinkCustomer();
+            spawnScheduled = true;
+            StartCoroutine(SpawnWithRandomDelay());
         }
 
-        // Watch the drink active flag: when it transitions from true -> false, instruct customer to leave
+        // Watch drink active flag: when it transitions from true -> false, instruct customer to leave
         if (currentCustomer != null)
         {
             bool nowActive = drinkManager.IsDrinkActive;
 
             if (previousDrinkActive && !nowActive)
             {
-                // drink just finished -> tell customer to leave
+                // Drink just finished -> tell customer to leave
                 currentCustomer.Leave();
                 currentCustomer = null;
             }
@@ -43,9 +50,17 @@ public class CustomerSpawner : MonoBehaviour
         }
         else
         {
-            // keep previous state synced when no customer
+            // Keep previous state synced when no customer exists
             previousDrinkActive = drinkManager.IsDrinkActive;
         }
+    }
+
+    private IEnumerator SpawnWithRandomDelay()
+    {
+        float delay = Random.Range(minSpawnDelay, maxSpawnDelay);
+        yield return new WaitForSeconds(delay);
+        SpawnDrinkCustomer();
+        spawnScheduled = false;
     }
 
     void SpawnDrinkCustomer()
@@ -56,11 +71,9 @@ public class CustomerSpawner : MonoBehaviour
         GameObject obj = Instantiate(customerPrefab, spawnDoor.position, Quaternion.identity);
         currentCustomer = obj.GetComponent<CustomerBehavior>();
 
-        // Initialize with spawn, stop (rightStop), and the chosen exit position.
+        // Initialize with spawn, stop (rightStop), and exit
         currentCustomer.Initialize(spawnDoor.position, rightStop.position, exitDoor.position, drinkManager);
 
-        // After spawn, the DrinkOrderManager remains in ReadyToSpawn==true until CustomerArrivedAtCounter() consumes it,
-        // which happens when the customer reaches rightStop. previousDrinkActive should be synced so we detect drink start.
         previousDrinkActive = drinkManager.IsDrinkActive;
     }
 }

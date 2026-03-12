@@ -13,6 +13,9 @@ public sealed class ThrowAndRotate : MonoBehaviour
     [SerializeField] private float throwMultiplier = 4f;
     [SerializeField] private float rotateSpeed = 180f;
 
+    [Header("Rotation Lock")]
+    [SerializeField] private bool lockZRotation = false;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -45,11 +48,17 @@ public sealed class ThrowAndRotate : MonoBehaviour
     {
         if (!isDragging) return;
 
-        float rotationInput = GetRotationInput();
-        if (rotationInput != 0f)
+        if (!lockZRotation)
         {
-            rb.MoveRotation(rb.rotation + rotationInput * rotateSpeed * Time.fixedDeltaTime);
+            float rotationInput = GetRotationInput();
+            if (rotationInput != 0f)
+            {
+                rb.MoveRotation(rb.rotation + rotationInput * rotateSpeed * Time.fixedDeltaTime);
+            }
         }
+
+        // Lock Z rotation in Rigidbody if needed
+        rb.freezeRotation = lockZRotation;
     }
 
     private Vector2 GetMouseWorldPosition()

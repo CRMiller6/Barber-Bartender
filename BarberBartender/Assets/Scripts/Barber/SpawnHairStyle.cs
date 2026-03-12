@@ -8,18 +8,20 @@ public class SpawnHairStyle : MonoBehaviour
     public List<GameObject> hairStyles = new List<GameObject>();
     public int totalPoints = 0;
     public TMP_Text cutScore;
+
+    public int StartWaitTime = 40;
     
     private GameObject currentHairInstance;
 
     void Start()
     {
 
-        StartCoroutine(HairCycleRoutine());
+        //StartCoroutine(HairCycleRoutine());
     }
 
     IEnumerator HairCycleRoutine()
     {
-        yield return new WaitForSeconds(40f);
+        yield return new WaitForSeconds(StartWaitTime);
         float startTime = Time.time;
         float durationLimit = 300f;
 

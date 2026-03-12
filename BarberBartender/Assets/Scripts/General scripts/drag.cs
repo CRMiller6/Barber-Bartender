@@ -8,6 +8,11 @@ public sealed class Drag : MonoBehaviour
     private bool isDragging;
     private Vector3 dragOffset; // Offset between mouse and object center
     public bool IsDragging => isDragging;
+
+    [Header("Drag Settings")]
+    [SerializeField] private bool useDrag = true; // Enable drag effect
+    [SerializeField] private float dragStrength = 10f; // How strongly it follows the mouse
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -40,6 +45,17 @@ public sealed class Drag : MonoBehaviour
 
         Vector3 mousePos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
         Vector3 targetPos = new Vector3(mousePos.x, mousePos.y, transform.position.z) + dragOffset;
-        rb.MovePosition(targetPos);
+
+        if (useDrag)
+        {
+            // Move smoothly toward the target position
+            Vector2 newPos = Vector2.Lerp(rb.position, targetPos, dragStrength * Time.fixedDeltaTime);
+            rb.MovePosition(newPos);
+        }
+        else
+        {
+            // Snap directly
+            rb.MovePosition(targetPos);
+        }
     }
 }

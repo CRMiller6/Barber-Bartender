@@ -175,6 +175,8 @@ MonoBehaviour:
   stickStrength: 10
   maxVelocity: 1000
   minConnections: 4
+  cupDelay: 0.6
+  cupMaxVelocity: 8
 --- !u!114 &1839042859531070043
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 5425285987320334390}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -71.27596, y: -20.78559, z: 0}
+  m_LocalPosition: {x: -71.27596, y: -20.78559, z: 25}
   m_LocalScale: {x: 6.1177, y: 6.1177, z: 6.1177}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -105,7 +105,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HairCustomerBehavior
   hairBridge: {fileID: 0}
-  walkSpeed: 5
+  walkSpeed: 6
   bounceHeight: 0.03
   bounceSpeed: 8
   startScale: 3

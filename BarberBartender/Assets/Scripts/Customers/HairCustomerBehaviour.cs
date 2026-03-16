@@ -64,6 +64,7 @@ public class HairCustomerBehavior : MonoBehaviour
         if (Mathf.Abs(transform.position.x - stopPosition.x) < 0.05f && !notifiedBridge)
         {
             notifiedBridge = true;
+            walkingIn = false; // stop walking in before starting hair round
             hairBridge.SpawnHairRound(() => { Leave(); });
         }
     }
@@ -71,6 +72,7 @@ public class HairCustomerBehavior : MonoBehaviour
     public void Leave()
     {
         walkingOut = true;
+        bounceTimer = 0f; // reset bounce for smooth exit
         UpdateFlip();
     }
 
@@ -84,13 +86,13 @@ public class HairCustomerBehavior : MonoBehaviour
         transform.position = pos;
 
         float total = Mathf.Abs(exitPosition.x - stopPosition.x);
-        float t = total > 0.0001f ? 1f - Mathf.Abs(exitPosition.x - transform.position.x) / total : 0f;
+        float t = total > 0.0001f ? 1f - Mathf.Abs(exitPosition.x - transform.position.x) / total : 1f;
         t = Mathf.Clamp01(t);
         transform.localScale = Vector3.one * Mathf.Lerp(endScale, startScale, t);
 
         UpdateFlip();
 
-        if (Mathf.Abs(transform.position.x - exitPosition.x) < 0.05f)
+        if (Vector3.Distance(transform.position, exitPosition) < 0.05f)
             Destroy(gameObject);
     }
 

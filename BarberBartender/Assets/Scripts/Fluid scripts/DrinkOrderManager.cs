@@ -38,7 +38,7 @@ public class DrinkOrderManager : MonoBehaviour
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         // Start fully invisible
-        SetColorRecursively(gameObject, new Color(0, 0, 0, 0));
+        DisableAllChildren();
     }
 
     private void Start()
@@ -49,30 +49,22 @@ public class DrinkOrderManager : MonoBehaviour
 
     private void StartBetweenTimer()
     {
-        // Ensure only one between coroutine runs
         if (betweenCoroutine != null) StopCoroutine(betweenCoroutine);
         betweenCoroutine = StartCoroutine(BetweenTimerCoroutine());
     }
 
     private IEnumerator BetweenTimerCoroutine()
     {
-        // Hide any UI while waiting for spawn
         isDrinkActive = false;
-        SetColorRecursively(gameObject, new Color(0, 0, 0, 0));
+        DisableAllChildren();
         readyToSpawn = false;
 
         yield return new WaitForSeconds(timeBetweenDrinks);
 
-        // After waiting, signal spawner that it may spawn a customer.
         readyToSpawn = true;
         betweenCoroutine = null;
     }
 
-    /// <summary>
-    /// Called by the customer when they reach their stop point.
-    /// If startDrinkOnCustomerAtCounter==true and ReadyToSpawn==true, this will pick the drink and start the drink timer.
-    /// If startDrinkOnCustomerAtCounter==false, this method does nothing (manager behaves as before, auto-picking).
-    /// </summary>
     public void CustomerArrivedAtCounter()
     {
         if (!startDrinkOnCustomerAtCounter)
@@ -83,47 +75,33 @@ public class DrinkOrderManager : MonoBehaviour
 
         if (!readyToSpawn)
         {
-            // Either the manager hasn't finished the between timer, or a drink is already active.
             Debug.Log("Customer arrived but manager is not ready to start a drink.");
             return;
         }
 
-        // Consume the ready flag so no other customer spawns for this round.
         readyToSpawn = false;
-
-        // Start the drink timer / selection
         StartDrinkTimer();
     }
 
     private void StartDrinkTimer()
     {
-        // Stop any running coroutines safely
         if (drinkCoroutine != null) StopCoroutine(drinkCoroutine);
         if (betweenCoroutine != null) StopCoroutine(betweenCoroutine);
 
-        // Choose and display a new drink
         PickNewTargetDrink();
         isDrinkActive = true;
 
-        // Start the drink countdown
         drinkCoroutine = StartCoroutine(DrinkTimerCoroutine());
     }
 
     private IEnumerator DrinkTimerCoroutine()
     {
-        float timer = drinkDisplayTime;
-        while (timer > 0f)
-        {
-            timer -= Time.deltaTime;
-            yield return null;
-        }
+        yield return new WaitForSeconds(drinkDisplayTime);
 
-        // Drink timer finished — hide and schedule next between timer
         isDrinkActive = false;
-        SetColorRecursively(gameObject, new Color(0, 0, 0, 0));
+        DisableAllChildren();
         drinkCoroutine = null;
 
-        // Start the waiting timer for the next spawn
         StartBetweenTimer();
     }
 
@@ -138,18 +116,19 @@ public class DrinkOrderManager : MonoBehaviour
         int randomIndex = Random.Range(0, possibleDrinks.Length);
         currentTargetDrinkID = possibleDrinks[randomIndex].objectID;
 
-        // Apply the drink color with full alpha
+        // Set the color for direct children
         Color colorToShow = possibleDrinks[randomIndex].displayColor;
         colorToShow.a = 1f;
-        SetColorRecursively(gameObject, colorToShow);
+        SetColorOnDirectChildren(colorToShow);
+
+        // Enable all children (and grandchildren will automatically be visible if parent active)
+        EnableAllChildren();
 
         Debug.Log("New Order: " + currentTargetDrinkID);
     }
 
     public void EndDrinkEarly()
     {
-        // Called when player submits early or you need to cancel.
-        // Stops current drink and restarts the between timer.
         if (drinkCoroutine != null)
         {
             StopCoroutine(drinkCoroutine);
@@ -157,23 +136,40 @@ public class DrinkOrderManager : MonoBehaviour
         }
 
         isDrinkActive = false;
-        SetColorRecursively(gameObject, new Color(0, 0, 0, 0));
-
-        // Restart the between timer
+        DisableAllChildren();
         StartBetweenTimer();
     }
 
-    private void SetColorRecursively(GameObject obj, Color color)
-    {
-        SpriteRenderer sr = obj.GetComponent<SpriteRenderer>();
-        if (sr != null)
-        {
-            sr.color = color; // overwrite fully, including alpha
-        }
+    // --- Helper methods ---
 
-        foreach (Transform child in obj.transform)
+    // Only changes color of immediate children
+    private void SetColorOnDirectChildren(Color color)
+    {
+        foreach (Transform child in transform)
         {
-            SetColorRecursively(child.gameObject, color);
+            SpriteRenderer sr = child.GetComponent<SpriteRenderer>();
+            if (sr != null)
+            {
+                sr.color = color;
+            }
+        }
+    }
+
+    // Disables all children (children + grandchildren)
+    private void DisableAllChildren()
+    {
+        foreach (Transform child in transform)
+        {
+            child.gameObject.SetActive(false);
+        }
+    }
+
+    // Enables all children (children + grandchildren)
+    private void EnableAllChildren()
+    {
+        foreach (Transform child in transform)
+        {
+            child.gameObject.SetActive(true);
         }
     }
 }

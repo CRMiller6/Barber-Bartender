@@ -57,26 +57,31 @@ public class CustomerBehavior : MonoBehaviour
     void WalkToStop()
     {
         bounceTimer += Time.deltaTime * bounceSpeed;
-        transform.position = Vector3.MoveTowards(transform.position, stopPosition, walkSpeed * Time.deltaTime);
 
-        Vector3 pos = transform.position;
-        pos.y += Mathf.Sin(bounceTimer) * bounceHeight;
-        transform.position = pos;
+        Vector3 basePos = Vector3.MoveTowards(transform.position, stopPosition, walkSpeed * Time.deltaTime);
 
-        float total = Mathf.Abs(stopPosition.x - spawnPosition.x);
-        float t = total > 0.0001f ? 1f - Mathf.Abs(stopPosition.x - transform.position.x) / total : 0f;
+        // Linear scale t
+        float totalX = Mathf.Abs(stopPosition.x - spawnPosition.x);
+        float t = totalX > 0.0001f ? 1f - Mathf.Abs(stopPosition.x - basePos.x) / totalX : 0f;
         t = Mathf.Clamp01(t);
 
         float scale = Mathf.Lerp(startScale, endScale, t);
-        transform.localScale = Vector3.one * scale;
 
-        // Dynamic Z based on scale
+        // Overlay bounce on Y
+        Vector3 visualPos = basePos;
+        visualPos.y += Mathf.Sin(bounceTimer) * bounceHeight;
+
+        // Dynamic Z
         float zT = (scale - startScale) / (endScale - startScale);
-        transform.position = new Vector3(transform.position.x, transform.position.y, Mathf.Lerp(minZ, maxZ, zT));
+        visualPos.z = Mathf.Lerp(minZ, maxZ, zT);
+
+        transform.position = visualPos;
+        transform.localScale = Vector3.one * scale;
 
         UpdateFlip();
 
-        if (Mathf.Abs(transform.position.x - stopPosition.x) < 0.05f && !notifiedManager)
+        if (Vector3.Distance(new Vector3(basePos.x, basePos.y, 0f),
+                             new Vector3(stopPosition.x, stopPosition.y, 0f)) < 0.05f && !notifiedManager)
         {
             notifiedManager = true;
             walkingIn = false;
@@ -94,27 +99,34 @@ public class CustomerBehavior : MonoBehaviour
     void WalkAway()
     {
         bounceTimer += Time.deltaTime * bounceSpeed;
-        transform.position = Vector3.MoveTowards(transform.position, exitPosition, walkSpeed * Time.deltaTime);
 
-        Vector3 pos = transform.position;
-        pos.y += Mathf.Sin(bounceTimer) * bounceHeight;
-        transform.position = pos;
+        Vector3 basePos = Vector3.MoveTowards(transform.position, exitPosition, walkSpeed * Time.deltaTime);
 
-        float total = Mathf.Abs(exitPosition.x - stopPosition.x);
-        float t = total > 0.0001f ? 1f - Mathf.Abs(exitPosition.x - transform.position.x) / total : 1f;
+        // Linear scale t from stop -> exit
+        float totalX = Mathf.Abs(exitPosition.x - stopPosition.x);
+        float t = totalX > 0.0001f ? 1f - Mathf.Abs(exitPosition.x - basePos.x) / totalX : 1f;
         t = Mathf.Clamp01(t);
 
         float scale = Mathf.Lerp(endScale, startScale, t);
-        transform.localScale = Vector3.one * scale;
 
-        // Dynamic Z based on scale
+        // Overlay bounce on Y
+        Vector3 visualPos = basePos;
+        visualPos.y += Mathf.Sin(bounceTimer) * bounceHeight;
+
+        // Dynamic Z
         float zT = (scale - startScale) / (endScale - startScale);
-        transform.position = new Vector3(transform.position.x, transform.position.y, Mathf.Lerp(minZ, maxZ, zT));
+        visualPos.z = Mathf.Lerp(minZ, maxZ, zT);
+
+        transform.position = visualPos;
+        transform.localScale = Vector3.one * scale;
 
         UpdateFlip();
 
-        if (Vector3.Distance(transform.position, exitPosition) < 0.05f)
+        if (Vector3.Distance(new Vector3(basePos.x, basePos.y, 0f),
+                             new Vector3(exitPosition.x, exitPosition.y, 0f)) < 1.5f)
+        {
             Destroy(gameObject);
+        }
     }
 
     private void UpdateFlip()

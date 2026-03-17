@@ -4834,7 +4834,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Drag
   useDrag: 1
-  dragStrength: 10
+  dragStrength: 5
 --- !u!50 &608251479
 Rigidbody2D:
   serializedVersion: 5

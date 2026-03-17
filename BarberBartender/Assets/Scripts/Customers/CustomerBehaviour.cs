@@ -3,10 +3,7 @@ using UnityEngine;
 [RequireComponent(typeof(SpriteRenderer))]
 public class CustomerBehavior : MonoBehaviour
 {
-    public enum CustomerType { DrinkCustomer } // kept flexible for future extension
-
-    [Header("References")]
-    public DrinkOrderManager drinkManager; // set by spawner when instantiating
+    public DrinkOrderManager drinkManager;
 
     private Vector3 spawnPosition;
     private Vector3 stopPosition;
@@ -22,6 +19,10 @@ public class CustomerBehavior : MonoBehaviour
     [Header("Scaling")]
     public float startScale = 0.5f;
     public float endScale = 1f;
+
+    [Header("Z-Position Bounds")]
+    public float minZ = 0f;   // smallest scale = farthest back
+    public float maxZ = -1f;  // largest scale = closest
 
     private float bounceTimer;
     private bool walkingIn = true;
@@ -44,106 +45,86 @@ public class CustomerBehavior : MonoBehaviour
         notifiedManager = false;
 
         spriteRenderer = GetComponent<SpriteRenderer>();
-        UpdateFlip(); // flip sprite to face movement direction
+        UpdateFlip();
     }
 
     void Update()
     {
-        if (walkingIn)
-            WalkToStop();
-        else if (walkingOut)
-            WalkAway();
-        // else idle at stop, waiting for spawner to call Leave()
+        if (walkingIn) WalkToStop();
+        else if (walkingOut) WalkAway();
     }
 
     void WalkToStop()
     {
         bounceTimer += Time.deltaTime * bounceSpeed;
-
         transform.position = Vector3.MoveTowards(transform.position, stopPosition, walkSpeed * Time.deltaTime);
 
-        // Bounce (affects only Y)
         Vector3 pos = transform.position;
         pos.y += Mathf.Sin(bounceTimer) * bounceHeight;
         transform.position = pos;
 
-        // Scale based ONLY on X movement (no Y influence)
         float total = Mathf.Abs(stopPosition.x - spawnPosition.x);
-        // protect divide-by-zero
-        float t = 0f;
-        if (total > 0.0001f)
-        {
-            float current = Mathf.Abs(stopPosition.x - transform.position.x);
-            t = 1f - (current / total);
-            t = Mathf.Clamp01(t);
-        }
+        float t = total > 0.0001f ? 1f - Mathf.Abs(stopPosition.x - transform.position.x) / total : 0f;
+        t = Mathf.Clamp01(t);
 
         float scale = Mathf.Lerp(startScale, endScale, t);
         transform.localScale = Vector3.one * scale;
 
+        // Dynamic Z based on scale
+        float zT = (scale - startScale) / (endScale - startScale);
+        transform.position = new Vector3(transform.position.x, transform.position.y, Mathf.Lerp(minZ, maxZ, zT));
+
         UpdateFlip();
 
-        if (Mathf.Abs(transform.position.x - stopPosition.x) < 0.05f)
+        if (Mathf.Abs(transform.position.x - stopPosition.x) < 0.05f && !notifiedManager)
         {
+            notifiedManager = true;
             walkingIn = false;
-
-            // Notify drink manager we arrived (only once)
-            if (!notifiedManager && drinkManager != null)
-            {
-                notifiedManager = true;
-                drinkManager.CustomerArrivedAtCounter();
-            }
+            drinkManager.CustomerArrivedAtCounter();
         }
     }
 
     public void Leave()
     {
-        // Determine facing based on exit direction
         walkingOut = true;
+        bounceTimer = 0f;
         UpdateFlip();
     }
 
     void WalkAway()
     {
         bounceTimer += Time.deltaTime * bounceSpeed;
-
         transform.position = Vector3.MoveTowards(transform.position, exitPosition, walkSpeed * Time.deltaTime);
 
         Vector3 pos = transform.position;
         pos.y += Mathf.Sin(bounceTimer) * bounceHeight;
         transform.position = pos;
 
-        // Scale based ONLY on X movement from stop to exit
         float total = Mathf.Abs(exitPosition.x - stopPosition.x);
-        float t = 0f;
-        if (total > 0.0001f)
-        {
-            float current = Mathf.Abs(exitPosition.x - transform.position.x);
-            t = 1f - (current / total);
-            t = Mathf.Clamp01(t);
-        }
+        float t = total > 0.0001f ? 1f - Mathf.Abs(exitPosition.x - transform.position.x) / total : 1f;
+        t = Mathf.Clamp01(t);
 
         float scale = Mathf.Lerp(endScale, startScale, t);
         transform.localScale = Vector3.one * scale;
 
+        // Dynamic Z based on scale
+        float zT = (scale - startScale) / (endScale - startScale);
+        transform.position = new Vector3(transform.position.x, transform.position.y, Mathf.Lerp(minZ, maxZ, zT));
+
         UpdateFlip();
 
-        if (Mathf.Abs(transform.position.x - exitPosition.x) < 0.05f)
-        {
+        if (Vector3.Distance(transform.position, exitPosition) < 0.05f)
             Destroy(gameObject);
-        }
     }
 
     private void UpdateFlip()
     {
         if (spriteRenderer == null) spriteRenderer = GetComponent<SpriteRenderer>();
-
-        // Face right if moving to greater X, left otherwise
         float targetX = walkingOut ? exitPosition.x : (walkingIn ? stopPosition.x : transform.position.x);
         if (Mathf.Abs(targetX - transform.position.x) > 0.01f)
         {
             bool facingRight = (targetX - transform.position.x) > 0f;
-            spriteRenderer.flipX = !facingRight; // flipX semantics depend on your art; adjust as needed
+            spriteRenderer.flipX = !facingRight;
         }
     }
 }

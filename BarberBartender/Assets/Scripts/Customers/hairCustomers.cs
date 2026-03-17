@@ -19,6 +19,9 @@ public class HairCustomerSpawner : MonoBehaviour
     [Header("Behavior")]
     public bool stopSpawningAtMaxPoints = true; //stop spawning when max points reached
 
+    [Header("Customer Sprites")]
+    public Sprite[] possibleHairCustomerSprites; // assign in inspector
+
     public bool autoSpawn = false;
 
     private HairCustomerBehavior currentHairCustomer;
@@ -36,7 +39,8 @@ public class HairCustomerSpawner : MonoBehaviour
         if (currentHairCustomer != null) return;
 
         // Stop spawn if max points reached AND stopSpawningAtMaxPoints is true
-        if (stopSpawningAtMaxPoints && hairBridge != null && hairBridge.spawnHairStyleRef.totalPoints >= maxHairPoints)
+        if (stopSpawningAtMaxPoints && hairBridge != null &&
+            hairBridge.spawnHairStyleRef.totalPoints >= maxHairPoints)
             return;
 
         Transform spawnDoor = Random.value > 0.5f ? doorA : doorB;
@@ -45,6 +49,13 @@ public class HairCustomerSpawner : MonoBehaviour
         GameObject obj = Instantiate(hairCustomerPrefab, spawnDoor.position, Quaternion.identity);
         currentHairCustomer = obj.GetComponent<HairCustomerBehavior>();
         currentHairCustomer.Initialize(spawnDoor.position, leftStop.position, exitDoor.position, hairBridge);
+
+        // Assign a random sprite
+        if (possibleHairCustomerSprites != null && possibleHairCustomerSprites.Length > 0)
+        {
+            SpriteRenderer sr = obj.GetComponent<SpriteRenderer>();
+            sr.sprite = possibleHairCustomerSprites[Random.Range(0, possibleHairCustomerSprites.Length)];
+        }
 
         StartCoroutine(WatchCustomerLife(obj));
     }
@@ -66,7 +77,8 @@ public class HairCustomerSpawner : MonoBehaviour
                 spawnScheduled = true;
 
                 // Stop spawn if max points reached AND stopSpawningAtMaxPoints is true
-                if (stopSpawningAtMaxPoints && hairBridge != null && hairBridge.spawnHairStyleRef.totalPoints >= maxHairPoints)
+                if (stopSpawningAtMaxPoints && hairBridge != null &&
+                    hairBridge.spawnHairStyleRef.totalPoints >= maxHairPoints)
                 {
                     spawnScheduled = false;
                     yield return null;

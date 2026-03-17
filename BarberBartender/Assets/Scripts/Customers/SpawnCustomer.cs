@@ -26,6 +26,9 @@ public class CustomerSpawner : MonoBehaviour
     [Header("Behavior")]
     public bool stopSpawningAtMaxPoints = true; // stop spawning when max points reached
 
+    [Header("Customer Sprites")]
+    public Sprite[] possibleCustomerSprites; // assign in inspector
+
     private CustomerBehavior currentCustomer;
     private bool previousDrinkActive = false;
     private bool spawnScheduled = false;
@@ -36,7 +39,8 @@ public class CustomerSpawner : MonoBehaviour
 
         if (drinkManager.ReadyToSpawn && currentCustomer == null && !spawnScheduled)
         {
-            if (stopSpawningAtMaxPoints && flavorPointsInstance != null && flavorPointsInstance.CurrentScore >= maxDrinkPoints)
+            if (stopSpawningAtMaxPoints && flavorPointsInstance != null &&
+                flavorPointsInstance.CurrentScore >= maxDrinkPoints)
                 return;
 
             spawnScheduled = true;
@@ -46,13 +50,11 @@ public class CustomerSpawner : MonoBehaviour
         if (currentCustomer != null)
         {
             bool nowActive = drinkManager.IsDrinkActive;
-
             if (previousDrinkActive && !nowActive)
             {
                 currentCustomer.Leave();
                 currentCustomer = null;
             }
-
             previousDrinkActive = nowActive;
         }
         else
@@ -76,9 +78,14 @@ public class CustomerSpawner : MonoBehaviour
 
         GameObject obj = Instantiate(customerPrefab, spawnDoor.position, Quaternion.identity);
         currentCustomer = obj.GetComponent<CustomerBehavior>();
-
-        // Initialize with spawn, stop (rightStop), and exit
         currentCustomer.Initialize(spawnDoor.position, rightStop.position, exitDoor.position, drinkManager);
+
+        // Assign a random sprite
+        if (possibleCustomerSprites != null && possibleCustomerSprites.Length > 0)
+        {
+            SpriteRenderer sr = obj.GetComponent<SpriteRenderer>();
+            sr.sprite = possibleCustomerSprites[Random.Range(0, possibleCustomerSprites.Length)];
+        }
 
         previousDrinkActive = drinkManager.IsDrinkActive;
     }

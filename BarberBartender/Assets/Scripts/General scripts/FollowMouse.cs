@@ -18,9 +18,9 @@ public class FollowMouse : MonoBehaviour
 
         // Check if mouse is near any of the four edges
         bool isNearEdge = mousePos.x < edgeThreshold || 
-                          mousePos.x > Screen.width - edgeThreshold || 
-                          mousePos.y < edgeThreshold || 
-                          mousePos.y > Screen.height - edgeThreshold;
+                          mousePos.x > Screen.width - edgeThreshold; // || 
+                          //mousePos.y < edgeThreshold || 
+                          //mousePos.y > Screen.height - edgeThreshold;
 
         if (isNearEdge)
         {

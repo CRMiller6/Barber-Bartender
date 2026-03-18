@@ -105,8 +105,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CustomerBehavior
   drinkManager: {fileID: 0}
-  walkSpeed: 6
-  bounceHeight: 0.03
+  walkSpeed: 8
+  bounceHeight: 0.05
   bounceSpeed: 8
   startScale: 0.75
   endScale: 1.3

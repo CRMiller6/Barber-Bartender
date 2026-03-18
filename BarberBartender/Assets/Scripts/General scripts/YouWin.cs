@@ -1,17 +1,20 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameWinManager : MonoBehaviour
 {
-    public FlavorPoints flavorPoints;   // Reference to your FlavorPoints script
-    public SpawnHairStyle hairPoints;   // Reference to your SpawnHairStyle script
+    public FlavorPoints flavorPoints;
+    public SpawnHairStyle hairPoints;
 
     [Header("Win Conditions")]
-    public int flavorPointsNeeded = 10; // Minimum Flavor Points needed
-    public int hairPointsNeeded = 5;    // Minimum Hair Points needed
-    public int totalPointsNeeded = 20;  // Minimum total points needed
+    public int flavorPointsNeeded = 10;
+    public int hairPointsNeeded = 5;
+    public int totalPointsNeeded = 20;
+    public int balanceMargin = 0;
 
-    [Header("Balance Settings")]
-    public int balanceMargin = 0;       // Difference allowed to consider the work "balanced"
+    [Header("Next Scene")]
+    public string nextSceneName;
+    public float sceneLoadDelay = 2f;
 
     private bool winTriggered = false;
 
@@ -19,12 +22,11 @@ public class GameWinManager : MonoBehaviour
     {
         if (flavorPoints == null || hairPoints == null) return;
 
-        int flavorPointTotal = flavorPoints.CurrentScore;  // Flavor points (barber/bartending)
-        int hairPointTotal = hairPoints.totalPoints;       // Hair points (haircuts)
-
+        int flavorPointTotal = flavorPoints.CurrentScore;
+        int hairPointTotal = hairPoints.totalPoints;
         int totalPoints = flavorPointTotal + hairPointTotal;
 
-        // Win condition
+        // Win condition check (optional, for debug/log)
         if (!winTriggered &&
             flavorPointTotal >= flavorPointsNeeded &&
             hairPointTotal >= hairPointsNeeded &&
@@ -32,16 +34,42 @@ public class GameWinManager : MonoBehaviour
         {
             winTriggered = true;
 
-            // Check if work is balanced
+            string balanceMsg;
             if (Mathf.Abs(flavorPointTotal - hairPointTotal) <= balanceMargin)
-            {
-                Debug.Log($"You won! Flavor Points = {flavorPointTotal}, Hair Points = {hairPointTotal}. Your work was balanced!");
-            }
+                balanceMsg = "Your work was balanced!";
             else
-            {
-                string moreOf = flavorPointTotal > hairPointTotal ? "Flavor Points" : "Hair Points";
-                Debug.Log($"You won! Flavor Points = {flavorPointTotal}, Hair Points = {hairPointTotal}. You did more {moreOf}!");
-            }
+                balanceMsg = flavorPointTotal > hairPointTotal ? "You did more Flavor Points!" : "You did more Hair Points!";
+
+            Debug.Log($"You won! Flavor: {flavorPointTotal}, Hair: {hairPointTotal}. {balanceMsg}");
         }
+    }
+
+    // Call this at end of day from DayCycleManager
+    public void SaveResults()
+    {
+        int flavorPointTotal = flavorPoints != null ? flavorPoints.CurrentScore : 0;
+        int hairPointTotal = hairPoints != null ? hairPoints.totalPoints : 0;
+        int totalPoints = flavorPointTotal + hairPointTotal;
+
+        string balanceMsg;
+        if (Mathf.Abs(flavorPointTotal - hairPointTotal) <= balanceMargin)
+            balanceMsg = "Your work was balanced!";
+        else
+            balanceMsg = flavorPointTotal > hairPointTotal ? "You did more Flavor Points!" : "You did more Hair Points!";
+
+        DayResults.flavorPoints = flavorPointTotal;
+        DayResults.hairPoints = hairPointTotal;
+        DayResults.totalPoints = totalPoints;
+        DayResults.balanceMessage = balanceMsg;
+
+        Debug.Log("Results saved. Loading next scene...");
+        StartCoroutine(LoadNextScene());
+    }
+
+    private System.Collections.IEnumerator LoadNextScene()
+    {
+        yield return new WaitForSeconds(sceneLoadDelay);
+        if (!string.IsNullOrEmpty(nextSceneName))
+            SceneManager.LoadScene(nextSceneName);
     }
 }

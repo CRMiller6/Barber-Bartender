@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 4310990303383132133}
   - component: {fileID: 4830135790951468375}
   - component: {fileID: 203614282394217628}
-  - component: {fileID: 8433851736837758451}
-  m_Layer: 4
-  m_Name: Fluids 2
+  - component: {fileID: 3017426112220416514}
+  m_Layer: 3
+  m_Name: red
   m_TagString: Drink
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -86,7 +86,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: -2059048225914490237, guid: a81f96eac8185cf408524bffa58f5f8f, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -177,7 +177,7 @@ MonoBehaviour:
   minConnections: 4
   cupDelay: 0.6
   cupMaxVelocity: 8
---- !u!114 &8433851736837758451
+--- !u!114 &3017426112220416514
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -189,4 +189,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 998415a34de553047a8c2ac9bb91d9de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MixableObject
-  objectID: 2
+  objectID: red

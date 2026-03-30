@@ -6,12 +6,24 @@ public sealed class Drag : MonoBehaviour
     private Rigidbody2D rb;
     private Camera mainCamera;
     private bool isDragging;
-    private Vector3 dragOffset; // Offset between mouse and object center
+    private Vector3 dragOffset;
     public bool IsDragging => isDragging;
 
+    private enum DragMode
+    {
+        Snap,
+        SmoothDrag, // uses dragStrength (Lerp)
+        MaxSpeed    // uses speed cap
+    }
+
     [Header("Drag Settings")]
-    [SerializeField] private bool useDrag = true; // Enable drag effect
-    [SerializeField] private float dragStrength = 10f; // How strongly it follows the mouse
+    [SerializeField] private DragMode dragMode = DragMode.SmoothDrag;
+
+    [Header("Smooth Drag")]
+    [SerializeField] private float dragStrength = 10f;
+
+    [Header("Max Speed Drag")]
+    [SerializeField] private float maxSpeed = 15f;
 
     private void Awake()
     {
@@ -21,12 +33,10 @@ public sealed class Drag : MonoBehaviour
 
     private void OnMouseDown()
     {
-        // Stop any current movement
         rb.linearVelocity = Vector2.zero;
         rb.angularVelocity = 0f;
         rb.freezeRotation = true;
 
-        // Calculate offset
         Vector3 mousePos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
         dragOffset = transform.position - new Vector3(mousePos.x, mousePos.y, transform.position.z);
 
@@ -46,16 +56,22 @@ public sealed class Drag : MonoBehaviour
         Vector3 mousePos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
         Vector3 targetPos = new Vector3(mousePos.x, mousePos.y, transform.position.z) + dragOffset;
 
-        if (useDrag)
+        switch (dragMode)
         {
-            // Move smoothly toward the target position
-            Vector2 newPos = Vector2.Lerp(rb.position, targetPos, dragStrength * Time.fixedDeltaTime);
-            rb.MovePosition(newPos);
-        }
-        else
-        {
-            // Snap directly
-            rb.MovePosition(targetPos);
+            case DragMode.Snap:
+                rb.MovePosition(targetPos);
+                break;
+
+            case DragMode.SmoothDrag:
+                Vector2 smoothPos = Vector2.Lerp(rb.position, targetPos, dragStrength * Time.fixedDeltaTime);
+                rb.MovePosition(smoothPos);
+                break;
+
+            case DragMode.MaxSpeed:
+                Vector2 direction = targetPos - (Vector3)rb.position;
+                Vector2 move = Vector2.ClampMagnitude(direction, maxSpeed * Time.fixedDeltaTime);
+                rb.MovePosition(rb.position + move);
+                break;
         }
     }
 }

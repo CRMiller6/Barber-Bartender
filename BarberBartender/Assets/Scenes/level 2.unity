@@ -2760,8 +2760,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DrinkOrderManager
   possibleDrinks:
+  - objectID: red
+    displayColor: {r: 1, g: 0, b: 0, a: 0}
   - objectID: blue
     displayColor: {r: 0, g: 0.54901963, b: 1, a: 0}
+  - objectID: purple
+    displayColor: {r: 0.54509807, g: 0, b: 1, a: 0}
   drinkDisplayTime: 20
   timeBetweenDrinks: 3
   startDrinkOnCustomerAtCounter: 1
@@ -9799,7 +9803,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1735265645
 Transform:
   m_ObjectHideFlags: 0

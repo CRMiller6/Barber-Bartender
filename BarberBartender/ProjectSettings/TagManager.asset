@@ -8,6 +8,7 @@ TagManager:
   - Cutable
   - cup
   - Drink
+  - Water
   layers:
   - Default
   - TransparentFX

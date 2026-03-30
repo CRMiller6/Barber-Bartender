@@ -2834,12 +2834,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DrinkOrderManager
   possibleDrinks:
-  - objectID: 1
+  - objectID: red
     displayColor: {r: 1, g: 0, b: 0, a: 0}
-  - objectID: 2
+  - objectID: blue
     displayColor: {r: 0, g: 0.54901963, b: 1, a: 0}
-  - objectID: 3
+  - objectID: yellow
+    displayColor: {r: 1, g: 0.8691972, b: 0, a: 0}
+  - objectID: purple
     displayColor: {r: 0.54509807, g: 0, b: 1, a: 0}
+  - objectID: orange
+    displayColor: {r: 1, g: 0.53949636, b: 0, a: 0}
+  - objectID: green
+    displayColor: {r: 0.10369992, g: 1, b: 0, a: 0}
+  - objectID: brown
+    displayColor: {r: 0.5471698, g: 0.2720035, b: 0, a: 0}
   drinkDisplayTime: 20
   timeBetweenDrinks: 3
   startDrinkOnCustomerAtCounter: 1

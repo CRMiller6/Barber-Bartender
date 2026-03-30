@@ -2760,11 +2760,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DrinkOrderManager
   possibleDrinks:
-  - objectID: 1
+  - objectID: red
     displayColor: {r: 1, g: 0, b: 0, a: 0}
-  - objectID: 2
+  - objectID: blue
     displayColor: {r: 0, g: 0.54901963, b: 1, a: 0}
-  - objectID: 3
+  - objectID: purple
     displayColor: {r: 0.54509807, g: 0, b: 1, a: 0}
   drinkDisplayTime: 20
   timeBetweenDrinks: 3
@@ -3359,8 +3359,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebb4b9a546538144fadcc0820ee80dfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Drag
-  useDrag: 0
+  dragMode: 1
   dragStrength: 10
+  maxSpeed: 15
 --- !u!50 &459626196
 Rigidbody2D:
   serializedVersion: 5
@@ -4833,8 +4834,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebb4b9a546538144fadcc0820ee80dfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Drag
-  useDrag: 1
+  dragMode: 1
   dragStrength: 5
+  maxSpeed: 15
 --- !u!50 &608251479
 Rigidbody2D:
   serializedVersion: 5
@@ -10021,8 +10023,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebb4b9a546538144fadcc0820ee80dfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Drag
-  useDrag: 0
+  dragMode: 1
   dragStrength: 10
+  maxSpeed: 15
 --- !u!50 &1735265650
 Rigidbody2D:
   serializedVersion: 5
@@ -11685,8 +11688,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebb4b9a546538144fadcc0820ee80dfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Drag
-  useDrag: 0
+  dragMode: 1
   dragStrength: 10
+  maxSpeed: 15
 --- !u!50 &2006226162
 Rigidbody2D:
   serializedVersion: 5

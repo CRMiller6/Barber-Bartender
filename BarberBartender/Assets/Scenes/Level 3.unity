@@ -3419,7 +3419,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ThrowAndRotate
   throwMultiplier: 0.5
-  rotateSpeed: 100
+  rotateSpeed: 150
   lockZRotation: 0
 --- !u!114 &459626195
 MonoBehaviour:
@@ -3433,8 +3433,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebb4b9a546538144fadcc0820ee80dfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Drag
-  useDrag: 0
+  dragMode: 1
   dragStrength: 10
+  maxSpeed: 15
 --- !u!50 &459626196
 Rigidbody2D:
   serializedVersion: 5
@@ -4898,7 +4899,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ThrowAndRotate
   throwMultiplier: 0.5
-  rotateSpeed: 100
+  rotateSpeed: 0
   lockZRotation: 1
 --- !u!114 &608251478
 MonoBehaviour:
@@ -4912,8 +4913,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebb4b9a546538144fadcc0820ee80dfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Drag
-  useDrag: 1
-  dragStrength: 5
+  dragMode: 1
+  dragStrength: 3
+  maxSpeed: 50
 --- !u!50 &608251479
 Rigidbody2D:
   serializedVersion: 5
@@ -9775,7 +9777,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ThrowAndRotate
   throwMultiplier: 0.5
-  rotateSpeed: 100
+  rotateSpeed: 150
   lockZRotation: 0
 --- !u!114 &1563610172
 MonoBehaviour:
@@ -9789,8 +9791,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebb4b9a546538144fadcc0820ee80dfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Drag
-  useDrag: 0
+  dragMode: 1
   dragStrength: 10
+  maxSpeed: 15
 --- !u!50 &1563610173
 Rigidbody2D:
   serializedVersion: 5
@@ -9881,9 +9884,9 @@ MonoBehaviour:
   - objectAID: red
     objectBID: orange
     result: {fileID: 1995855834966535755, guid: 8e0ccfa558ff4a44ead22536aede4e9f, type: 3}
-  - objectAID: purple
+  - objectAID: blue
     objectBID: yellow
-    result: {fileID: 1995855834966535755, guid: 8e0ccfa558ff4a44ead22536aede4e9f, type: 3}
+    result: {fileID: 1995855834966535755, guid: 03c109fd332b8504c8199efed09a0eb5, type: 3}
   - objectAID: blue
     objectBID: green
     result: {fileID: 1995855834966535755, guid: 03c109fd332b8504c8199efed09a0eb5, type: 3}
@@ -9892,14 +9895,32 @@ MonoBehaviour:
     result: {fileID: 1995855834966535755, guid: 03c109fd332b8504c8199efed09a0eb5, type: 3}
   - objectAID: orange
     objectBID: blue
-    result: {fileID: 1995855834966535755, guid: 8e0ccfa558ff4a44ead22536aede4e9f, type: 3}
+    result: {fileID: 1995855834966535755, guid: 58e2fb75329a8b74f80c710f0301c851, type: 3}
   - objectAID: green
     objectBID: red
-    result: {fileID: 1995855834966535755, guid: 8e0ccfa558ff4a44ead22536aede4e9f, type: 3}
+    result: {fileID: 1995855834966535755, guid: 58e2fb75329a8b74f80c710f0301c851, type: 3}
   - objectAID: purple
     objectBID: yellow
-    result: {fileID: 1995855834966535755, guid: 8e0ccfa558ff4a44ead22536aede4e9f, type: 3}
-  spawnDelay: 0.05
+    result: {fileID: 1995855834966535755, guid: 58e2fb75329a8b74f80c710f0301c851, type: 3}
+  - objectAID: brown
+    objectBID: blue
+    result: {fileID: 1995855834966535755, guid: 58e2fb75329a8b74f80c710f0301c851, type: 3}
+  - objectAID: brown
+    objectBID: green
+    result: {fileID: 1995855834966535755, guid: 58e2fb75329a8b74f80c710f0301c851, type: 3}
+  - objectAID: brown
+    objectBID: orange
+    result: {fileID: 1995855834966535755, guid: 58e2fb75329a8b74f80c710f0301c851, type: 3}
+  - objectAID: brown
+    objectBID: purple
+    result: {fileID: 1995855834966535755, guid: 58e2fb75329a8b74f80c710f0301c851, type: 3}
+  - objectAID: brown
+    objectBID: red
+    result: {fileID: 1995855834966535755, guid: 58e2fb75329a8b74f80c710f0301c851, type: 3}
+  - objectAID: brown
+    objectBID: yellow
+    result: {fileID: 1995855834966535755, guid: 58e2fb75329a8b74f80c710f0301c851, type: 3}
+  spawnDelay: 0.08
 --- !u!1 &1593989697
 GameObject:
   m_ObjectHideFlags: 0
@@ -10896,7 +10917,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ThrowAndRotate
   throwMultiplier: 0.5
-  rotateSpeed: 100
+  rotateSpeed: 150
   lockZRotation: 0
 --- !u!114 &1735265649
 MonoBehaviour:
@@ -10910,8 +10931,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebb4b9a546538144fadcc0820ee80dfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Drag
-  useDrag: 0
+  dragMode: 1
   dragStrength: 10
+  maxSpeed: 15
 --- !u!50 &1735265650
 Rigidbody2D:
   serializedVersion: 5
@@ -12683,8 +12705,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebb4b9a546538144fadcc0820ee80dfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Drag
-  useDrag: 0
+  dragMode: 1
   dragStrength: 10
+  maxSpeed: 15
 --- !u!50 &2006226162
 Rigidbody2D:
   serializedVersion: 5

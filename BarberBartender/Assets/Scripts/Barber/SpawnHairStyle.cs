@@ -31,6 +31,10 @@ public class SpawnHairStyle : MonoBehaviour
             {
                 int randomIndex = Random.Range(0, hairStyles.Count);
                 currentHairInstance = Instantiate(hairStyles[randomIndex], transform.position, transform.rotation);
+                Debug.Log("instqance" + currentHairInstance);
+
+                currentHairInstance.transform.localScale = new Vector3 (3f, 3f, 3f);
+                Debug.Log($"hair: {currentHairInstance.transform} or {currentHairInstance.transform.localScale}");
                 
                 CountBools(currentHairInstance, out int startTrue, out int startFalse);
 

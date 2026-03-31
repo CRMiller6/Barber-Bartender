@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 using UnityEditor;   // Needed for SceneAsset
 using System.Collections;
 
-public class NextLevelButton : MonoBehaviour
+public class LoadNextScene : MonoBehaviour
 {
     [Header("Optional Delay Before Loading")]
     public float delay = 0f;

@@ -1039,9 +1039,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69fc0be9a45b3174995d17cf0a2060c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Results
-  flavorPointsText: {fileID: 0}
-  hairPointsText: {fileID: 0}
-  messageText: {fileID: 0}
 --- !u!114 &813659540
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1664,9 +1661,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69fc0be9a45b3174995d17cf0a2060c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Results
-  flavorPointsText: {fileID: 0}
-  hairPointsText: {fileID: 0}
-  messageText: {fileID: 0}
 --- !u!114 &1685029451
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1831,9 +1825,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69fc0be9a45b3174995d17cf0a2060c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Results
-  flavorPointsText: {fileID: 0}
-  hairPointsText: {fileID: 0}
-  messageText: {fileID: 0}
 --- !u!114 &1719237798
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2147,8 +2138,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0.827451, g: 0.3882353, b: 0.050980393, a: 1}
-    m_HighlightedColor: {r: 0.827451, g: 0.3882353, b: 0.050980393, a: 1}
-    m_PressedColor: {r: 0.827451, g: 0.3882353, b: 0.050980393, a: 1}
+    m_HighlightedColor: {r: 0.827451, g: 0.66154194, b: 0.050980378, a: 1}
+    m_PressedColor: {r: 0.4811321, g: 0.19036339, b: 0, a: 1}
     m_SelectedColor: {r: 0.827451, g: 0.3882353, b: 0.050980393, a: 1}
     m_DisabledColor: {r: 0.827451, g: 0.3882353, b: 0.050980393, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -2170,8 +2161,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 900178025}
-        m_TargetAssemblyTypeName: LoadNextSceneButton, Assembly-CSharp
-        m_MethodName: LoadScene
+        m_TargetAssemblyTypeName: LoadNextScene, Assembly-CSharp
+        m_MethodName: LoadNextLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

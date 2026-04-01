@@ -13605,7 +13605,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62012dc61fada4340a1a73ed2db53305, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  dayDuration: 25
+  dayDuration: 180
   morningDuration: 60
   rushDuration: 60
   nightDuration: 60

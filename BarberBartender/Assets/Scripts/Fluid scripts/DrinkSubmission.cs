@@ -13,22 +13,10 @@ public class DrinkSubmissionHandler : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (!orderManager || !orderManager.IsDrinkActive)
-        {
-            // No active drink, can't submit
-            Debug.Log("No active drink to submit.");
-            return;
-        }
-
-        if (zoneCollider == null)
-        {
-            Debug.LogWarning("Zone Collider not assigned!");
-            return;
-        }
+        if (!orderManager || !orderManager.IsDrinkActive) return;
+        if (zoneCollider == null) return;
 
         HandleSubmission();
-
-        // End the current drink early so the delay timer starts
         orderManager.EndDrinkEarly();
     }
 
@@ -50,8 +38,8 @@ public class DrinkSubmissionHandler : MonoBehaviour, IPointerClickHandler
                 if (mixable != null)
                 {
                     submittedDrinkID = mixable.objectID;
+                    break;
                 }
-                break;
             }
         }
 
@@ -59,25 +47,19 @@ public class DrinkSubmissionHandler : MonoBehaviour, IPointerClickHandler
         {
             if (submittedDrinkID == orderManager.CurrentTargetDrinkID)
             {
-                scoreManager.AddCorrect();
+                int points = orderManager.GetCurrentDrinkPoints();
+                scoreManager.AddPoints(points);
             }
             else
             {
                 scoreManager.AddWrong();
             }
         }
-        else
-        {
-            Debug.Log("No drink submitted.");
-        }
 
         // Destroy all drinks in zone
         foreach (var col in overlapping)
         {
-            if (col.CompareTag("Drink"))
-            {
-                Destroy(col.gameObject);
-            }
+            if (col.CompareTag("Drink")) Destroy(col.gameObject);
         }
     }
 }

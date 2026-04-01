@@ -26,7 +26,6 @@ public class GameWinManager : MonoBehaviour
         int hairPointTotal = hairPoints.totalPoints;
         int totalPoints = flavorPointTotal + hairPointTotal;
 
-        // Win condition check (optional, for debug/log)
         if (!winTriggered &&
             flavorPointTotal >= flavorPointsNeeded &&
             hairPointTotal >= hairPointsNeeded &&
@@ -57,12 +56,17 @@ public class GameWinManager : MonoBehaviour
         else
             balanceMsg = flavorPointTotal > hairPointTotal ? "You did more Flavor Points!" : "You did more Hair Points!";
 
+        // Save current day results
         DayResults.flavorPoints = flavorPointTotal;
         DayResults.hairPoints = hairPointTotal;
         DayResults.totalPoints = totalPoints;
         DayResults.balanceMessage = balanceMsg;
 
-        Debug.Log("Results saved. Loading next scene...");
+        // Update cumulative points
+        DayResults.AddToCumulative();
+
+        Debug.Log($"Day results saved. Cumulative Flavor: {DayResults.cumulativeFlavorPoints}, Hair: {DayResults.cumulativeHairPoints}, Total: {DayResults.cumulativeTotalPoints}");
+
         StartCoroutine(LoadNextScene());
     }
 

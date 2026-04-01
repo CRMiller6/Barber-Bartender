@@ -3,15 +3,14 @@ using UnityEngine;
 public class FlavorPoints : MonoBehaviour
 {
     [Header("Scoring")]
-    public int correctPoints = 2;
     public int wrongPoints = -1;
 
     public int CurrentScore { get; private set; }
 
-    public void AddCorrect()
+    public void AddPoints(int points)
     {
-        CurrentScore += correctPoints;
-        Debug.Log($"Correct! +{correctPoints} points.");
+        CurrentScore += points;
+        Debug.Log($"Correct! +{points} points.");
         Debug.Log("Current Score: " + CurrentScore);
     }
 

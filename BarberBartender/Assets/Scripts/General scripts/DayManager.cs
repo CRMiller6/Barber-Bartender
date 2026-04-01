@@ -16,17 +16,23 @@ public class DayCycleManager : MonoBehaviour
 
     [Header("Lighting")]
     public Transform visualChild;        
+    public Transform visualChild2;        
+
     public Color nightColor = new Color(0.1f, 0.1f, 0.3f);
     public Color dayColor = Color.white;
 
     private float currentTime;
     private bool dayRunning = false;
     private SpriteRenderer sr;
+    private SpriteRenderer sr2;
 
     void Start()
     {
         if (visualChild != null)
             sr = visualChild.GetComponent<SpriteRenderer>();
+        if (visualChild2 != null)
+            sr2 = visualChild2.GetComponent<SpriteRenderer>();
+
 
         StartDay();
     }
@@ -100,6 +106,8 @@ public class DayCycleManager : MonoBehaviour
 
         t = Mathf.SmoothStep(0f, 1f, t);
         sr.color = Color.Lerp(nightColor, dayColor, t);
+        sr2.color = Color.Lerp(nightColor, dayColor, t);
+
     }
 
     private void EndDay()

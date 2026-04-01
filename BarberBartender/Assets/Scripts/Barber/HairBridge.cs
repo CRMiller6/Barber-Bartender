@@ -9,6 +9,9 @@ public class HairSpawnBridge : MonoBehaviour
     private GameObject currentHairInstance;
     private bool roundRunning = false;
 
+    public float xScale = 1f;
+    public float yScale = 1f;
+
     public bool SpawnHairRound(System.Action onComplete = null)
     {
         if (spawnHairStyleRef == null) return false;
@@ -28,7 +31,7 @@ public class HairSpawnBridge : MonoBehaviour
 
         currentHairInstance = Instantiate(prefab, spawnHairStyleRef.transform.position, spawnHairStyleRef.transform.rotation);
 
-        currentHairInstance.transform.localScale = new Vector3 (3f, 3f, 3f);
+        currentHairInstance.transform.localScale = new Vector3 (xScale, yScale, 3f);
         Debug.Log($"hair: {currentHairInstance.transform} or {currentHairInstance.transform.localScale}");
 
         CountBools(currentHairInstance, out int startTrue, out int startFalse);

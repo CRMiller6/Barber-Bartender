@@ -4,6 +4,8 @@ using UnityEngine;
 public class CustomerBehavior : MonoBehaviour
 {
     public DrinkOrderManager drinkManager;
+    public GameObject submitZone; 
+    private BoxCollider2D submitZoneCollider;
 
     private Vector3 spawnPosition;
     private Vector3 stopPosition;
@@ -21,8 +23,11 @@ public class CustomerBehavior : MonoBehaviour
     public float endScale = 1f;
 
     [Header("Z-Position Bounds")]
-    public float minZ = 0f;   // smallest scale = farthest back
-    public float maxZ = -1f;  // largest scale = closest
+    public float minZ = 0f;  
+    public float maxZ = -1f;  
+
+    [Header("Stop Y Position")]
+    public float stopY = -19f; 
 
     private float bounceTimer;
     private bool walkingIn = true;
@@ -36,6 +41,16 @@ public class CustomerBehavior : MonoBehaviour
         stopPosition = stop;
         exitPosition = exit;
         drinkManager = manager;
+
+        if (submitZone == null)
+            submitZone = GameObject.FindWithTag("SubmitZone");
+
+        if (submitZone != null)
+        {
+            submitZoneCollider = submitZone.GetComponent<BoxCollider2D>();
+            if (submitZoneCollider != null)
+                submitZoneCollider.enabled = false;
+        }
 
         transform.position = spawnPosition;
         transform.localScale = Vector3.one * startScale;
@@ -56,22 +71,39 @@ public class CustomerBehavior : MonoBehaviour
 
     void WalkToStop()
     {
-        bounceTimer += Time.deltaTime * bounceSpeed;
-
+        // Horizontal movement
         Vector3 basePos = Vector3.MoveTowards(transform.position, stopPosition, walkSpeed * Time.deltaTime);
 
-        // Linear scale t
         float totalX = Mathf.Abs(stopPosition.x - spawnPosition.x);
         float t = totalX > 0.0001f ? 1f - Mathf.Abs(stopPosition.x - basePos.x) / totalX : 0f;
         t = Mathf.Clamp01(t);
 
         float scale = Mathf.Lerp(startScale, endScale, t);
 
-        // Overlay bounce on Y
         Vector3 visualPos = basePos;
-        visualPos.y += Mathf.Sin(bounceTimer) * bounceHeight;
 
-        // Dynamic Z
+        // If reached stop X, lock Y exactly at stopY
+        if (Mathf.Abs(basePos.x - stopPosition.x) < 0.05f)
+        {
+            if (!notifiedManager)
+            {
+                notifiedManager = true;
+                walkingIn = false;
+                drinkManager.CustomerArrivedAtCounter();
+
+                if (submitZoneCollider != null)
+                    submitZoneCollider.enabled = true;
+            }
+
+            visualPos.y = stopY; // <- lock Y exactly at -19
+        }
+        else
+        {
+            // Normal bounce while walking
+            bounceTimer += Time.deltaTime * bounceSpeed;
+            visualPos.y += Mathf.Sin(bounceTimer) * bounceHeight;
+        }
+
         float zT = (scale - startScale) / (endScale - startScale);
         visualPos.z = Mathf.Lerp(minZ, maxZ, zT);
 
@@ -79,14 +111,6 @@ public class CustomerBehavior : MonoBehaviour
         transform.localScale = Vector3.one * scale;
 
         UpdateFlip();
-
-        if (Vector3.Distance(new Vector3(basePos.x, basePos.y, 0f),
-                             new Vector3(stopPosition.x, stopPosition.y, 0f)) < 0.05f && !notifiedManager)
-        {
-            notifiedManager = true;
-            walkingIn = false;
-            drinkManager.CustomerArrivedAtCounter();
-        }
     }
 
     public void Leave()
@@ -94,6 +118,9 @@ public class CustomerBehavior : MonoBehaviour
         walkingOut = true;
         bounceTimer = 0f;
         UpdateFlip();
+
+        if (submitZoneCollider != null)
+            submitZoneCollider.enabled = false;
     }
 
     void WalkAway()
@@ -102,18 +129,16 @@ public class CustomerBehavior : MonoBehaviour
 
         Vector3 basePos = Vector3.MoveTowards(transform.position, exitPosition, walkSpeed * Time.deltaTime);
 
-        // Linear scale t from stop -> exit
         float totalX = Mathf.Abs(exitPosition.x - stopPosition.x);
         float t = totalX > 0.0001f ? 1f - Mathf.Abs(exitPosition.x - basePos.x) / totalX : 1f;
         t = Mathf.Clamp01(t);
 
         float scale = Mathf.Lerp(endScale, startScale, t);
 
-        // Overlay bounce on Y
         Vector3 visualPos = basePos;
+        // Normal bounce while leaving
         visualPos.y += Mathf.Sin(bounceTimer) * bounceHeight;
 
-        // Dynamic Z
         float zT = (scale - startScale) / (endScale - startScale);
         visualPos.z = Mathf.Lerp(minZ, maxZ, zT);
 

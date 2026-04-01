@@ -9,6 +9,7 @@ TagManager:
   - cup
   - Drink
   - Water
+  - SubmitZone
   layers:
   - Default
   - TransparentFX

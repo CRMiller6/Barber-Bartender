@@ -9,14 +9,15 @@ public class DrinkOrderManager : MonoBehaviour
     {
         public string objectID;
         public Color displayColor;
+        public int points; // Added: points for this drink
     }
 
     [Header("Drink Options")]
     public DrinkDefinition[] possibleDrinks;
 
     [Header("Timing")]
-    public float drinkDisplayTime = 5f;  // How long the drink stays active
-    public float timeBetweenDrinks = 3f; // Delay before next drink appears
+    public float drinkDisplayTime = 5f;  
+    public float timeBetweenDrinks = 3f; 
 
     [Header("Behavior")]
     [Tooltip("When true, the manager will wait until Customer calls CustomerArrivedAtCounter() to pick/start the drink timer.")]
@@ -37,13 +38,11 @@ public class DrinkOrderManager : MonoBehaviour
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        // Start fully invisible
         DisableAllChildren();
     }
 
     private void Start()
     {
-        // Start the initial between-drinks timer so the first spawn happens after timeBetweenDrinks.
         StartBetweenTimer();
     }
 
@@ -67,17 +66,8 @@ public class DrinkOrderManager : MonoBehaviour
 
     public void CustomerArrivedAtCounter()
     {
-        if (!startDrinkOnCustomerAtCounter)
-        {
-            Debug.LogWarning("CustomerArrivedAtCounter called while startDrinkOnCustomerAtCounter is false.");
-            return;
-        }
-
-        if (!readyToSpawn)
-        {
-            Debug.Log("Customer arrived but manager is not ready to start a drink.");
-            return;
-        }
+        if (!startDrinkOnCustomerAtCounter) return;
+        if (!readyToSpawn) return;
 
         readyToSpawn = false;
         StartDrinkTimer();
@@ -107,69 +97,58 @@ public class DrinkOrderManager : MonoBehaviour
 
     public void PickNewTargetDrink()
     {
-        if (possibleDrinks == null || possibleDrinks.Length == 0)
-        {
-            Debug.LogWarning("No drinks assigned!");
-            return;
-        }
+        if (possibleDrinks == null || possibleDrinks.Length == 0) return;
 
         int randomIndex = Random.Range(0, possibleDrinks.Length);
         currentTargetDrinkID = possibleDrinks[randomIndex].objectID;
 
-        // Set the color for direct children
         Color colorToShow = possibleDrinks[randomIndex].displayColor;
         colorToShow.a = 1f;
         SetColorOnDirectChildren(colorToShow);
 
-        // Enable all children (and grandchildren will automatically be visible if parent active)
         EnableAllChildren();
 
-        Debug.Log("New Order: " + currentTargetDrinkID);
+        Debug.Log("New Order: " + currentTargetDrinkID + " (Points: " + possibleDrinks[randomIndex].points + ")");
     }
 
     public void EndDrinkEarly()
     {
-        if (drinkCoroutine != null)
-        {
-            StopCoroutine(drinkCoroutine);
-            drinkCoroutine = null;
-        }
+        if (drinkCoroutine != null) StopCoroutine(drinkCoroutine);
 
         isDrinkActive = false;
         DisableAllChildren();
         StartBetweenTimer();
     }
 
+    public int GetCurrentDrinkPoints()
+    {
+        if (possibleDrinks == null || possibleDrinks.Length == 0) return 0;
+
+        foreach (var drink in possibleDrinks)
+        {
+            if (drink.objectID == currentTargetDrinkID) return drink.points;
+        }
+        return 0;
+    }
+
     // --- Helper methods ---
 
-    // Only changes color of immediate children
     private void SetColorOnDirectChildren(Color color)
     {
         foreach (Transform child in transform)
         {
             SpriteRenderer sr = child.GetComponent<SpriteRenderer>();
-            if (sr != null)
-            {
-                sr.color = color;
-            }
+            if (sr != null) sr.color = color;
         }
     }
 
-    // Disables all children (children + grandchildren)
     private void DisableAllChildren()
     {
-        foreach (Transform child in transform)
-        {
-            child.gameObject.SetActive(false);
-        }
+        foreach (Transform child in transform) child.gameObject.SetActive(false);
     }
 
-    // Enables all children (children + grandchildren)
     private void EnableAllChildren()
     {
-        foreach (Transform child in transform)
-        {
-            child.gameObject.SetActive(true);
-        }
+        foreach (Transform child in transform) child.gameObject.SetActive(true);
     }
 }

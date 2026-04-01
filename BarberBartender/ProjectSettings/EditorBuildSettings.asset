@@ -12,14 +12,14 @@ EditorBuildSettings:
     path: Assets/Scenes/StoryIntro.unity
     guid: b850e3dba3c9b4f628ac274f756469f1
   - enabled: 1
-    path: Assets/Scenes/Main Scene.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
-  - enabled: 1
     path: Assets/Scenes/Go To Next Scene.unity
     guid: 750a1a43e0565514b8eea8e78b7ee51c
   - enabled: 1
-    path: Assets/Scenes/level 2.unity
-    guid: 3db8a415ed6329b45a2967ced5b7dd9d
+    path: Assets/Scenes/Main Scene.unity
+    guid: ec30cc6f98fc5c94f921930545d76cab
+  - enabled: 1
+    path: Assets/Scenes/Level 2.unity
+    guid: b61661e560fda034782be09b18cb99cb
   - enabled: 1
     path: Assets/Scenes/Level 3.unity
     guid: bad3ce3616157074198d36c1d3644ee0

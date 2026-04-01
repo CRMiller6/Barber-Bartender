@@ -9,7 +9,7 @@ public static class DayResults
     public static int totalPoints = 0;
     public static string balanceMessage = "";
 
-    // Cumulative points across all days (never reset automatically)
+    // Cumulative points across all days
     public static int cumulativeFlavorPoints = 0;
     public static int cumulativeHairPoints = 0;
     public static int cumulativeTotalPoints = 0;

@@ -2836,13 +2836,13 @@ MonoBehaviour:
   possibleDrinks:
   - objectID: red
     displayColor: {r: 1, g: 0, b: 0, a: 0}
-    points: 2
+    points: 3
   - objectID: blue
     displayColor: {r: 0, g: 0.54901963, b: 1, a: 0}
-    points: 2
+    points: 3
   - objectID: purple
     displayColor: {r: 0.54509807, g: 0, b: 1, a: 0}
-    points: 4
+    points: 6
   drinkDisplayTime: 30
   timeBetweenDrinks: 3
   startDrinkOnCustomerAtCounter: 1
@@ -9352,7 +9352,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HairSpawnBridge
   spawnHairStyleRef: {fileID: 1487893457}
-  hairDisplayTime: 25
+  hairDisplayTime: 20
   xScale: 1
   yScale: 1
 --- !u!1001 &1533963623
@@ -10967,7 +10967,7 @@ MonoBehaviour:
   flavorPointsNeeded: 100
   hairPointsNeeded: 100
   totalPointsNeeded: 250
-  balanceMargin: 0
+  balanceMargin: 5
   nextSceneName: Go To Next Scene
   sceneLoadDelay: 2
 --- !u!1 &1735265644
@@ -13613,8 +13613,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   dayDuration: 180
   morningDuration: 60
+  morningSpawnMin: 3
+  morningSpawnMax: 6
   rushDuration: 60
+  rushSpawnMin: 0.5
+  rushSpawnMax: 2
   nightDuration: 60
+  nightSpawnMin: 1
+  nightSpawnMax: 6
   drinkSpawner: {fileID: 1933999136}
   hairSpawner: {fileID: 449542304}
   winManager: {fileID: 1731338473}

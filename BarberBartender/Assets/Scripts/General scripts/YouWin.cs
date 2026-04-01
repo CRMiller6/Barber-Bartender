@@ -10,7 +10,7 @@ public class GameWinManager : MonoBehaviour
     public int flavorPointsNeeded = 10;
     public int hairPointsNeeded = 5;
     public int totalPointsNeeded = 20;
-    public int balanceMargin = 0;
+    public int balanceMargin = 5;
 
     [Header("Next Scene")]
     public string nextSceneName;

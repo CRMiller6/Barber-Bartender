@@ -2836,7 +2836,7 @@ MonoBehaviour:
   possibleDrinks:
   - objectID: blue
     displayColor: {r: 0, g: 0.54901963, b: 1, a: 0}
-    points: 2
+    points: 3
   drinkDisplayTime: 30
   timeBetweenDrinks: 3
   startDrinkOnCustomerAtCounter: 1
@@ -10961,7 +10961,7 @@ MonoBehaviour:
   flavorPointsNeeded: 100
   hairPointsNeeded: 100
   totalPointsNeeded: 250
-  balanceMargin: 0
+  balanceMargin: 5
   nextSceneName: Go To Next Scene
   sceneLoadDelay: 2
 --- !u!1 &1735265644
@@ -13607,8 +13607,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   dayDuration: 180
   morningDuration: 60
+  morningSpawnMin: 3
+  morningSpawnMax: 6
   rushDuration: 60
+  rushSpawnMin: 0.5
+  rushSpawnMax: 2
   nightDuration: 60
+  nightSpawnMin: 1
+  nightSpawnMax: 6
   drinkSpawner: {fileID: 1933999136}
   hairSpawner: {fileID: 449542304}
   winManager: {fileID: 1731338473}

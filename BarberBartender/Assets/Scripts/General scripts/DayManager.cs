@@ -3,11 +3,24 @@ using System.Collections;
 
 public class DayCycleManager : MonoBehaviour
 {
-    [Header("Day Settings")]
+    [Header("Day length and phases")]
     public float dayDuration = 180f;
+
+    [Header("Morning")]
+
     public float morningDuration = 60f;
+    public float morningSpawnMin = 3f;
+    public float morningSpawnMax = 6f;
+
+    [Header("Rush Hour")]
     public float rushDuration = 60f;
+    public float rushSpawnMin = 0.5f;
+    public float rushSpawnMax = 2f;
+
+    [Header("Night")]
     public float nightDuration = 60f;
+    public float nightSpawnMin = 1f;
+    public float nightSpawnMax = 6f;
 
     [Header("References")]
     public CustomerSpawner drinkSpawner;
@@ -64,17 +77,17 @@ public class DayCycleManager : MonoBehaviour
     {
         // Morning Phase
         Debug.Log("Morning Phase");
-        SetSpawnRates(1f, 5f);
+        SetSpawnRates(morningSpawnMin, morningSpawnMax);
         yield return new WaitForSeconds(morningDuration);
 
         // Rush Hour Phase
         Debug.Log("Rush Hour!");
-        SetSpawnRates(0.5f, 2f);
+        SetSpawnRates(rushSpawnMin, rushSpawnMax);
         yield return new WaitForSeconds(rushDuration);
 
         // Night Phase
         Debug.Log("Night Phase");
-        SetSpawnRates(2f, 6f);
+        SetSpawnRates(nightSpawnMin, nightSpawnMax);
         yield return new WaitForSeconds(nightDuration);
 
         EndDay();

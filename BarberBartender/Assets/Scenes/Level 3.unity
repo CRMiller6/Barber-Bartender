@@ -2839,22 +2839,22 @@ MonoBehaviour:
     points: 2
   - objectID: blue
     displayColor: {r: 0, g: 0.54901963, b: 1, a: 0}
-    points: 2
+    points: 3
   - objectID: yellow
     displayColor: {r: 1, g: 0.8691972, b: 0, a: 0}
-    points: 2
+    points: 3
   - objectID: purple
     displayColor: {r: 0.54509807, g: 0, b: 1, a: 0}
-    points: 4
+    points: 3
   - objectID: orange
     displayColor: {r: 1, g: 0.53949636, b: 0, a: 0}
-    points: 4
+    points: 6
   - objectID: green
     displayColor: {r: 0.10369992, g: 1, b: 0, a: 0}
-    points: 4
+    points: 6
   - objectID: brown
     displayColor: {r: 0.5471698, g: 0.2720035, b: 0, a: 0}
-    points: 6
+    points: 8
   drinkDisplayTime: 30
   timeBetweenDrinks: 3
   startDrinkOnCustomerAtCounter: 1
@@ -6039,6 +6039,7 @@ MonoBehaviour:
   objectsToReset:
   - {fileID: 459626191}
   - {fileID: 1735265644}
+  - {fileID: 1563610167}
 --- !u!61 &789243981
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9364,7 +9365,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HairSpawnBridge
   spawnHairStyleRef: {fileID: 1487893457}
-  hairDisplayTime: 25
+  hairDisplayTime: 15
   xScale: 1
   yScale: 1
 --- !u!1001 &1533963623
@@ -10979,7 +10980,7 @@ MonoBehaviour:
   flavorPointsNeeded: 100
   hairPointsNeeded: 100
   totalPointsNeeded: 250
-  balanceMargin: 0
+  balanceMargin: 5
   nextSceneName: Go To Next Scene
   sceneLoadDelay: 0
 --- !u!1 &1735265644
@@ -13625,8 +13626,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   dayDuration: 180
   morningDuration: 60
+  morningSpawnMin: 3
+  morningSpawnMax: 6
   rushDuration: 60
+  rushSpawnMin: 0.5
+  rushSpawnMax: 2
   nightDuration: 60
+  nightSpawnMin: 1
+  nightSpawnMax: 6
   drinkSpawner: {fileID: 1933999136}
   hairSpawner: {fileID: 449542304}
   winManager: {fileID: 1731338473}

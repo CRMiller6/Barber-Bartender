@@ -1605,8 +1605,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LoadNextSceneButton
   delay: 0
   levelScenes:
-  - {fileID: 102900000, guid: b61661e560fda034782be09b18cb99cb, type: 3}
-  - {fileID: 102900000, guid: bad3ce3616157074198d36c1d3644ee0, type: 3}
+  - Level 2
+  - Level 3
 --- !u!4 &900178026
 Transform:
   m_ObjectHideFlags: 0

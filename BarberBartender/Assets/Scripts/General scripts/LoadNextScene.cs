@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEditor;   // Needed for SceneAsset
 using System.Collections;
 
 public class NextLevelButton : MonoBehaviour
@@ -8,12 +7,12 @@ public class NextLevelButton : MonoBehaviour
     [Header("Optional Delay Before Loading")]
     public float delay = 0f;
 
-    [Header("Scenes for Levels (Drag & Drop)")]
-    public SceneAsset[] levelScenes;  // Drag scene assets here in inspector
+    [Header("Scene Names (Must match Build Settings)")]
+    public string[] levelScenes;
 
-    private static int currentLevelIndex = 0; // Start at first scene in array
+    private static int currentLevelIndex = 0;
 
-    // Call this from the Button's OnClick()
+    // Call this from your Button's OnClick()
     public void LoadNextLevel()
     {
         if (levelScenes == null || levelScenes.Length == 0)
@@ -30,19 +29,24 @@ public class NextLevelButton : MonoBehaviour
         if (delay > 0f)
             yield return new WaitForSeconds(delay);
 
-        // Get the next scene name
         if (currentLevelIndex >= levelScenes.Length)
         {
-            Debug.LogWarning("No more levels in the list. You can reset or load main menu.");
+            Debug.LogWarning("No more levels in the list.");
             yield break;
         }
 
-        string sceneName = levelScenes[currentLevelIndex].name;
+        string sceneName = levelScenes[currentLevelIndex];
         Debug.Log("Loading scene: " + sceneName);
 
         SceneManager.LoadScene(sceneName);
 
-        // Increment for next button press
+        // Move to next level for next button press
         currentLevelIndex++;
+    }
+
+    // Optional: Reset progression (useful for main menu button)
+    public void ResetLevels()
+    {
+        currentLevelIndex = 0;
     }
 }

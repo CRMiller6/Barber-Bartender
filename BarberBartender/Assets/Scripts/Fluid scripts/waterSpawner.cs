@@ -8,13 +8,15 @@ public sealed class waterSpawner : MonoBehaviour
     [SerializeField] private int spawnCount = 1;
     [SerializeField] private float minSpawnInterval = 0.2f;
     [SerializeField] private float maxSpawnInterval = 1.2f;
+
     [Header("Tilt Thresholds (Degrees)")]
     [SerializeField] private float uprightThreshold = 45f;
 
     private Transform parentTransform;
     private float spawnTimer;
+    private Drag dragScript; // Reference to your drag script
 
-    // Cached constants
+    // Cached constants for smoothstep
     private float maxDistance;
     private float invMaxDistance;
 
@@ -22,20 +24,40 @@ public sealed class waterSpawner : MonoBehaviour
     {
         parentTransform = transform.parent;
 
-        // Precompute constants (avoids recalculation every frame)
+        if (parentTransform == null)
+        {
+            Debug.LogWarning("waterSpawner requires a parent with a Transform.");
+            return;
+        }
+
+        dragScript = parentTransform.GetComponent<Drag>();
+        if (dragScript == null)
+        {
+            Debug.LogWarning("Parent does not have a Drag component!");
+        }
+
+        // Precompute constants
         maxDistance = 180f - uprightThreshold;
         invMaxDistance = 1f / maxDistance;
     }
 
     private void Update()
     {
-        if (parentTransform == null)
+        if (parentTransform == null || dragScript == null)
             return;
 
-        float z = parentTransform.eulerAngles.z;
-        z = z > 180f ? z - 360f : z; // Faster than Mathf.DeltaAngle
+        // Only spawn while dragging
+        if (!dragScript.IsDragging)
+        {
+            spawnTimer = 0f;
+            return;
+        }
 
-        float absZ = z >= 0f ? z : -z;
+        // Get the parent's Z rotation
+        float z = parentTransform.eulerAngles.z;
+        z = z > 180f ? z - 360f : z; // Convert 0-360 to -180..180
+
+        float absZ = Mathf.Abs(z);
 
         // Inside upright range -- no spawn
         if (absZ <= uprightThreshold)
@@ -46,14 +68,13 @@ public sealed class waterSpawner : MonoBehaviour
 
         spawnTimer += Time.deltaTime;
 
-        // Distance from fully upside-down (180)
+        // Distance from fully upside-down
         float distance = absZ >= 180f ? 0f : 180f - absZ;
 
         // Normalize [0..1]
-        float t = distance * invMaxDistance;
-        t = t < 0f ? 0f : (t > 1f ? 1f : t);
+        float t = Mathf.Clamp01(distance * invMaxDistance);
 
-        // SmoothStep inline (faster than Mathf.SmoothStep)
+        // SmoothStep (faster inline version)
         t = t * t * (3f - 2f * t);
 
         float spawnInterval = minSpawnInterval + (maxSpawnInterval - minSpawnInterval) * t;
@@ -71,7 +92,7 @@ public sealed class waterSpawner : MonoBehaviour
 
         for (int i = 0; i < spawnCount; i++)
         {
-            GameObject obj = Instantiate(prefabToSpawn, pos, Quaternion.identity);
+            Instantiate(prefabToSpawn, pos, Quaternion.identity);
         }
     }
 }

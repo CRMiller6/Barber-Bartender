@@ -46,11 +46,10 @@ public class WaterTriggerCounter : MonoBehaviour
     {
         if (!activated && currentWaterObjects.Count >= requiredCount)
         {
-            activated = true;
+            activated = false;
 
             Debug.Log("Reached required water count!");
 
-            // Option 2: Directly enable buttons
             if (nextButton != null)
                 nextButton.gameObject.SetActive(true);
 

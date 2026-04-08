@@ -7,13 +7,18 @@ using UnityEngine.UI;
 [System.Serializable]
 public class DialogueLine
 {
-    public string name;                 // Unique name or ID for the dialogue line
+    public string name;
     [TextArea]
-    public string text;                 // The actual text content
-    public float typingDelay = 0.05f;   // Typewriter speed
-    public bool removeButtonsOnStart;   // Toggle to remove Next & Back buttons when this line starts
+    public string text;
+    public float typingDelay = 0.05f;
+    public bool removeButtonsOnStart;
     [HideInInspector]
-    public bool hasRemovedButtons = false; // Track if we've already removed them
+    public bool hasRemovedButtons = false;
+    public bool SpawnRed;
+    [HideInInspector]
+    public bool hasSpawnedRed = false;
+
+
 }
 
 public class DialogueManager : MonoBehaviour
@@ -22,6 +27,8 @@ public class DialogueManager : MonoBehaviour
     public List<DialogueLine> dialogueLines;    // List of dialogue lines
     public Button nextButton;                    // Next button reference
     public Button backButton;                    // Back button reference
+
+    public GameObject redBottle;
 
     private int currentIndex = 0;               // Current dialogue index
     private Coroutine typingCoroutine;
@@ -101,6 +108,13 @@ public class DialogueManager : MonoBehaviour
             }
         }
 
+        if (line.SpawnRed && !line.hasSpawnedRed)
+        {
+            if (redBottle != null) redBottle.gameObject.SetActive(true);
+            line.hasSpawnedRed = true; // Only spawn once
+        }
+
+
         if (typingCoroutine != null)
         {
             StopCoroutine(typingCoroutine);
@@ -140,6 +154,8 @@ public class DialogueManager : MonoBehaviour
         if (nextButton != null) nextButton.gameObject.SetActive(true);
         if (backButton != null) backButton.gameObject.SetActive(true);
     }
+
+
 
     // Reset dialogue
     public void ResetDialogue()

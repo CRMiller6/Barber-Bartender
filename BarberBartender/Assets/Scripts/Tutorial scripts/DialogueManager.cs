@@ -10,7 +10,6 @@ public class DialogueLine
     public string name;
     [TextArea]
     public string text;
-    public float typingDelay = 0.05f;
     public bool removeButtonsOnStart;
     [HideInInspector]
     public bool hasRemovedButtons = false;
@@ -18,17 +17,29 @@ public class DialogueLine
     [HideInInspector]
     public bool hasSpawnedRed = false;
 
+    public bool SpawnDad;
+    [HideInInspector]
+    public bool hasSpawnedDad = false;
 
+    public bool SpawnSubmit;
+    [HideInInspector]
+    public bool hasSpawnedSubmit = false;
 }
 
 public class DialogueManager : MonoBehaviour
 {
+    public int CurrentIndex => currentIndex;
     private TMP_Text textComponent;             // The TextMeshPro component on this object
     public List<DialogueLine> dialogueLines;    // List of dialogue lines
     public Button nextButton;                    // Next button reference
     public Button backButton;                    // Back button reference
+    public float typingDelay = 0.05f;
 
     public GameObject redBottle;
+    public GameObject dad;
+    public GameObject dissapearingDad;
+    public GameObject submitButton;
+    public DrinkOrderManager orderManager; // Reference to DrinkOrderManager for tutorial integration
 
     private int currentIndex = 0;               // Current dialogue index
     private Coroutine typingCoroutine;
@@ -114,6 +125,23 @@ public class DialogueManager : MonoBehaviour
             line.hasSpawnedRed = true; // Only spawn once
         }
 
+        if (line.SpawnDad && !line.hasSpawnedDad)
+        {
+            if (dad != null) dad.gameObject.SetActive(true);
+            if (dissapearingDad != null) dissapearingDad.gameObject.SetActive(false);
+
+            line.hasSpawnedDad = true;
+        }
+
+        if (line.SpawnSubmit && !line.hasSpawnedSubmit)
+        {
+            if (submitButton != null) submitButton.gameObject.SetActive(true);
+
+            line.hasSpawnedSubmit = true;
+            orderManager.tutorialStart();
+        }
+
+
 
         if (typingCoroutine != null)
         {
@@ -142,7 +170,7 @@ public class DialogueManager : MonoBehaviour
         foreach (char c in line.text)
         {
             textComponent.text += c;
-            yield return new WaitForSeconds(line.typingDelay);
+            yield return new WaitForSeconds(typingDelay);
         }
         isTyping = false;
         typingCoroutine = null;

@@ -10,14 +10,23 @@ public class DrinkSubmissionHandler : MonoBehaviour, IPointerClickHandler
     [Header("References")]
     public DrinkOrderManager orderManager;
     public FlavorPoints scoreManager;
+    public GameObject tutorialButton;
+
 
     public void OnPointerClick(PointerEventData eventData)
     {
+
+        
         if (!orderManager || !orderManager.IsDrinkActive) return;
         if (zoneCollider == null) return;
 
         HandleSubmission();
         orderManager.EndDrinkEarly();
+
+        if (orderManager.tutorial) 
+        {
+            tutorialButton.gameObject.SetActive(false); // Disable submission during tutorial
+        }
     }
 
     private void HandleSubmission()

@@ -1,12 +1,16 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(Collider2D))]
 public class ResetObjectsButton : MonoBehaviour, IPointerClickHandler
 {
     [Header("Objects To Reset")]
     public List<GameObject> objectsToReset = new List<GameObject>();
+
+    public Button nextButton;
+    public Button backButton;
 
     // Internal storage of original transforms
     private Dictionary<GameObject, Vector3> originalPositions = new Dictionary<GameObject, Vector3>();
@@ -27,6 +31,8 @@ public class ResetObjectsButton : MonoBehaviour, IPointerClickHandler
     public void OnPointerClick(PointerEventData eventData)
     {
         ResetAllObjects();
+        if (nextButton != null) nextButton.gameObject.SetActive(true);
+        if (backButton != null) backButton.gameObject.SetActive(true);
     }
 
     private void ResetAllObjects()

@@ -34,6 +34,9 @@ public class DrinkOrderManager : MonoBehaviour
     public string CurrentTargetDrinkID => currentTargetDrinkID;
     public bool IsDrinkActive => isDrinkActive;
     public bool ReadyToSpawn => readyToSpawn;
+    public bool tutorial = false;
+    public DialogueManager dialogueManager; // Reference to DialogueManager for tutorial integration
+    public Collider2D tutorialzoneCollider;
 
     private void Awake()
     {
@@ -43,6 +46,8 @@ public class DrinkOrderManager : MonoBehaviour
 
     private void Start()
     {
+        if (tutorial) return;
+        else
         StartBetweenTimer();
     }
 
@@ -151,4 +156,29 @@ public class DrinkOrderManager : MonoBehaviour
     {
         foreach (Transform child in transform) child.gameObject.SetActive(true);
     }
+
+    public void tutorialStart()
+    {
+        PickNewTutorialDrink();
+    }
+
+    private void PickNewTutorialDrink()
+    {
+        if (possibleDrinks == null || possibleDrinks.Length == 0) return;
+
+        // For tutorial, we can just pick the first drink or a specific one
+        currentTargetDrinkID = possibleDrinks[0].objectID;
+
+        Color colorToShow = possibleDrinks[0].displayColor;
+        colorToShow.a = 1f;
+        SetColorOnDirectChildren(colorToShow);
+
+        EnableAllChildren();
+
+        Debug.Log("Tutorial Order: " + currentTargetDrinkID + " (Points: " + possibleDrinks[0].points + ")");
+
+        tutorialzoneCollider.gameObject.SetActive(true); // Enable tutorial zone to detect drink submission
+        
+    }
+
 }

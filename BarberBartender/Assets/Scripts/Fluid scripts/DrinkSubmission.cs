@@ -22,11 +22,6 @@ public class DrinkSubmissionHandler : MonoBehaviour, IPointerClickHandler
 
         HandleSubmission();
         orderManager.EndDrinkEarly();
-
-        if (orderManager.tutorial) 
-        {
-            tutorialButton.gameObject.SetActive(false); // Disable submission during tutorial
-        }
     }
 
     private void HandleSubmission()
@@ -69,6 +64,10 @@ public class DrinkSubmissionHandler : MonoBehaviour, IPointerClickHandler
         foreach (var col in overlapping)
         {
             if (col.CompareTag("Drink")) Destroy(col.gameObject);
+        }
+        if (orderManager.tutorial) 
+        {
+            tutorialButton.gameObject.SetActive(false); // Disable submission during tutorial
         }
     }
 }

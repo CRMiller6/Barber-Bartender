@@ -164,6 +164,7 @@ public class DrinkOrderManager : MonoBehaviour
 
     private void PickNewTutorialDrink()
     {
+        isDrinkActive = true;
         if (possibleDrinks == null || possibleDrinks.Length == 0) return;
 
         // For tutorial, we can just pick the first drink or a specific one

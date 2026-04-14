@@ -426,10 +426,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueManager
   dialogueLines:
   - name: 
-    text: 
-    textColor: {r: 0, g: 0, b: 0, a: 0}
-    GoToUncle: 1
-    GoToDad: 0
+    text: Ok, it's time to start learning how to cut hair, but first...
+    uncleSpeaking: 1
+    dadSpeaking: 0
+    removeButtonsOnStart: 0
+    hasRemovedButtons: 0
+    SpawnRed: 0
+    hasSpawnedRed: 0
+    SpawnDad: 0
+    hasSpawnedDad: 0
+    SpawnSubmit: 0
+    hasSpawnedSubmit: 0
+    waterTrigger: 0
+    purpleTrigger: 0
+    MoveCamera: 0
+    hasMovedCamera: 0
+  - name: 
+    text: Let's move over to the other side, it looks better anyway.
+    uncleSpeaking: 1
+    dadSpeaking: 0
     removeButtonsOnStart: 0
     hasRemovedButtons: 0
     SpawnRed: 0
@@ -444,9 +459,8 @@ MonoBehaviour:
     hasMovedCamera: 0
   - name: 
     text: 
-    textColor: {r: 0, g: 0, b: 0, a: 0}
-    GoToUncle: 1
-    GoToDad: 0
+    uncleSpeaking: 1
+    dadSpeaking: 0
     removeButtonsOnStart: 0
     hasRemovedButtons: 0
     SpawnRed: 0
@@ -458,6 +472,23 @@ MonoBehaviour:
     waterTrigger: 0
     purpleTrigger: 0
     MoveCamera: 1
+    hasMovedCamera: 0
+  - name: 
+    text: Now, when you're actually working here, I won't be here to move you around,
+      so you have to move yourself by getting close to the other side.
+    uncleSpeaking: 1
+    dadSpeaking: 0
+    removeButtonsOnStart: 0
+    hasRemovedButtons: 0
+    SpawnRed: 0
+    hasSpawnedRed: 0
+    SpawnDad: 0
+    hasSpawnedDad: 0
+    SpawnSubmit: 0
+    hasSpawnedSubmit: 0
+    waterTrigger: 0
+    purpleTrigger: 0
+    MoveCamera: 0
     hasMovedCamera: 0
   nextButton: {fileID: 1195183071}
   backButton: {fileID: 1245142687}
@@ -475,6 +506,8 @@ MonoBehaviour:
   movingCamera: {fileID: 519420028}
   targetCamera: {fileID: 1482819336}
   cameraLerpDuration: 3
+  uncleColor: {r: 0.70980394, g: 0.93333334, b: 0.91764706, a: 1}
+  dadColor: {r: 1, g: 0.8666667, b: 0.654902, a: 1}
   nextSceneName: Main Scene
 --- !u!114 &93469539
 MonoBehaviour:

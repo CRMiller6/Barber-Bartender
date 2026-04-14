@@ -555,16 +555,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueManager
   dialogueLines:
   - name: 
-    text: Wait, What are you doing here, I'm trying to teach my kid how to run a
-      proper bar.
-    textColor: {r: 1, g: 1, b: 1, a: 1}
-    GoToUncle: 0
-    GoToDad: 1
+    text: 'Wait, What are YOU doing here?! I''m trying to teach my kid how to run
+      a proper bar, and you just come barging in? '
+    uncleSpeaking: 0
+    dadSpeaking: 1
     removeButtonsOnStart: 0
     hasRemovedButtons: 0
     SpawnRed: 0
     hasSpawnedRed: 0
-    SpawnDad: 0
+    SpawnDad: 1
     hasSpawnedDad: 0
     SpawnSubmit: 0
     hasSpawnedSubmit: 0
@@ -574,9 +573,8 @@ MonoBehaviour:
     hasMovedCamera: 0
   - name: 
     text: You really need to loosen up, man, I'm here to teach her too.
-    textColor: {r: 1, g: 1, b: 1, a: 1}
-    GoToUncle: 1
-    GoToDad: 0
+    uncleSpeaking: 1
+    dadSpeaking: 0
     removeButtonsOnStart: 0
     hasRemovedButtons: 0
     SpawnRed: 0
@@ -591,9 +589,8 @@ MonoBehaviour:
     hasMovedCamera: 0
   - name: 
     text: She's going to learn how to cut hair to make people look really cool.
-    textColor: {r: 1, g: 1, b: 1, a: 1}
-    GoToUncle: 1
-    GoToDad: 0
+    uncleSpeaking: 1
+    dadSpeaking: 0
     removeButtonsOnStart: 0
     hasRemovedButtons: 0
     SpawnRed: 0
@@ -608,9 +605,8 @@ MonoBehaviour:
     hasMovedCamera: 0
   - name: 
     text: She's my daughter, and I want to teach her to bartend.
-    textColor: {r: 1, g: 1, b: 1, a: 1}
-    GoToUncle: 0
-    GoToDad: 1
+    uncleSpeaking: 0
+    dadSpeaking: 1
     removeButtonsOnStart: 0
     hasRemovedButtons: 0
     SpawnRed: 0
@@ -626,9 +622,8 @@ MonoBehaviour:
   - name: 
     text: Well, she's my neice, and she inherited my half of this building too, I'll
       teach her how to cut hair, then she can choose which to do for herself.
-    textColor: {r: 1, g: 1, b: 1, a: 1}
-    GoToUncle: 1
-    GoToDad: 0
+    uncleSpeaking: 1
+    dadSpeaking: 0
     removeButtonsOnStart: 0
     hasRemovedButtons: 0
     SpawnRed: 0
@@ -644,9 +639,8 @@ MonoBehaviour:
   - name: 
     text: I'm not done teaching her, we haven't even gotten to yellow, come back
       in two years and maybe I'll let you teach her too.
-    textColor: {r: 1, g: 1, b: 1, a: 1}
-    GoToUncle: 0
-    GoToDad: 1
+    uncleSpeaking: 0
+    dadSpeaking: 1
     removeButtonsOnStart: 0
     hasRemovedButtons: 0
     SpawnRed: 0
@@ -662,9 +656,8 @@ MonoBehaviour:
   - name: 
     text: While you were teaching her, I learned more ghost powers, so I don't think
       you have a say in this, goodbye.
-    textColor: {r: 1, g: 1, b: 1, a: 1}
-    GoToUncle: 1
-    GoToDad: 0
+    uncleSpeaking: 1
+    dadSpeaking: 0
     removeButtonsOnStart: 0
     hasRemovedButtons: 0
     SpawnRed: 0
@@ -679,9 +672,8 @@ MonoBehaviour:
     hasMovedCamera: 0
   - name: 
     text: Noooooooooooooooo...
-    textColor: {r: 1, g: 1, b: 1, a: 1}
-    GoToUncle: 0
-    GoToDad: 1
+    uncleSpeaking: 0
+    dadSpeaking: 1
     removeButtonsOnStart: 0
     hasRemovedButtons: 0
     SpawnRed: 0
@@ -696,9 +688,8 @@ MonoBehaviour:
     hasMovedCamera: 0
   - name: 
     text: Alright, are you ready to cut some hair?
-    textColor: {r: 1, g: 1, b: 1, a: 1}
-    GoToUncle: 1
-    GoToDad: 0
+    uncleSpeaking: 1
+    dadSpeaking: 0
     removeButtonsOnStart: 0
     hasRemovedButtons: 0
     SpawnRed: 0
@@ -715,7 +706,7 @@ MonoBehaviour:
   backButton: {fileID: 1245142687}
   typingDelay: 0.05
   redBottle: {fileID: 0}
-  dad: {fileID: 1688764153}
+  dad: {fileID: 2094912949}
   dissapearingDad: {fileID: 1564906996}
   submitButton: {fileID: 0}
   orderManager: {fileID: 0}
@@ -723,10 +714,12 @@ MonoBehaviour:
   uncleAnchor: {fileID: 517746760}
   dadAnchor: {fileID: 347135378}
   defaultAnchor: {fileID: 347135378}
-  dadLerpDuration: 3
+  dadLerpDuration: 1
   movingCamera: {fileID: 0}
   targetCamera: {fileID: 0}
   cameraLerpDuration: 0.5
+  uncleColor: {r: 0.70980394, g: 0.93333334, b: 0.91764706, a: 1}
+  dadColor: {r: 1, g: 0.8666667, b: 0.654902, a: 1}
   nextSceneName: HairTutorial
 --- !u!114 &93469539
 MonoBehaviour:
@@ -4608,7 +4601,7 @@ Transform:
   m_GameObject: {fileID: 1564906996}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -62.9, y: -29.2, z: -4.45}
+  m_LocalPosition: {x: -31.2, y: -23.3, z: 24}
   m_LocalScale: {x: 14.801055, y: 14.801055, z: 14.801055}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5876,6 +5869,97 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!1 &2094912949
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2094912951}
+  - component: {fileID: 2094912950}
+  m_Layer: 0
+  m_Name: Dad (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!212 &2094912950
+SpriteRenderer:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2094912949}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.57254905}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 2}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_SpriteSortPoint: 0
+--- !u!4 &2094912951
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2094912949}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -62.9, y: -29.2, z: -4.45}
+  m_LocalScale: {x: 14.801055, y: 14.801055, z: 14.801055}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2123922542
 GameObject:
   m_ObjectHideFlags: 0
@@ -6023,5 +6107,6 @@ SceneRoots:
   - {fileID: 1083810769}
   - {fileID: 1688764155}
   - {fileID: 1564906998}
+  - {fileID: 2094912951}
   - {fileID: 1937487379}
   - {fileID: 759061104}

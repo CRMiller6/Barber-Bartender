@@ -11,11 +11,8 @@ public class DialogueLine
     public string name;
     [TextArea]
     public string text;
-
-    public Color textColor = Color.white;
-
-    public bool GoToUncle;
-    public bool GoToDad;
+    public bool uncleSpeaking;
+    public bool dadSpeaking;
     public bool removeButtonsOnStart;
     [HideInInspector]
     public bool hasRemovedButtons = false;
@@ -70,6 +67,10 @@ public class DialogueManager : MonoBehaviour
     public float cameraLerpDuration = 0.5f;
 
     private Coroutine cameraMoveCoroutine;
+
+    [Header("Dialogue Colors")]
+    public Color uncleColor = new Color32(0xB5, 0xEE, 0xEA, 255); // B5EEEA
+    public Color dadColor   = new Color32(0xFF, 0xDD, 0xA7, 255); // FFDDA7
 
     public string nextSceneName;
 
@@ -142,16 +143,26 @@ public class DialogueManager : MonoBehaviour
     {
         var line = dialogueLines[currentIndex];
         // Apply text color
-        textComponent.color = line.textColor;
-
+        if (line.uncleSpeaking)
+        {
+            textComponent.color = uncleColor;
+        }
+        else if (line.dadSpeaking)
+        {
+            textComponent.color = dadColor;
+        }
+        else
+        {
+            textComponent.color = Color.white; // fallback
+        }
         // Move dialogue position
         if (parentRect != null)
         {
-            if (line.GoToUncle && uncleAnchor != null)
+            if (line.uncleSpeaking && uncleAnchor != null)
             {
                 parentRect.position = uncleAnchor.position;
             }
-            else if (line.GoToDad && dadAnchor != null)
+            else if (line.dadSpeaking && dadAnchor != null)
             {
                 parentRect.position = dadAnchor.position;
             }

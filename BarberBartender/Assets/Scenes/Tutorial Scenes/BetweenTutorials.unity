@@ -572,7 +572,26 @@ MonoBehaviour:
     MoveCamera: 0
     hasMovedCamera: 0
   - name: 
-    text: You really need to loosen up, man, I'm here to teach her too.
+    text: And what did you do with my bardending equiptment, where did it go?
+    uncleSpeaking: 0
+    dadSpeaking: 1
+    removeButtonsOnStart: 0
+    hasRemovedButtons: 0
+    SpawnRed: 0
+    hasSpawnedRed: 0
+    SpawnDad: 0
+    hasSpawnedDad: 0
+    SpawnSubmit: 0
+    hasSpawnedSubmit: 0
+    waterTrigger: 0
+    purpleTrigger: 0
+    MoveCamera: 0
+    hasMovedCamera: 0
+  - name: 
+    text: 'Doesn''t matter.
+
+      Anyway, you really need to loosen up, man, I''m
+      here to teach her too.'
     uncleSpeaking: 1
     dadSpeaking: 0
     removeButtonsOnStart: 0

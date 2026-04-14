@@ -53,8 +53,11 @@ public class DrinkOrderManager : MonoBehaviour
 
     private void StartBetweenTimer()
     {
-        if (betweenCoroutine != null) StopCoroutine(betweenCoroutine);
-        betweenCoroutine = StartCoroutine(BetweenTimerCoroutine());
+        if (!tutorial)
+        {
+            if (betweenCoroutine != null) StopCoroutine(betweenCoroutine);
+            betweenCoroutine = StartCoroutine(BetweenTimerCoroutine());
+        }
     }
 
     private IEnumerator BetweenTimerCoroutine()

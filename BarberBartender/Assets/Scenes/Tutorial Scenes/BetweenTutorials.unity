@@ -555,15 +555,139 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueManager
   dialogueLines:
   - name: 
-    text: 
-    textColor: {r: 0, g: 0, b: 0, a: 0}
+    text: Wait, What are you doing here, I'm trying to teach my kid how to run a
+      proper bar.
+    textColor: {r: 1, g: 1, b: 1, a: 1}
     GoToUncle: 0
+    GoToDad: 1
+    removeButtonsOnStart: 0
+    hasRemovedButtons: 0
+    SpawnRed: 0
+    hasSpawnedRed: 0
+    SpawnDad: 0
+    hasSpawnedDad: 0
+    SpawnSubmit: 0
+    hasSpawnedSubmit: 0
+    waterTrigger: 0
+    purpleTrigger: 0
+  - name: 
+    text: You really need to loosen up, man, I'm here to teach her too.
+    textColor: {r: 1, g: 1, b: 1, a: 1}
+    GoToUncle: 1
     GoToDad: 0
     removeButtonsOnStart: 0
     hasRemovedButtons: 0
     SpawnRed: 0
     hasSpawnedRed: 0
     SpawnDad: 0
+    hasSpawnedDad: 0
+    SpawnSubmit: 0
+    hasSpawnedSubmit: 0
+    waterTrigger: 0
+    purpleTrigger: 0
+  - name: 
+    text: She's going to learn how to cut hair to make people look really cool.
+    textColor: {r: 1, g: 1, b: 1, a: 1}
+    GoToUncle: 1
+    GoToDad: 0
+    removeButtonsOnStart: 0
+    hasRemovedButtons: 0
+    SpawnRed: 0
+    hasSpawnedRed: 0
+    SpawnDad: 0
+    hasSpawnedDad: 0
+    SpawnSubmit: 0
+    hasSpawnedSubmit: 0
+    waterTrigger: 0
+    purpleTrigger: 0
+  - name: 
+    text: She's my daughter, and I want to teach her to bartend.
+    textColor: {r: 1, g: 1, b: 1, a: 1}
+    GoToUncle: 0
+    GoToDad: 1
+    removeButtonsOnStart: 0
+    hasRemovedButtons: 0
+    SpawnRed: 0
+    hasSpawnedRed: 0
+    SpawnDad: 0
+    hasSpawnedDad: 0
+    SpawnSubmit: 0
+    hasSpawnedSubmit: 0
+    waterTrigger: 0
+    purpleTrigger: 0
+  - name: 
+    text: Well, she's my neice, and she inherited my half of this building too, I'll
+      teach her how to cut hair, then she can choose which to do for herself.
+    textColor: {r: 1, g: 1, b: 1, a: 1}
+    GoToUncle: 1
+    GoToDad: 0
+    removeButtonsOnStart: 0
+    hasRemovedButtons: 0
+    SpawnRed: 0
+    hasSpawnedRed: 0
+    SpawnDad: 0
+    hasSpawnedDad: 0
+    SpawnSubmit: 0
+    hasSpawnedSubmit: 0
+    waterTrigger: 0
+    purpleTrigger: 0
+  - name: 
+    text: I'm not done teaching her, we haven't even gotten to yellow, come back
+      in two years and maybe I'll let you teach her too.
+    textColor: {r: 1, g: 1, b: 1, a: 1}
+    GoToUncle: 0
+    GoToDad: 1
+    removeButtonsOnStart: 0
+    hasRemovedButtons: 0
+    SpawnRed: 0
+    hasSpawnedRed: 0
+    SpawnDad: 0
+    hasSpawnedDad: 0
+    SpawnSubmit: 0
+    hasSpawnedSubmit: 0
+    waterTrigger: 0
+    purpleTrigger: 0
+  - name: 
+    text: While you were teaching her, I learned more ghost powers, so I don't think
+      you have a say in this, goodbye.
+    textColor: {r: 1, g: 1, b: 1, a: 1}
+    GoToUncle: 1
+    GoToDad: 0
+    removeButtonsOnStart: 0
+    hasRemovedButtons: 0
+    SpawnRed: 0
+    hasSpawnedRed: 0
+    SpawnDad: 0
+    hasSpawnedDad: 0
+    SpawnSubmit: 0
+    hasSpawnedSubmit: 0
+    waterTrigger: 0
+    purpleTrigger: 0
+  - name: 
+    text: Noooooooooooooooo...
+    textColor: {r: 1, g: 1, b: 1, a: 1}
+    GoToUncle: 0
+    GoToDad: 1
+    removeButtonsOnStart: 0
+    hasRemovedButtons: 0
+    SpawnRed: 0
+    hasSpawnedRed: 0
+    SpawnDad: 1
+    hasSpawnedDad: 0
+    SpawnSubmit: 0
+    hasSpawnedSubmit: 0
+    waterTrigger: 0
+    purpleTrigger: 0
+  - name: 
+    text: Alright, are you ready to cut some hair?
+    textColor: {r: 1, g: 1, b: 1, a: 1}
+    GoToUncle: 1
+    GoToDad: 0
+    removeButtonsOnStart: 0
+    hasRemovedButtons: 0
+    SpawnRed: 0
+    hasSpawnedRed: 0
+    SpawnDad: 1
     hasSpawnedDad: 0
     SpawnSubmit: 0
     hasSpawnedSubmit: 0
@@ -582,7 +706,7 @@ MonoBehaviour:
   dadAnchor: {fileID: 347135378}
   defaultAnchor: {fileID: 347135378}
   dadLerpDuration: 3
-  nextSceneName: Main Scene
+  nextSceneName: HairTutorial
 --- !u!114 &93469539
 MonoBehaviour:
   m_ObjectHideFlags: 0

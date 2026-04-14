@@ -53,11 +53,14 @@ public class DialogueManager : MonoBehaviour
     private Coroutine typingCoroutine;
     private bool isTyping = false;
 
-    public RectTransform textTransform; // Assign your TMP object here
+    public RectTransform parentRect;
 
     public Transform uncleAnchor; // where uncle dialogue goes
     public Transform dadAnchor;   // where dad dialogue goes
     public Transform defaultAnchor; // fallback
+
+    public float dadLerpDuration = 0.5f;
+    private Coroutine dadMoveCoroutine; 
     public string nextSceneName;
 
 
@@ -132,19 +135,19 @@ public class DialogueManager : MonoBehaviour
         textComponent.color = line.textColor;
 
         // Move dialogue position
-        if (textTransform != null)
+        if (parentRect != null)
         {
             if (line.GoToUncle && uncleAnchor != null)
             {
-                textTransform.position = uncleAnchor.position;
+                parentRect.position = uncleAnchor.position;
             }
             else if (line.GoToDad && dadAnchor != null)
             {
-                textTransform.position = dadAnchor.position;
+                parentRect.position = dadAnchor.position;
             }
             else if (defaultAnchor != null)
             {
-                textTransform.position = defaultAnchor.position;
+                parentRect.position = defaultAnchor.position;
             }
         }
 
@@ -173,8 +176,10 @@ public class DialogueManager : MonoBehaviour
 
         if (line.SpawnDad && !line.hasSpawnedDad)
         {
-            if (dad != null) dad.gameObject.SetActive(true);
-            if (dissapearingDad != null) dissapearingDad.gameObject.SetActive(false);
+            if (dadMoveCoroutine != null)
+                StopCoroutine(dadMoveCoroutine);
+
+            dadMoveCoroutine = StartCoroutine(MoveDadTransition());
 
             line.hasSpawnedDad = true;
         }
@@ -195,6 +200,35 @@ public class DialogueManager : MonoBehaviour
         }
 
         typingCoroutine = StartCoroutine(TypeText(line));
+    }
+
+    private IEnumerator MoveDadTransition()
+    {
+        if (dissapearingDad == null || dad == null)
+            yield break;
+
+        dissapearingDad.SetActive(true);
+
+        Vector3 startPos = dissapearingDad.transform.position;
+        Vector3 targetPos = dad.transform.position;
+
+        float time = 0f;
+
+        while (time < dadLerpDuration)
+        {
+            time += Time.deltaTime;
+            float t = time / dadLerpDuration;
+
+            dissapearingDad.transform.position = Vector3.Lerp(startPos, targetPos, t);
+            yield return null;
+        }
+
+        // Snap to exact position at end
+        dissapearingDad.transform.position = targetPos;
+
+        // Swap objects
+        dissapearingDad.SetActive(false);
+        dad.SetActive(true);
     }
 
     private void FinishCurrentLine()

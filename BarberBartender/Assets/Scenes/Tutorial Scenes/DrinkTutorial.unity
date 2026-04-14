@@ -789,6 +789,9 @@ MonoBehaviour:
   - name: 
     text: It's finally time for you to take on the family legacy, so I'll teach you
       how to properly pour and mix drinks to satisfy your customers.
+    textColor: {r: 1, g: 1, b: 1, a: 1}
+    GoToUncle: 0
+    GoToDad: 0
     removeButtonsOnStart: 0
     hasRemovedButtons: 0
     SpawnRed: 0
@@ -801,6 +804,9 @@ MonoBehaviour:
     purpleTrigger: 0
   - name: 
     text: They used to be my customers...
+    textColor: {r: 1, g: 1, b: 1, a: 1}
+    GoToUncle: 0
+    GoToDad: 0
     removeButtonsOnStart: 0
     hasRemovedButtons: 0
     SpawnRed: 0
@@ -813,6 +819,9 @@ MonoBehaviour:
     purpleTrigger: 0
   - name: 
     text: Anyway, I guess its time I actually teach you how to do this
+    textColor: {r: 1, g: 1, b: 1, a: 1}
+    GoToUncle: 0
+    GoToDad: 0
     removeButtonsOnStart: 0
     hasRemovedButtons: 0
     SpawnRed: 0
@@ -829,6 +838,9 @@ MonoBehaviour:
       Those
       will return the other bottles and glasses to their original spot, so you don''t
       have to worry about losing those.'
+    textColor: {r: 1, g: 1, b: 1, a: 1}
+    GoToUncle: 0
+    GoToDad: 0
     removeButtonsOnStart: 0
     hasRemovedButtons: 0
     SpawnRed: 0
@@ -845,6 +857,9 @@ MonoBehaviour:
 
       Wait, is that just
       water? Ok, well I guess we all have to start from somewhere'
+    textColor: {r: 1, g: 1, b: 1, a: 1}
+    GoToUncle: 0
+    GoToDad: 0
     removeButtonsOnStart: 0
     hasRemovedButtons: 0
     SpawnRed: 0
@@ -861,6 +876,9 @@ MonoBehaviour:
 
       try to pour
       it into that cup.'
+    textColor: {r: 1, g: 1, b: 1, a: 1}
+    GoToUncle: 0
+    GoToDad: 0
     removeButtonsOnStart: 1
     hasRemovedButtons: 0
     SpawnRed: 0
@@ -874,6 +892,9 @@ MonoBehaviour:
   - name: 
     text: Great job, I think you might be ready for the most difficult part of this
       job.
+    textColor: {r: 1, g: 1, b: 1, a: 1}
+    GoToUncle: 0
+    GoToDad: 0
     removeButtonsOnStart: 0
     hasRemovedButtons: 0
     SpawnRed: 0
@@ -888,6 +909,9 @@ MonoBehaviour:
     text: I'm loaning you my bottle of mysterious red liquid just for today, but
       you'll have to get your own after you make some money selling your water on
       your first day.
+    textColor: {r: 1, g: 1, b: 1, a: 1}
+    GoToUncle: 0
+    GoToDad: 0
     removeButtonsOnStart: 0
     hasRemovedButtons: 0
     SpawnRed: 1
@@ -901,6 +925,9 @@ MonoBehaviour:
   - name: 
     text: anyway, you need to learn how to mix drinks, so, go ahead and pour some
       red and some blue in that cup.
+    textColor: {r: 1, g: 1, b: 1, a: 1}
+    GoToUncle: 0
+    GoToDad: 0
     removeButtonsOnStart: 1
     hasRemovedButtons: 0
     SpawnRed: 0
@@ -914,6 +941,9 @@ MonoBehaviour:
   - name: 
     text: As you might expect, it turned into purple, which is my favorite flavor,
       so now, I'll show you how to give the drinks to customers.
+    textColor: {r: 1, g: 1, b: 1, a: 1}
+    GoToUncle: 0
+    GoToDad: 0
     removeButtonsOnStart: 0
     hasRemovedButtons: 0
     SpawnRed: 0
@@ -927,6 +957,9 @@ MonoBehaviour:
   - name: 
     text: Ok, now, put the drink on the tray in front of me and pop my thought bubble
       to give it to me.
+    textColor: {r: 1, g: 1, b: 1, a: 1}
+    GoToUncle: 0
+    GoToDad: 0
     removeButtonsOnStart: 1
     hasRemovedButtons: 0
     SpawnRed: 0
@@ -939,6 +972,9 @@ MonoBehaviour:
     purpleTrigger: 0
   - name: 
     text: Great Job, I don't think there's anything else I can teach you
+    textColor: {r: 1, g: 1, b: 1, a: 1}
+    GoToUncle: 0
+    GoToDad: 0
     removeButtonsOnStart: 0
     hasRemovedButtons: 0
     SpawnRed: 0
@@ -957,7 +993,12 @@ MonoBehaviour:
   dissapearingDad: {fileID: 1564906996}
   submitButton: {fileID: 68560186}
   orderManager: {fileID: 421655146}
-  nextSceneName: HairTutorial
+  parentRect: {fileID: 0}
+  uncleAnchor: {fileID: 0}
+  dadAnchor: {fileID: 0}
+  defaultAnchor: {fileID: 0}
+  dadLerpDuration: 0.5
+  nextSceneName: BetweenTutorials
 --- !u!114 &93469539
 MonoBehaviour:
   m_ObjectHideFlags: 0

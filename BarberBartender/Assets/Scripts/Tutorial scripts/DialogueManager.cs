@@ -32,6 +32,8 @@ public class DialogueLine
     public bool hasSpawnedSubmit = false;
     public bool waterTrigger;
     public bool purpleTrigger;
+    public bool MoveCamera;
+    [HideInInspector] public bool hasMovedCamera = false;
 }
 
 public class DialogueManager : MonoBehaviour
@@ -61,6 +63,14 @@ public class DialogueManager : MonoBehaviour
 
     public float dadLerpDuration = 0.5f;
     private Coroutine dadMoveCoroutine; 
+
+    public GameObject movingCamera;        // The object that moves (like disappearingDad)
+    public GameObject targetCamera;        // The destination position
+
+    public float cameraLerpDuration = 0.5f;
+
+    private Coroutine cameraMoveCoroutine;
+
     public string nextSceneName;
 
 
@@ -184,6 +194,16 @@ public class DialogueManager : MonoBehaviour
             line.hasSpawnedDad = true;
         }
 
+        if (line.MoveCamera && !line.hasMovedCamera)
+        {
+            if (cameraMoveCoroutine != null)
+                StopCoroutine(cameraMoveCoroutine);
+
+            cameraMoveCoroutine = StartCoroutine(MoveCameraTransition());
+
+            line.hasMovedCamera = true;
+        }
+
         if (line.SpawnSubmit && !line.hasSpawnedSubmit)
         {
             if (submitButton != null) submitButton.gameObject.SetActive(true);
@@ -225,10 +245,31 @@ public class DialogueManager : MonoBehaviour
 
         // Snap to exact position at end
         dissapearingDad.transform.position = targetPos;
+    }
 
-        // Swap objects
-        dissapearingDad.SetActive(false);
-        dad.SetActive(true);
+    private IEnumerator MoveCameraTransition()
+    {
+        if (movingCamera == null || targetCamera == null)
+            yield break;
+
+        movingCamera.SetActive(true);
+
+        Vector3 startPos = movingCamera.transform.position;
+        Vector3 targetPos = targetCamera.transform.position;
+
+        float time = 0f;
+
+        while (time < cameraLerpDuration)
+        {
+            time += Time.deltaTime;
+            float t = time / cameraLerpDuration;
+
+            movingCamera.transform.position = Vector3.Lerp(startPos, targetPos, t);
+            yield return null;
+        }
+
+        // Snap to final position
+        movingCamera.transform.position = targetPos;
     }
 
     private void FinishCurrentLine()

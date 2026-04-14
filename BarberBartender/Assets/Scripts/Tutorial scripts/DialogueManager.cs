@@ -243,6 +243,9 @@ public class DialogueManager : MonoBehaviour
         Vector3 startPos = dissapearingDad.transform.position;
         Vector3 targetPos = dad.transform.position;
 
+        Vector3 startScale = dissapearingDad.transform.localScale;
+        Vector3 targetScale = dad.transform.localScale;
+
         float time = 0f;
 
         while (time < dadLerpDuration)
@@ -250,12 +253,18 @@ public class DialogueManager : MonoBehaviour
             time += Time.deltaTime;
             float t = time / dadLerpDuration;
 
-            dissapearingDad.transform.position = Vector3.Lerp(startPos, targetPos, t);
+            // Smooth interpolation (optional but nicer)
+            float smoothT = Mathf.SmoothStep(0f, 1f, t);
+
+            dissapearingDad.transform.position = Vector3.Lerp(startPos, targetPos, smoothT);
+            dissapearingDad.transform.localScale = Vector3.Lerp(startScale, targetScale, smoothT);
+
             yield return null;
         }
 
-        // Snap to exact position at end
+        // Snap to exact final values
         dissapearingDad.transform.position = targetPos;
+        dissapearingDad.transform.localScale = targetScale;
     }
 
     private IEnumerator MoveCameraTransition()

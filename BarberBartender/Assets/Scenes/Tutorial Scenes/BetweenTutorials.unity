@@ -720,7 +720,7 @@ MonoBehaviour:
   cameraLerpDuration: 0.5
   uncleColor: {r: 0.70980394, g: 0.93333334, b: 0.91764706, a: 1}
   dadColor: {r: 1, g: 0.8666667, b: 0.654902, a: 1}
-  nextSceneName: HairTutorial
+  nextSceneName: Between2
 --- !u!114 &93469539
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4602,7 +4602,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -31.2, y: -23.3, z: 24}
-  m_LocalScale: {x: 14.801055, y: 14.801055, z: 14.801055}
+  m_LocalScale: {x: 12.446207, y: 12.446207, z: 12.446207}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}

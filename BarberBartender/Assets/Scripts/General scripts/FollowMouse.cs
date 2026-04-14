@@ -30,9 +30,14 @@ public class FollowMouse : MonoBehaviour
             targetWorldPos.z = 0; // Lock to 2D plane
 
             // Move towards target smoothly at a constant speed
+            Vector3 currentPos = transform.position;
+
+            // Only change X, keep Y the same
+            Vector3 targetPos = new Vector3(targetWorldPos.x, currentPos.y, currentPos.z);
+
             transform.position = Vector3.MoveTowards(
-                transform.position, 
-                targetWorldPos, 
+                currentPos,
+                targetPos,
                 moveSpeed * Time.deltaTime
             );
         }

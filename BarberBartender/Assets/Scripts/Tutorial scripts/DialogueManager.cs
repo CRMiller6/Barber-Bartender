@@ -3,6 +3,7 @@ using TMPro;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 [System.Serializable]
 public class DialogueLine
@@ -10,6 +11,11 @@ public class DialogueLine
     public string name;
     [TextArea]
     public string text;
+
+    public Color textColor = Color.white;
+
+    public bool GoToUncle;
+    public bool GoToDad;
     public bool removeButtonsOnStart;
     [HideInInspector]
     public bool hasRemovedButtons = false;
@@ -24,6 +30,8 @@ public class DialogueLine
     public bool SpawnSubmit;
     [HideInInspector]
     public bool hasSpawnedSubmit = false;
+    public bool waterTrigger;
+    public bool purpleTrigger;
 }
 
 public class DialogueManager : MonoBehaviour
@@ -44,6 +52,14 @@ public class DialogueManager : MonoBehaviour
     private int currentIndex = 0;               // Current dialogue index
     private Coroutine typingCoroutine;
     private bool isTyping = false;
+
+    public RectTransform textTransform; // Assign your TMP object here
+
+    public Transform uncleAnchor; // where uncle dialogue goes
+    public Transform dadAnchor;   // where dad dialogue goes
+    public Transform defaultAnchor; // fallback
+    public string nextSceneName;
+
 
     private void Awake()
     {
@@ -68,10 +84,21 @@ public class DialogueManager : MonoBehaviour
         else
         {
             currentIndex++;
+
             if (currentIndex >= dialogueLines.Count)
             {
                 Debug.Log("Dialogue finished!");
-                currentIndex = dialogueLines.Count - 1;
+
+                // Load next scene if name is set
+                if (!string.IsNullOrEmpty(nextSceneName))
+                {
+                    SceneManager.LoadScene(nextSceneName);
+                }
+                else
+                {
+                    Debug.LogWarning("Next scene name not set!");
+                }
+
                 return;
             }
 
@@ -101,6 +128,25 @@ public class DialogueManager : MonoBehaviour
     private void StartTypingCurrentLine()
     {
         var line = dialogueLines[currentIndex];
+        // Apply text color
+        textComponent.color = line.textColor;
+
+        // Move dialogue position
+        if (textTransform != null)
+        {
+            if (line.GoToUncle && uncleAnchor != null)
+            {
+                textTransform.position = uncleAnchor.position;
+            }
+            else if (line.GoToDad && dadAnchor != null)
+            {
+                textTransform.position = dadAnchor.position;
+            }
+            else if (defaultAnchor != null)
+            {
+                textTransform.position = defaultAnchor.position;
+            }
+        }
 
         // Remove buttons immediately if toggle is set and hasn't happened yet
         if (line.removeButtonsOnStart && !line.hasRemovedButtons)

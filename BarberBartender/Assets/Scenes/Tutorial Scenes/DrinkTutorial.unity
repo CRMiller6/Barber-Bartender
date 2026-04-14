@@ -797,6 +797,8 @@ MonoBehaviour:
     hasSpawnedDad: 0
     SpawnSubmit: 0
     hasSpawnedSubmit: 0
+    waterTrigger: 0
+    purpleTrigger: 0
   - name: 
     text: They used to be my customers...
     removeButtonsOnStart: 0
@@ -807,6 +809,8 @@ MonoBehaviour:
     hasSpawnedDad: 0
     SpawnSubmit: 0
     hasSpawnedSubmit: 0
+    waterTrigger: 0
+    purpleTrigger: 0
   - name: 
     text: Anyway, I guess its time I actually teach you how to do this
     removeButtonsOnStart: 0
@@ -817,6 +821,8 @@ MonoBehaviour:
     hasSpawnedDad: 0
     SpawnSubmit: 0
     hasSpawnedSubmit: 0
+    waterTrigger: 0
+    purpleTrigger: 0
   - name: 
     text: 'Look at the skinny bottle and small glass on the right shelf.
 
@@ -831,6 +837,8 @@ MonoBehaviour:
     hasSpawnedDad: 0
     SpawnSubmit: 0
     hasSpawnedSubmit: 0
+    waterTrigger: 0
+    purpleTrigger: 0
   - name: 
     text: 'See the bottle with the blue label over there?
 
@@ -845,6 +853,8 @@ MonoBehaviour:
     hasSpawnedDad: 0
     SpawnSubmit: 0
     hasSpawnedSubmit: 0
+    waterTrigger: 0
+    purpleTrigger: 0
   - name: 
     text: 'Anyway, grab the bottle and use Q or E to rotate it.
 
@@ -859,6 +869,8 @@ MonoBehaviour:
     hasSpawnedDad: 0
     SpawnSubmit: 0
     hasSpawnedSubmit: 0
+    waterTrigger: 1
+    purpleTrigger: 0
   - name: 
     text: Great job, I think you might be ready for the most difficult part of this
       job.
@@ -870,6 +882,8 @@ MonoBehaviour:
     hasSpawnedDad: 0
     SpawnSubmit: 0
     hasSpawnedSubmit: 0
+    waterTrigger: 0
+    purpleTrigger: 0
   - name: 
     text: I'm loaning you my bottle of mysterious red liquid just for today, but
       you'll have to get your own after you make some money selling your water on
@@ -882,10 +896,12 @@ MonoBehaviour:
     hasSpawnedDad: 0
     SpawnSubmit: 0
     hasSpawnedSubmit: 0
+    waterTrigger: 0
+    purpleTrigger: 0
   - name: 
     text: anyway, you need to learn how to mix drinks, so, go ahead and pour some
       red and some blue in that cup.
-    removeButtonsOnStart: 0
+    removeButtonsOnStart: 1
     hasRemovedButtons: 0
     SpawnRed: 0
     hasSpawnedRed: 0
@@ -893,6 +909,8 @@ MonoBehaviour:
     hasSpawnedDad: 0
     SpawnSubmit: 0
     hasSpawnedSubmit: 0
+    waterTrigger: 0
+    purpleTrigger: 1
   - name: 
     text: As you might expect, it turned into purple, which is my favorite flavor,
       so now, I'll show you how to give the drinks to customers.
@@ -904,6 +922,8 @@ MonoBehaviour:
     hasSpawnedDad: 0
     SpawnSubmit: 0
     hasSpawnedSubmit: 0
+    waterTrigger: 0
+    purpleTrigger: 0
   - name: 
     text: Ok, now, put the drink on the tray in front of me and pop my thought bubble
       to give it to me.
@@ -915,8 +935,10 @@ MonoBehaviour:
     hasSpawnedDad: 0
     SpawnSubmit: 1
     hasSpawnedSubmit: 0
+    waterTrigger: 0
+    purpleTrigger: 0
   - name: 
-    text: 
+    text: Great Job, I don't think there's anything else I can teach you
     removeButtonsOnStart: 0
     hasRemovedButtons: 0
     SpawnRed: 0
@@ -925,6 +947,8 @@ MonoBehaviour:
     hasSpawnedDad: 0
     SpawnSubmit: 0
     hasSpawnedSubmit: 0
+    waterTrigger: 0
+    purpleTrigger: 0
   nextButton: {fileID: 1195183071}
   backButton: {fileID: 1245142687}
   typingDelay: 0.05
@@ -933,6 +957,7 @@ MonoBehaviour:
   dissapearingDad: {fileID: 1564906996}
   submitButton: {fileID: 68560186}
   orderManager: {fileID: 421655146}
+  nextSceneName: HairTutorial
 --- !u!114 &93469539
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3421,6 +3446,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::WaterTriggerCounter
   requiredCount: 100
   LayerName: Water
+  PurpleLayerName: purple
   nextButton: {fileID: 1195183071}
   backButton: {fileID: 1245142687}
   dialogueManager: {fileID: 93469538}
@@ -6938,7 +6964,7 @@ Transform:
   m_GameObject: {fileID: 1375980312}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 23.5, y: -2.67, z: 0}
+  m_LocalPosition: {x: 23.5, y: -2.67, z: 14}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

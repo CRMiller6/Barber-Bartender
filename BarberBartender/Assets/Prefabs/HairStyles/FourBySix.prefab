@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8782018729391074998}
   - component: {fileID: 3114931051609031513}
   - component: {fileID: 2483514283964268404}
+  - component: {fileID: 7652487635065145461}
   m_Layer: 7
   m_Name: Square (12)
   m_TagString: Untagged
@@ -151,6 +152,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e00a8abe43e624c25a392b17f84e66ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollisionDetectorForPrefabs
+--- !u!114 &7652487635065145461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 181077500617858690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e64ec5e4715004bed871a9133a13905b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HairData
+  isWet: 0
+  basePoints: 0
+  wetToDryReward: 20
+  leftWetPenalty: -15
 --- !u!1 &355188414564148100
 GameObject:
   m_ObjectHideFlags: 0
@@ -165,6 +182,7 @@ GameObject:
   - component: {fileID: 435204786160166079}
   - component: {fileID: 1996387938191945241}
   - component: {fileID: 8088989354289207849}
+  - component: {fileID: 6277509804370963570}
   m_Layer: 7
   m_Name: Square (11)
   m_TagString: Cutable
@@ -318,7 +336,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61922c348607845bc8814a73ed24491d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestroyDanglingHair
-  target: {fileID: 8323210742998467374}
+  target: {fileID: 0}
 --- !u!114 &8088989354289207849
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -331,6 +349,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e00a8abe43e624c25a392b17f84e66ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollisionDetectorForPrefabs
+--- !u!114 &6277509804370963570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 355188414564148100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e64ec5e4715004bed871a9133a13905b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HairData
+  isWet: 0
+  basePoints: 0
+  wetToDryReward: 20
+  leftWetPenalty: -15
 --- !u!1 &364960256860084818
 GameObject:
   m_ObjectHideFlags: 0
@@ -346,6 +380,7 @@ GameObject:
   - component: {fileID: 5278140849915147065}
   - component: {fileID: 1853099331007533101}
   - component: {fileID: 3191166949117486128}
+  - component: {fileID: 7010283117067466092}
   m_Layer: 7
   m_Name: Square (23)
   m_TagString: Cutable
@@ -499,7 +534,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61922c348607845bc8814a73ed24491d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestroyDanglingHair
-  target: {fileID: 6010140652554217425}
+  target: {fileID: 0}
 --- !u!114 &1853099331007533101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -524,6 +559,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e00a8abe43e624c25a392b17f84e66ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollisionDetectorForPrefabs
+--- !u!114 &7010283117067466092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 364960256860084818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e64ec5e4715004bed871a9133a13905b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HairData
+  isWet: 0
+  basePoints: 0
+  wetToDryReward: 20
+  leftWetPenalty: -15
 --- !u!1 &476166075092628738
 GameObject:
   m_ObjectHideFlags: 0
@@ -539,6 +590,7 @@ GameObject:
   - component: {fileID: 2948659816444732256}
   - component: {fileID: 1765393162952766094}
   - component: {fileID: 4334993205926189754}
+  - component: {fileID: 4430937567695226557}
   m_Layer: 7
   m_Name: Square (5)
   m_TagString: Cutable
@@ -692,7 +744,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61922c348607845bc8814a73ed24491d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestroyDanglingHair
-  target: {fileID: 8282039480424680419}
+  target: {fileID: 0}
 --- !u!114 &1765393162952766094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -717,6 +769,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e00a8abe43e624c25a392b17f84e66ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollisionDetectorForPrefabs
+--- !u!114 &4430937567695226557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 476166075092628738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e64ec5e4715004bed871a9133a13905b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HairData
+  isWet: 0
+  basePoints: 0
+  wetToDryReward: 20
+  leftWetPenalty: -15
 --- !u!1 &1255890397860892257
 GameObject:
   m_ObjectHideFlags: 0
@@ -731,6 +799,7 @@ GameObject:
   - component: {fileID: 4105893897667595197}
   - component: {fileID: 6215954024891801365}
   - component: {fileID: 4315628419157217017}
+  - component: {fileID: 3194468313368514270}
   m_Layer: 7
   m_Name: Square (4)
   m_TagString: Cutable
@@ -896,6 +965,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e00a8abe43e624c25a392b17f84e66ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollisionDetectorForPrefabs
+--- !u!114 &3194468313368514270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1255890397860892257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e64ec5e4715004bed871a9133a13905b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HairData
+  isWet: 0
+  basePoints: 0
+  wetToDryReward: 20
+  leftWetPenalty: -15
 --- !u!1 &1885568851040457980
 GameObject:
   m_ObjectHideFlags: 0
@@ -908,6 +993,7 @@ GameObject:
   - component: {fileID: 7935577354204775811}
   - component: {fileID: 3056897620382866661}
   - component: {fileID: 293040899460397469}
+  - component: {fileID: 2515963573732683635}
   m_Layer: 7
   m_Name: Square
   m_TagString: Untagged
@@ -1047,6 +1133,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e00a8abe43e624c25a392b17f84e66ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollisionDetectorForPrefabs
+--- !u!114 &2515963573732683635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1885568851040457980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e64ec5e4715004bed871a9133a13905b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HairData
+  isWet: 0
+  basePoints: 0
+  wetToDryReward: 20
+  leftWetPenalty: -15
 --- !u!1 &2008193446062725748
 GameObject:
   m_ObjectHideFlags: 0
@@ -1062,6 +1164,7 @@ GameObject:
   - component: {fileID: 8045219739663548396}
   - component: {fileID: 2107902841672663268}
   - component: {fileID: 2234813124521939381}
+  - component: {fileID: 3578208606736716779}
   m_Layer: 7
   m_Name: Square (6)
   m_TagString: Cutable
@@ -1215,7 +1318,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61922c348607845bc8814a73ed24491d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestroyDanglingHair
-  target: {fileID: 6215954024891801365}
+  target: {fileID: 0}
 --- !u!114 &2107902841672663268
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1240,6 +1343,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e00a8abe43e624c25a392b17f84e66ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollisionDetectorForPrefabs
+--- !u!114 &3578208606736716779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2008193446062725748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e64ec5e4715004bed871a9133a13905b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HairData
+  isWet: 0
+  basePoints: 0
+  wetToDryReward: 20
+  leftWetPenalty: -15
 --- !u!1 &2019775031579821550
 GameObject:
   m_ObjectHideFlags: 0
@@ -1254,6 +1373,7 @@ GameObject:
   - component: {fileID: 6079148370872246569}
   - component: {fileID: 1139103433961895510}
   - component: {fileID: 5364659479301836906}
+  - component: {fileID: 2216753498055103112}
   m_Layer: 7
   m_Name: Square (15)
   m_TagString: Cutable
@@ -1407,7 +1527,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61922c348607845bc8814a73ed24491d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestroyDanglingHair
-  target: {fileID: 1853099331007533101}
+  target: {fileID: 0}
 --- !u!114 &5364659479301836906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1420,6 +1540,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e00a8abe43e624c25a392b17f84e66ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollisionDetectorForPrefabs
+--- !u!114 &2216753498055103112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2019775031579821550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e64ec5e4715004bed871a9133a13905b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HairData
+  isWet: 0
+  basePoints: 0
+  wetToDryReward: 20
+  leftWetPenalty: -15
 --- !u!1 &2094635057929183076
 GameObject:
   m_ObjectHideFlags: 0
@@ -1435,6 +1571,7 @@ GameObject:
   - component: {fileID: 5663167339834318555}
   - component: {fileID: 7680336662554603925}
   - component: {fileID: 4157940745920630559}
+  - component: {fileID: 9114858523162720569}
   m_Layer: 7
   m_Name: Square (17)
   m_TagString: Cutable
@@ -1588,7 +1725,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61922c348607845bc8814a73ed24491d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestroyDanglingHair
-  target: {fileID: 2107902841672663268}
+  target: {fileID: 0}
 --- !u!114 &7680336662554603925
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1613,6 +1750,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e00a8abe43e624c25a392b17f84e66ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollisionDetectorForPrefabs
+--- !u!114 &9114858523162720569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2094635057929183076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e64ec5e4715004bed871a9133a13905b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HairData
+  isWet: 0
+  basePoints: 0
+  wetToDryReward: 20
+  leftWetPenalty: -15
 --- !u!1 &2525738986215834615
 GameObject:
   m_ObjectHideFlags: 0
@@ -1628,6 +1781,7 @@ GameObject:
   - component: {fileID: 6354879931581801713}
   - component: {fileID: 6010140652554217425}
   - component: {fileID: 5045014958989939080}
+  - component: {fileID: 2773900492404424138}
   m_Layer: 7
   m_Name: Square (19)
   m_TagString: Cutable
@@ -1781,7 +1935,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61922c348607845bc8814a73ed24491d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestroyDanglingHair
-  target: {fileID: 371633278154662194}
+  target: {fileID: 0}
 --- !u!114 &6010140652554217425
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1806,6 +1960,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e00a8abe43e624c25a392b17f84e66ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollisionDetectorForPrefabs
+--- !u!114 &2773900492404424138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2525738986215834615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e64ec5e4715004bed871a9133a13905b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HairData
+  isWet: 0
+  basePoints: 0
+  wetToDryReward: 20
+  leftWetPenalty: -15
 --- !u!1 &2907147158114140755
 GameObject:
   m_ObjectHideFlags: 0
@@ -1820,6 +1990,7 @@ GameObject:
   - component: {fileID: 3334957835792083639}
   - component: {fileID: 8282039480424680419}
   - component: {fileID: 735767330447975858}
+  - component: {fileID: 2472971406746535838}
   m_Layer: 7
   m_Name: Square (3)
   m_TagString: Cutable
@@ -1985,6 +2156,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e00a8abe43e624c25a392b17f84e66ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollisionDetectorForPrefabs
+--- !u!114 &2472971406746535838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2907147158114140755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e64ec5e4715004bed871a9133a13905b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HairData
+  isWet: 0
+  basePoints: 0
+  wetToDryReward: 20
+  leftWetPenalty: -15
 --- !u!1 &3823497489881138862
 GameObject:
   m_ObjectHideFlags: 0
@@ -2055,6 +2242,7 @@ GameObject:
   - component: {fileID: 8632094016138121681}
   - component: {fileID: 3918364752122022472}
   - component: {fileID: 4700413938237741189}
+  - component: {fileID: 6572454991150838920}
   m_Layer: 7
   m_Name: Square (8)
   m_TagString: Cutable
@@ -2208,7 +2396,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61922c348607845bc8814a73ed24491d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestroyDanglingHair
-  target: {fileID: 4338147602645646815}
+  target: {fileID: 0}
 --- !u!114 &3918364752122022472
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2233,6 +2421,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e00a8abe43e624c25a392b17f84e66ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollisionDetectorForPrefabs
+--- !u!114 &6572454991150838920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4607538178258010050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e64ec5e4715004bed871a9133a13905b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HairData
+  isWet: 0
+  basePoints: 0
+  wetToDryReward: 20
+  leftWetPenalty: -15
 --- !u!1 &4993463757020854816
 GameObject:
   m_ObjectHideFlags: 0
@@ -2248,6 +2452,7 @@ GameObject:
   - component: {fileID: 1738425164716268764}
   - component: {fileID: 7415656387561002508}
   - component: {fileID: 1900084911886522676}
+  - component: {fileID: 3805904305286378784}
   m_Layer: 7
   m_Name: Square (20)
   m_TagString: Cutable
@@ -2401,7 +2606,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61922c348607845bc8814a73ed24491d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestroyDanglingHair
-  target: {fileID: 9009350503047405415}
+  target: {fileID: 0}
 --- !u!114 &7415656387561002508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2426,6 +2631,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e00a8abe43e624c25a392b17f84e66ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollisionDetectorForPrefabs
+--- !u!114 &3805904305286378784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4993463757020854816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e64ec5e4715004bed871a9133a13905b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HairData
+  isWet: 0
+  basePoints: 0
+  wetToDryReward: 20
+  leftWetPenalty: -15
 --- !u!1 &5401390908983462005
 GameObject:
   m_ObjectHideFlags: 0
@@ -2440,6 +2661,7 @@ GameObject:
   - component: {fileID: 2573379517883425673}
   - component: {fileID: 5367077131556994643}
   - component: {fileID: 3741433569126760822}
+  - component: {fileID: 5918370581949975213}
   m_Layer: 7
   m_Name: Square (10)
   m_TagString: Cutable
@@ -2593,7 +2815,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61922c348607845bc8814a73ed24491d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestroyDanglingHair
-  target: {fileID: 6052579730405705381}
+  target: {fileID: 0}
 --- !u!114 &3741433569126760822
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2606,6 +2828,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e00a8abe43e624c25a392b17f84e66ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollisionDetectorForPrefabs
+--- !u!114 &5918370581949975213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5401390908983462005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e64ec5e4715004bed871a9133a13905b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HairData
+  isWet: 0
+  basePoints: 0
+  wetToDryReward: 20
+  leftWetPenalty: -15
 --- !u!1 &5608352746741702593
 GameObject:
   m_ObjectHideFlags: 0
@@ -2621,6 +2859,7 @@ GameObject:
   - component: {fileID: 6705562613931368279}
   - component: {fileID: 6052579730405705381}
   - component: {fileID: 6142582413172388310}
+  - component: {fileID: 5001600248070996007}
   m_Layer: 7
   m_Name: Square (21)
   m_TagString: Cutable
@@ -2774,7 +3013,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61922c348607845bc8814a73ed24491d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestroyDanglingHair
-  target: {fileID: 7680336662554603925}
+  target: {fileID: 0}
 --- !u!114 &6052579730405705381
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2799,6 +3038,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e00a8abe43e624c25a392b17f84e66ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollisionDetectorForPrefabs
+--- !u!114 &5001600248070996007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5608352746741702593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e64ec5e4715004bed871a9133a13905b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HairData
+  isWet: 0
+  basePoints: 0
+  wetToDryReward: 20
+  leftWetPenalty: -15
 --- !u!1 &5703492363725893826
 GameObject:
   m_ObjectHideFlags: 0
@@ -2814,6 +3069,7 @@ GameObject:
   - component: {fileID: 7452800507376421529}
   - component: {fileID: 8323210742998467374}
   - component: {fileID: 2138476811936679212}
+  - component: {fileID: 3523713848637443162}
   m_Layer: 7
   m_Name: Square (22)
   m_TagString: Cutable
@@ -2967,7 +3223,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61922c348607845bc8814a73ed24491d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestroyDanglingHair
-  target: {fileID: 4362242147260240434}
+  target: {fileID: 0}
 --- !u!114 &8323210742998467374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2992,6 +3248,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e00a8abe43e624c25a392b17f84e66ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollisionDetectorForPrefabs
+--- !u!114 &3523713848637443162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5703492363725893826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e64ec5e4715004bed871a9133a13905b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HairData
+  isWet: 0
+  basePoints: 0
+  wetToDryReward: 20
+  leftWetPenalty: -15
 --- !u!1 &7011098510042055621
 GameObject:
   m_ObjectHideFlags: 0
@@ -3004,6 +3276,7 @@ GameObject:
   - component: {fileID: 5844486873662649813}
   - component: {fileID: 3955908170004701421}
   - component: {fileID: 3140866567166940984}
+  - component: {fileID: 5191469320931722258}
   m_Layer: 7
   m_Name: Square (1)
   m_TagString: Untagged
@@ -3143,6 +3416,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e00a8abe43e624c25a392b17f84e66ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollisionDetectorForPrefabs
+--- !u!114 &5191469320931722258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7011098510042055621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e64ec5e4715004bed871a9133a13905b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HairData
+  isWet: 0
+  basePoints: 0
+  wetToDryReward: 20
+  leftWetPenalty: -15
 --- !u!1 &7141975818237435393
 GameObject:
   m_ObjectHideFlags: 0
@@ -3158,6 +3447,7 @@ GameObject:
   - component: {fileID: 4364829508881487993}
   - component: {fileID: 371633278154662194}
   - component: {fileID: 3440905969002081931}
+  - component: {fileID: 746748737955455086}
   m_Layer: 7
   m_Name: Square (14)
   m_TagString: Cutable
@@ -3311,7 +3601,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61922c348607845bc8814a73ed24491d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestroyDanglingHair
-  target: {fileID: 8772976702239351159}
+  target: {fileID: 0}
 --- !u!114 &371633278154662194
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3336,6 +3626,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e00a8abe43e624c25a392b17f84e66ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollisionDetectorForPrefabs
+--- !u!114 &746748737955455086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7141975818237435393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e64ec5e4715004bed871a9133a13905b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HairData
+  isWet: 0
+  basePoints: 0
+  wetToDryReward: 20
+  leftWetPenalty: -15
 --- !u!1 &7623275241603913942
 GameObject:
   m_ObjectHideFlags: 0
@@ -3350,6 +3656,7 @@ GameObject:
   - component: {fileID: 2687410709621305966}
   - component: {fileID: 4338147602645646815}
   - component: {fileID: 4549123646217507961}
+  - component: {fileID: 2629256979534029804}
   m_Layer: 7
   m_Name: Square (7)
   m_TagString: Cutable
@@ -3515,6 +3822,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e00a8abe43e624c25a392b17f84e66ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollisionDetectorForPrefabs
+--- !u!114 &2629256979534029804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7623275241603913942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e64ec5e4715004bed871a9133a13905b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HairData
+  isWet: 0
+  basePoints: 0
+  wetToDryReward: 20
+  leftWetPenalty: -15
 --- !u!1 &7816433551748291188
 GameObject:
   m_ObjectHideFlags: 0
@@ -3530,6 +3853,7 @@ GameObject:
   - component: {fileID: 5968209732711681952}
   - component: {fileID: 4362242147260240434}
   - component: {fileID: 6578775700820344870}
+  - component: {fileID: 4619598974566880004}
   m_Layer: 7
   m_Name: Square (18)
   m_TagString: Cutable
@@ -3683,7 +4007,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61922c348607845bc8814a73ed24491d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestroyDanglingHair
-  target: {fileID: 3918364752122022472}
+  target: {fileID: 0}
 --- !u!114 &4362242147260240434
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3708,6 +4032,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e00a8abe43e624c25a392b17f84e66ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollisionDetectorForPrefabs
+--- !u!114 &4619598974566880004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7816433551748291188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e64ec5e4715004bed871a9133a13905b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HairData
+  isWet: 0
+  basePoints: 0
+  wetToDryReward: 20
+  leftWetPenalty: -15
 --- !u!1 &8042192255839701280
 GameObject:
   m_ObjectHideFlags: 0
@@ -3722,6 +4062,7 @@ GameObject:
   - component: {fileID: 3206473342637837777}
   - component: {fileID: 8772976702239351159}
   - component: {fileID: 497906784257009719}
+  - component: {fileID: 7261679360413334559}
   m_Layer: 7
   m_Name: Square (13)
   m_TagString: Cutable
@@ -3887,6 +4228,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e00a8abe43e624c25a392b17f84e66ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollisionDetectorForPrefabs
+--- !u!114 &7261679360413334559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8042192255839701280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e64ec5e4715004bed871a9133a13905b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HairData
+  isWet: 0
+  basePoints: 0
+  wetToDryReward: 20
+  leftWetPenalty: -15
 --- !u!1 &8128038120525896747
 GameObject:
   m_ObjectHideFlags: 0
@@ -3902,6 +4259,7 @@ GameObject:
   - component: {fileID: 4329305012875067498}
   - component: {fileID: 9009350503047405415}
   - component: {fileID: 1985138334111179656}
+  - component: {fileID: 2735053582644482364}
   m_Layer: 7
   m_Name: Square (16)
   m_TagString: Cutable
@@ -4055,7 +4413,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61922c348607845bc8814a73ed24491d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestroyDanglingHair
-  target: {fileID: 1765393162952766094}
+  target: {fileID: 0}
 --- !u!114 &9009350503047405415
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4080,6 +4438,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e00a8abe43e624c25a392b17f84e66ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollisionDetectorForPrefabs
+--- !u!114 &2735053582644482364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8128038120525896747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e64ec5e4715004bed871a9133a13905b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HairData
+  isWet: 0
+  basePoints: 0
+  wetToDryReward: 20
+  leftWetPenalty: -15
 --- !u!1 &8525538300741409795
 GameObject:
   m_ObjectHideFlags: 0
@@ -4094,6 +4468,7 @@ GameObject:
   - component: {fileID: 7891850814977479706}
   - component: {fileID: 2023115366001059848}
   - component: {fileID: 908939664825240923}
+  - component: {fileID: 812632076580317750}
   m_Layer: 7
   m_Name: Square (9)
   m_TagString: Cutable
@@ -4247,7 +4622,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61922c348607845bc8814a73ed24491d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestroyDanglingHair
-  target: {fileID: 7415656387561002508}
+  target: {fileID: 0}
 --- !u!114 &908939664825240923
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4260,6 +4635,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e00a8abe43e624c25a392b17f84e66ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollisionDetectorForPrefabs
+--- !u!114 &812632076580317750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8525538300741409795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e64ec5e4715004bed871a9133a13905b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HairData
+  isWet: 0
+  basePoints: 0
+  wetToDryReward: 20
+  leftWetPenalty: -15
 --- !u!1 &8820425876601706207
 GameObject:
   m_ObjectHideFlags: 0
@@ -4272,6 +4663,7 @@ GameObject:
   - component: {fileID: 8960890643725004586}
   - component: {fileID: 1288372588932440280}
   - component: {fileID: 8810816577008231354}
+  - component: {fileID: 8187101811740510159}
   m_Layer: 7
   m_Name: Square (2)
   m_TagString: Untagged
@@ -4411,3 +4803,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e00a8abe43e624c25a392b17f84e66ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollisionDetectorForPrefabs
+--- !u!114 &8187101811740510159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8820425876601706207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e64ec5e4715004bed871a9133a13905b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HairData
+  isWet: 0
+  basePoints: 0
+  wetToDryReward: 20
+  leftWetPenalty: -15

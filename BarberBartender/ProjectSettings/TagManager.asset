@@ -25,7 +25,7 @@ TagManager:
   - green
   - orange
   - brown
-  - 
+  - shower
   - 
   - 
   - 
@@ -49,3 +49,6 @@ TagManager:
     locked: 0
   m_RenderingLayers:
   - Default
+  - shower
+  - scissors
+  - hair

@@ -4,12 +4,14 @@ using UnityEngine.InputSystem;
 
 public class Scissors : MonoBehaviour
 {
-    private void OnCollisionEnter2D (Collision2D collision2D)
+    private void OnTriggerStay2D(Collider2D other)
     {
-        if (collision2D.gameObject.CompareTag("Cutable"))
+        Debug.Log("Something hit: " + other.name);
+        // Check if the object we hit has the "Cutable" tag
+        if (other.CompareTag("Cutable"))
         {
-            Destroy(collision2D.gameObject);
-            // Debug.Log("Object Cut!");
+            // Destroy the object
+            Destroy(other.gameObject);
         }
     }
 }

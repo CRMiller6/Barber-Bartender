@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class TargetScript : MonoBehaviour
+public class TargetTheScript : MonoBehaviour
 {
     public System.Action OnTargetDestroyed;
 

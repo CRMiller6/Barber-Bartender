@@ -77,8 +77,13 @@ public class HairGameManager : MonoBehaviour
         if (!isRoundActive || currentHairData == null) return;
 
         int roundScore = currentHairData.GetFinalScore();
+        
+        var cuttingCheck = currentHairInstance.GetComponentInChildren<WantToBeCut>();
+    if (cuttingCheck != null)
+    {
+        roundScore += cuttingCheck.wantCutting ? -2 : 1;
+    }
         totalPoints += roundScore;
-        Debug.Log($"Round Score: {roundScore}. New Total: {totalPoints}");
 
         Destroy(currentHairInstance);
         currentHairInstance = null; // Clear reference

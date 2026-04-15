@@ -11,6 +11,7 @@ public class HairSpawnBridge : MonoBehaviour
 
     public float xScale = 1f;
     public float yScale = 1f;
+    public bool tutorial = false;
 
     public bool SpawnHairRound(System.Action onComplete = null)
     {
@@ -52,7 +53,7 @@ public class HairSpawnBridge : MonoBehaviour
 
         spawnHairStyleRef.totalPoints += roundScore;
 
-        if (currentHairInstance != null) Destroy(currentHairInstance);
+        if (currentHairInstance != null && !tutorial) Destroy(currentHairInstance);
 
         roundRunning = false;
         onComplete?.Invoke();

@@ -3312,6 +3312,7 @@ MonoBehaviour:
   possibleHairCustomerSprites:
   - {fileID: 21300000, guid: 716daffdc113a8547b84782a46b7fac4, type: 3}
   - {fileID: 21300000, guid: ef69ca071bf74bc40b1448c66d86a188, type: 3}
+  - {fileID: 21300000, guid: db97196a2d08fb74da9cb21062ff4ca9, type: 3}
   autoSpawn: 1
 --- !u!212 &449542305
 SpriteRenderer:
@@ -12743,6 +12744,7 @@ MonoBehaviour:
   possibleCustomerSprites:
   - {fileID: 21300000, guid: 716daffdc113a8547b84782a46b7fac4, type: 3}
   - {fileID: 21300000, guid: ef69ca071bf74bc40b1448c66d86a188, type: 3}
+  - {fileID: 21300000, guid: db97196a2d08fb74da9cb21062ff4ca9, type: 3}
 --- !u!1001 &1938749435
 PrefabInstance:
   m_ObjectHideFlags: 0

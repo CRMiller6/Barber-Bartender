@@ -12,6 +12,7 @@ public class SpawnHairStyle : MonoBehaviour
     public int StartWaitTime = 40;
     
     private GameObject currentHairInstance;
+    public bool tutorial = false; // Set this to true to enable tutorial mode (spawns only the one hair style)
 
     void Start()
     {
@@ -78,6 +79,7 @@ public class SpawnHairStyle : MonoBehaviour
 
     void Update()
     {
-        cutScore.text = "Haircut Score: " + totalPoints;
+        if (!tutorial)
+            cutScore.text = "Haircut Score: " + totalPoints;
     }
 }

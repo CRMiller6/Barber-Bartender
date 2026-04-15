@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 5edd058ec64ef4edca1b0574f0f2c645
+guid: ffbe4b533ea127747b47d7dedcd6c38e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -375134960776709530
-    second: titlcrd_0
+      213: -3641239717225935225
+    second: titlecard_for_barbar_bartender_20.75x_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: titlcrd_0
+      name: titlecard_for_barbar_bartender_20.75x_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 7500
-        height: 4500
+        width: 4125
+        height: 2475
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 66af210adb04bcaf0800000000000000
-      internalID: -375134960776709530
+      spriteID: 78e44b0f4c7b77dc0800000000000000
+      internalID: -3641239717225935225
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      titlcrd_0: -375134960776709530
+      titlecard_for_barbar_bartender_20.75x_0: -3641239717225935225
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

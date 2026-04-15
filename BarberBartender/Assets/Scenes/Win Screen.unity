@@ -1875,8 +1875,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LoadNextSceneButton
   delay: 0
   levelScenes:
-  - Level 2
-  - Level 3
+  - Infinite Mode
+  - Infinite Mode
+  - Infinite Mode
 --- !u!4 &900178026
 Transform:
   m_ObjectHideFlags: 0

@@ -12,7 +12,6 @@ public class NextLevelButton : MonoBehaviour
 
     private static int currentLevelIndex = 0;
 
-    // Call this from your Button's OnClick()
     public void LoadNextLevel()
     {
         if (levelScenes == null || levelScenes.Length == 0)
@@ -40,11 +39,9 @@ public class NextLevelButton : MonoBehaviour
 
         SceneManager.LoadScene(sceneName);
 
-        // Move to next level for next button press
         currentLevelIndex++;
     }
 
-    // Optional: Reset progression (useful for main menu button)
     public void ResetLevels()
     {
         currentLevelIndex = 0;

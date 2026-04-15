@@ -32,6 +32,7 @@ public class HairCustomerBehavior : MonoBehaviour
     private bool walkingIn = true;
     private bool walkingOut = false;
     private bool notifiedBridge = false;
+    public bool tutorial = false; // Set this to true to enable tutorial mode yayyyy
 
     private SpriteRenderer spriteRenderer;
 
@@ -104,7 +105,13 @@ public class HairCustomerBehavior : MonoBehaviour
                     }
                 }
 
-                hairBridge.SpawnHairRound(() => { Leave(); });
+                hairBridge.SpawnHairRound(() =>
+                {
+                    if (!tutorial)
+                    {
+                        Leave();
+                    }
+                });
             }
 
             visualPos.y = stopPosition.y; // lock Y exactly

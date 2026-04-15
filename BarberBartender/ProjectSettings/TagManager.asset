@@ -10,6 +10,7 @@ TagManager:
   - Drink
   - Water
   - SubmitZone
+  - ghost
   layers:
   - Default
   - TransparentFX

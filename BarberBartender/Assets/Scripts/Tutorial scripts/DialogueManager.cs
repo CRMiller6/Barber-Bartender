@@ -31,6 +31,10 @@ public class DialogueLine
     public bool purpleTrigger;
     public bool MoveCamera;
     [HideInInspector] public bool hasMovedCamera = false;
+
+    public bool spawnHairCustomer;
+    [HideInInspector]
+    public bool hasSpawnedHairCustomer = false;
 }
 
 public class DialogueManager : MonoBehaviour
@@ -73,6 +77,7 @@ public class DialogueManager : MonoBehaviour
     public Color dadColor   = new Color32(0xFF, 0xDD, 0xA7, 255); // FFDDA7
 
     public string nextSceneName;
+    public HairCustomerSpawner hairSpawner;
 
 
     private void Awake()
@@ -171,6 +176,14 @@ public class DialogueManager : MonoBehaviour
                 parentRect.position = defaultAnchor.position;
             }
         }
+
+        if (line.spawnHairCustomer && !line.hasSpawnedHairCustomer)
+            {
+                if (hairSpawner != null)
+                    hairSpawner.SpawnNow();
+
+                line.hasSpawnedHairCustomer = true;
+            }
 
         // Remove buttons immediately if toggle is set and hasn't happened yet
         if (line.removeButtonsOnStart && !line.hasRemovedButtons)

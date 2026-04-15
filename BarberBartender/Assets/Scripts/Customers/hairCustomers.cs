@@ -28,10 +28,14 @@ public class HairCustomerSpawner : MonoBehaviour
     private bool spawnScheduled = false;
     private Coroutine autoSpawnCoroutine;
 
+    public bool tutorial = false; // Set this to true to enable tutorial mode (spawns only the one customer)
+
     void Start()
     {
-        if (autoSpawn)
+        if (autoSpawn && !tutorial)
+        {
             autoSpawnCoroutine = StartCoroutine(AutoSpawnRoutine());
+        }
     }
 
     public void SpawnNow()

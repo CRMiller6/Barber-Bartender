@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4843386216427289074}
   - component: {fileID: 8730001993840804070}
   m_Layer: 0
-  m_Name: HairCustomer
+  m_Name: TutorialCustomer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -113,12 +113,7 @@ MonoBehaviour:
   minZ: 33
   maxZ: 23
   spriteSwaps:
-  - original: {fileID: 21300000, guid: ef69ca071bf74bc40b1448c66d86a188, type: 3}
-    arrived: {fileID: 21300000, guid: e25af43b5849eb64a90c9662e27b1ee4, type: 3}
-    leaving: {fileID: 21300000, guid: a8c88e464da469b459c1e714adb3bfc2, type: 3}
-  - original: {fileID: 21300000, guid: 716daffdc113a8547b84782a46b7fac4, type: 3}
-    arrived: {fileID: 21300000, guid: 474b74782808fee49888d8c8e6d61491, type: 3}
-    leaving: {fileID: 21300000, guid: d0fe9232c643ab842bc29a078f9bf0a9, type: 3}
   - original: {fileID: 21300000, guid: db97196a2d08fb74da9cb21062ff4ca9, type: 3}
     arrived: {fileID: 21300000, guid: c4218f3d1637ffe478b86bea4126c3cc, type: 3}
     leaving: {fileID: 21300000, guid: ec0f9c6f7d7836d4a97945f6dbda9c48, type: 3}
+  tutorial: 1

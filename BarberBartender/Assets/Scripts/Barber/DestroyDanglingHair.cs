@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class DestroyDanglingHair : MonoBehaviour
 {
-    public TargetScript target;
+    public HairData target;
 
     void OnEnable()
     {
@@ -24,7 +24,6 @@ public class DestroyDanglingHair : MonoBehaviour
 
     private void HandleDeletion()
     {
-        // Delete this dependent object
         Destroy(gameObject);
     }
 }

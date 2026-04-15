@@ -34,6 +34,9 @@ public class DayCycleManager : MonoBehaviour
     public Color nightColor = new Color(0.1f, 0.1f, 0.3f);
     public Color dayColor = Color.white;
 
+    [Header("Modes")]
+    public bool infiniteMode = false;
+
     private float currentTime;
     private bool dayRunning = false;
     private SpriteRenderer sr;
@@ -57,7 +60,7 @@ public class DayCycleManager : MonoBehaviour
         currentTime += Time.deltaTime;
         UpdateLighting();
 
-        if (currentTime >= dayDuration)
+        if (!infiniteMode && currentTime >= dayDuration)
             EndDay();
     }
 
@@ -75,22 +78,33 @@ public class DayCycleManager : MonoBehaviour
 
     private IEnumerator DayRoutine()
     {
-        // Morning Phase
-        Debug.Log("Morning Phase");
-        SetSpawnRates(morningSpawnMin, morningSpawnMax);
-        yield return new WaitForSeconds(morningDuration);
+        while (true)
+        {
+            // Morning Phase
+            Debug.Log("Morning Phase");
+            SetSpawnRates(morningSpawnMin, morningSpawnMax);
+            yield return new WaitForSeconds(morningDuration);
 
-        // Rush Hour Phase
-        Debug.Log("Rush Hour!");
-        SetSpawnRates(rushSpawnMin, rushSpawnMax);
-        yield return new WaitForSeconds(rushDuration);
+            // Rush Hour Phase
+            Debug.Log("Rush Hour!");
+            SetSpawnRates(rushSpawnMin, rushSpawnMax);
+            yield return new WaitForSeconds(rushDuration);
 
-        // Night Phase
-        Debug.Log("Night Phase");
-        SetSpawnRates(nightSpawnMin, nightSpawnMax);
-        yield return new WaitForSeconds(nightDuration);
+            // Night Phase
+            Debug.Log("Night Phase");
+            SetSpawnRates(nightSpawnMin, nightSpawnMax);
+            yield return new WaitForSeconds(nightDuration);
 
-        EndDay();
+            if (!infiniteMode)
+            {
+                EndDay();
+                yield break;
+            }
+
+            // Reset time for next loop
+            currentTime = 0f;
+            Debug.Log("Looping Day Again (Infinite Mode)");
+        }
     }
 
     private void SetSpawnRates(float min, float max)
@@ -125,7 +139,8 @@ public class DayCycleManager : MonoBehaviour
 
     private void EndDay()
     {
-        if (!dayRunning) return;
+        if (!dayRunning || infiniteMode) return;
+
         dayRunning = false;
 
         if (hairSpawner != null)
@@ -133,10 +148,7 @@ public class DayCycleManager : MonoBehaviour
 
         Debug.Log("Day Ended");
 
-        // Save results at end of day
         if (winManager != null)
             winManager.SaveResults();
-
-        // GameWinManager will handle scene transition
     }
 }

@@ -12391,6 +12391,7 @@ MonoBehaviour:
   visualChild2: {fileID: 1106683996}
   nightColor: {r: 0.003921569, g: 0.015686275, b: 0.23529412, a: 0.11764706}
   dayColor: {r: 1, g: 0.98302925, b: 0.8915094, a: 0}
+  infiniteMode: 1
 --- !u!4 &2069724473
 Transform:
   m_ObjectHideFlags: 0

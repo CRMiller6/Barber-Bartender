@@ -11,7 +11,7 @@ public class HairGameManager : MonoBehaviour
     [Header("UI")]
     public TMP_Text scoreDisplay;
 
-    private int totalPoints = 0;
+    public int totalPoints = 0;
     private GameObject currentHairInstance;
     private HairData currentHairData;
     private bool isRoundActive = false;
@@ -22,7 +22,7 @@ public class HairGameManager : MonoBehaviour
 
     void Start()
     {
-        UpdateScoreUI(); // Initialize UI
+        scoreDisplay.text = "Total Score: " + totalPoints; // Initialize UI
         StartNewRound();
     }
 
@@ -78,11 +78,14 @@ public class HairGameManager : MonoBehaviour
 
         int roundScore = currentHairData.GetFinalScore();
         
-        var cuttingCheck = currentHairInstance.GetComponentInChildren<WantToBeCut>();
-    if (cuttingCheck != null)
+        WantToBeCut[] allCuttingScripts = currentHairInstance.GetComponentsInChildren<WantToBeCut>();
+
+    foreach (var script in allCuttingScripts)
     {
-        roundScore += cuttingCheck.wantCutting ? -2 : 1;
+        // Add -2 if true, +1 if false
+        roundScore += script.wantCutting ? -2 : 1;
     }
+
         totalPoints += roundScore;
 
         Destroy(currentHairInstance);
@@ -91,14 +94,15 @@ public class HairGameManager : MonoBehaviour
 
         timer = 0;
         
-        UpdateScoreUI();
+        scoreDisplay.text = "Total Score: " + totalPoints;
     }
 
     void UpdateScoreUI()
     {
-        if (scoreDisplay != null)
-        {
-            scoreDisplay.text = "Total Score: " + totalPoints;
-        }
+        // if (scoreDisplay != null)
+        // {
+        Debug.Log ("ahahdah");
+        
+        // }
     }
 }

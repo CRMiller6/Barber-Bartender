@@ -12,19 +12,19 @@ public class HairData : MonoBehaviour
     public int wetToDryReward = 20;   // Reward for drying wet hair
     public int leftWetPenalty = -15;  // Penalty if still wet at the end
 
-    public SpriteRenderer spriteRenderer;
-    public Color wetColor = new Color(0.7f, 0.7f, 1.0f); // Slightly blue/darker
-    public Color dryColor = Color.white;
+    // public SpriteRenderer spriteRenderer;
+    // public Color wetColor = new Color(0.7f, 0.7f, 1.0f); // Slightly blue/darker
+    // public Color dryColor = Color.white;
 
     private SpriteRenderer sr; 
 
     void Awake() 
     {
         // This runs the moment Instantiate() is called for THIS specific clone
-        sr = GetComponent<SpriteRenderer>(); 
+        // sr = GetComponent<SpriteRenderer>(); 
         
         // Safety check in case the renderer is on a child object
-        if (sr == null) sr = GetComponentInChildren<SpriteRenderer>();
+        // if (sr == null) sr = GetComponentInChildren<SpriteRenderer>();
     }
 
     // Call this to spray the hair
@@ -33,8 +33,8 @@ public class HairData : MonoBehaviour
         isWet = true;
         wasEverWet = true;
         Debug.Log("Hair is now Wet.");
-        spriteRenderer.color = wetColor;
-        UpdateVisuals();
+        // spriteRenderer.color = wetColor;
+        // UpdateVisuals();
     }
 
     // Call this to dry the hair (e.g., with a blowdryer)
@@ -42,15 +42,15 @@ public class HairData : MonoBehaviour
     {
         isWet = false;
         Debug.Log("Hair is now Dry.");
-        spriteRenderer.color = dryColor;
-        UpdateVisuals();
+        // spriteRenderer.color = dryColor;
+        // UpdateVisuals();
     }
 
     private void UpdateVisuals()
     {
         if (sr != null)
         {
-            sr.color = isWet ? wetColor : dryColor;
+            // sr.color = isWet ? wetColor : dryColor;
         }
     }
 

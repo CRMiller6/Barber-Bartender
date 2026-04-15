@@ -585,10 +585,10 @@ GameObject:
   m_Component:
   - component: {fileID: 79962294}
   - component: {fileID: 79962299}
-  - component: {fileID: 79962298}
   - component: {fileID: 79962297}
   - component: {fileID: 79962296}
   - component: {fileID: 79962295}
+  - component: {fileID: 79962300}
   m_Layer: 14
   m_Name: ShowerHead
   m_TagString: Untagged
@@ -605,8 +605,8 @@ Transform:
   m_GameObject: {fileID: 79962293}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 68.30716, y: 17.41383, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -49.2, y: -15.38, z: 0}
+  m_LocalScale: {x: -0.18034236, y: 0.18034236, z: 0.18034236}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2029646012}
@@ -666,52 +666,6 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!61 &79962298
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 79962293}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 16384
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
 --- !u!212 &79962299
 SpriteRenderer:
   serializedVersion: 2
@@ -761,7 +715,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3bd64a3b7222c2f45a600bb63ec83bd7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -771,6 +725,183 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!60 &79962300
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 79962293}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 75, y: 45.007324}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -21.569824, y: -12.359619}
+      - {x: -21.386719, y: -12.213135}
+      - {x: -21.313477, y: -12.1032715}
+      - {x: -20.324707, y: -11.224365}
+      - {x: -19.042969, y: -10.05249}
+      - {x: -18.0542, y: -9.210205}
+      - {x: -16.442871, y: -7.7453613}
+      - {x: -16.333008, y: -7.4890137}
+      - {x: -16.149902, y: -7.0861816}
+      - {x: -15.966797, y: -6.903076}
+      - {x: -15.600586, y: -6.866455}
+      - {x: -15.307617, y: -6.6101074}
+      - {x: -15.014648, y: -6.097412}
+      - {x: -14.135742, y: -4.3029785}
+      - {x: -14.0625, y: -4.2297363}
+      - {x: -13.806152, y: -3.68042}
+      - {x: -13.659668, y: -3.8635254}
+      - {x: -13.220215, y: -3.68042}
+      - {x: -13.146973, y: -3.277588}
+      - {x: -12.817383, y: -2.7282715}
+      - {x: -12.817383, y: -2.581787}
+      - {x: -12.414551, y: -2.0324707}
+      - {x: -12.011719, y: -1.4465332}
+      - {x: -7.836914, y: 4.3029785}
+      - {x: -6.7749023, y: 5.7678223}
+      - {x: -5.01709, y: 8.184814}
+      - {x: -4.724121, y: 8.148193}
+      - {x: -4.4311523, y: 7.928467}
+      - {x: -3.5888672, y: 7.8186035}
+      - {x: -2.6733398, y: 7.8552246}
+      - {x: -2.1606445, y: 8.001709}
+      - {x: -1.3549805, y: 8.221436}
+      - {x: -0.6591797, y: 8.5876465}
+      - {x: -0.07324219, y: 9.100342}
+      - {x: 0.29296875, y: 9.466553}
+      - {x: 0.25634766, y: 9.613037}
+      - {x: 0.6958008, y: 9.7229}
+      - {x: 1.0253906, y: 10.198975}
+      - {x: 1.1352539, y: 10.71167}
+      - {x: 1.3916016, y: 11.297607}
+      - {x: 1.6845703, y: 12.322998}
+      - {x: 1.6845703, y: 13.897705}
+      - {x: 1.4282227, y: 14.886475}
+      - {x: 1.0253906, y: 15.545654}
+      - {x: 0.47607422, y: 16.05835}
+      - {x: 0.5126953, y: 16.204834}
+      - {x: 0.43945312, y: 16.278076}
+      - {x: -0.40283203, y: 16.38794}
+      - {x: -0.98876953, y: 16.497803}
+      - {x: -1.6113281, y: 16.497803}
+      - {x: -2.0874023, y: 16.38794}
+      - {x: -2.2705078, y: 16.314697}
+      - {x: -2.709961, y: 16.204834}
+      - {x: -3.0395508, y: 16.204834}
+      - {x: -3.515625, y: 15.911865}
+      - {x: -3.881836, y: 15.765381}
+      - {x: -4.35791, y: 15.72876}
+      - {x: -4.760742, y: 15.362549}
+      - {x: -5.5664062, y: 14.923096}
+      - {x: -6.0424805, y: 14.593506}
+      - {x: -6.4819336, y: 14.300537}
+      - {x: -6.70166, y: 14.117432}
+      - {x: -7.507324, y: 13.348389}
+      - {x: -7.9833984, y: 12.579346}
+      - {x: -8.422852, y: 11.956787}
+      - {x: -8.642578, y: 11.590576}
+      - {x: -8.7890625, y: 11.3342285}
+      - {x: -8.898926, y: 11.04126}
+      - {x: -8.935547, y: 10.858154}
+      - {x: -8.825684, y: 10.784912}
+      - {x: -8.71582, y: 10.858154}
+      - {x: -8.532715, y: 11.187744}
+      - {x: -8.203125, y: 11.553955}
+      - {x: -8.02002, y: 11.480713}
+      - {x: -8.093262, y: 11.224365}
+      - {x: -8.239746, y: 10.418701}
+      - {x: -8.203125, y: 11.260986}
+      - {x: -8.276367, y: 11.3342285}
+      - {x: -8.349609, y: 11.3342285}
+      - {x: -8.532715, y: 11.151123}
+      - {x: -8.679199, y: 10.9313965}
+      - {x: -8.7890625, y: 10.784912}
+      - {x: -8.862305, y: 10.675049}
+      - {x: -9.301758, y: 10.05249}
+      - {x: -9.631348, y: 9.320068}
+      - {x: -9.851074, y: 8.9904785}
+      - {x: -10.070801, y: 8.514404}
+      - {x: -11.242676, y: 5.9509277}
+      - {x: -11.499023, y: 5.181885}
+      - {x: -11.755371, y: 4.888916}
+      - {x: -12.084961, y: 4.412842}
+      - {x: -12.04834, y: 4.156494}
+      - {x: -12.3046875, y: 3.68042}
+      - {x: -12.70752, y: 2.6184082}
+      - {x: -12.854004, y: 2.4719238}
+      - {x: -13.4765625, y: 1.1535645}
+      - {x: -13.659668, y: 0.64086914}
+      - {x: -13.879395, y: 0.38452148}
+      - {x: -14.172363, y: -0.16479492}
+      - {x: -14.355469, y: -0.60424805}
+      - {x: -14.575195, y: -1.4099121}
+      - {x: -14.794922, y: -1.7028809}
+      - {x: -14.941406, y: -2.142334}
+      - {x: -15.124512, y: -2.3986816}
+      - {x: -15.344238, y: -2.7648926}
+      - {x: -15.270996, y: -3.1311035}
+      - {x: -15.966797, y: -4.559326}
+      - {x: -16.113281, y: -4.6325684}
+      - {x: -16.333008, y: -4.888916}
+      - {x: -16.442871, y: -5.218506}
+      - {x: -16.442871, y: -5.36499}
+      - {x: -16.662598, y: -5.8410645}
+      - {x: -16.845703, y: -6.3171387}
+      - {x: -17.578125, y: -6.6833496}
+      - {x: -18.200684, y: -7.232666}
+      - {x: -18.859863, y: -7.8186035}
+      - {x: -20.471191, y: -9.283447}
+      - {x: -21.166992, y: -9.869385}
+      - {x: -21.826172, y: -10.455322}
+      - {x: -22.77832, y: -11.3342285}
+      - {x: -24.09668, y: -12.432861}
+      - {x: -25.231934, y: -13.531494}
+      - {x: -25.305176, y: -13.751221}
+      - {x: -25.305176, y: -14.117432}
+      - {x: -25.231934, y: -14.373779}
+      - {x: -24.865723, y: -14.666748}
+      - {x: -24.206543, y: -14.666748}
+      - {x: -23.913574, y: -14.4104}
+      - {x: -22.924805, y: -13.531494}
+      - {x: -22.44873, y: -12.835693}
+  m_UseDelaunayMesh: 1
 --- !u!1 &93469537
 GameObject:
   m_ObjectHideFlags: 0
@@ -900,7 +1031,7 @@ MonoBehaviour:
     text: 
     uncleSpeaking: 1
     dadSpeaking: 0
-    removeButtonsOnStart: 0
+    removeButtonsOnStart: 1
     hasRemovedButtons: 0
     SpawnRed: 0
     hasSpawnedRed: 0
@@ -951,10 +1082,123 @@ MonoBehaviour:
     hasMovedCamera: 0
     spawnHairCustomer: 1
     hasSpawnedHairCustomer: 0
+  - name: 
+    text: If you run out, just ask me to give her more hair. I can do that now. Because
+      I'm a ghost.
+    uncleSpeaking: 1
+    dadSpeaking: 0
+    removeButtonsOnStart: 0
+    hasRemovedButtons: 0
+    SpawnRed: 1
+    hasSpawnedRed: 0
+    SpawnDad: 0
+    hasSpawnedDad: 0
+    SpawnSubmit: 0
+    hasSpawnedSubmit: 0
+    waterTrigger: 0
+    purpleTrigger: 0
+    MoveCamera: 0
+    hasMovedCamera: 0
+    spawnHairCustomer: 1
+    hasSpawnedHairCustomer: 0
+  - name: 
+    text: The first thing you need to know is the scissors, drag the scissors onto
+      the hair, and try to only cut the parts that the client indicates.
+    uncleSpeaking: 1
+    dadSpeaking: 0
+    removeButtonsOnStart: 0
+    hasRemovedButtons: 0
+    SpawnRed: 0
+    hasSpawnedRed: 0
+    SpawnDad: 0
+    hasSpawnedDad: 0
+    SpawnSubmit: 0
+    hasSpawnedSubmit: 0
+    waterTrigger: 0
+    purpleTrigger: 0
+    MoveCamera: 0
+    hasMovedCamera: 0
+    spawnHairCustomer: 1
+    hasSpawnedHairCustomer: 0
+  - name: 
+    text: 'Next, you should know how to wet and dry your client''s hair. '
+    uncleSpeaking: 1
+    dadSpeaking: 0
+    removeButtonsOnStart: 0
+    hasRemovedButtons: 0
+    SpawnRed: 0
+    hasSpawnedRed: 0
+    SpawnDad: 0
+    hasSpawnedDad: 0
+    SpawnSubmit: 0
+    hasSpawnedSubmit: 0
+    waterTrigger: 0
+    purpleTrigger: 0
+    MoveCamera: 0
+    hasMovedCamera: 0
+    spawnHairCustomer: 1
+    hasSpawnedHairCustomer: 0
+  - name: 
+    text: Just drag the shower head onto the hair to wet it, and do the same with
+      the towel to dry it.
+    uncleSpeaking: 1
+    dadSpeaking: 0
+    removeButtonsOnStart: 0
+    hasRemovedButtons: 0
+    SpawnRed: 0
+    hasSpawnedRed: 0
+    SpawnDad: 0
+    hasSpawnedDad: 0
+    SpawnSubmit: 0
+    hasSpawnedSubmit: 0
+    waterTrigger: 0
+    purpleTrigger: 0
+    MoveCamera: 0
+    hasMovedCamera: 0
+    spawnHairCustomer: 1
+    hasSpawnedHairCustomer: 0
+  - name: 
+    text: I think that's pretty much all I can teach you now, so mess around with
+      it a bit more until you're comfortable, then you can go right to your first
+      day.
+    uncleSpeaking: 1
+    dadSpeaking: 0
+    removeButtonsOnStart: 0
+    hasRemovedButtons: 0
+    SpawnRed: 0
+    hasSpawnedRed: 0
+    SpawnDad: 0
+    hasSpawnedDad: 0
+    SpawnSubmit: 0
+    hasSpawnedSubmit: 0
+    waterTrigger: 0
+    purpleTrigger: 0
+    MoveCamera: 0
+    hasMovedCamera: 0
+    spawnHairCustomer: 1
+    hasSpawnedHairCustomer: 0
+  - name: 
+    text: 
+    uncleSpeaking: 1
+    dadSpeaking: 0
+    removeButtonsOnStart: 0
+    hasRemovedButtons: 0
+    SpawnRed: 0
+    hasSpawnedRed: 0
+    SpawnDad: 0
+    hasSpawnedDad: 0
+    SpawnSubmit: 0
+    hasSpawnedSubmit: 0
+    waterTrigger: 0
+    purpleTrigger: 0
+    MoveCamera: 0
+    hasMovedCamera: 0
+    spawnHairCustomer: 1
+    hasSpawnedHairCustomer: 0
   nextButton: {fileID: 1195183071}
   backButton: {fileID: 1245142687}
   typingDelay: 0.05
-  redBottle: {fileID: 0}
+  redBottle: {fileID: 2092305659}
   dad: {fileID: 1564906996}
   dissapearingDad: {fileID: 1688764153}
   submitButton: {fileID: 0}
@@ -1338,6 +1582,143 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!1 &137358769
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 137358770}
+  - component: {fileID: 137358772}
+  - component: {fileID: 137358771}
+  m_Layer: 5
+  m_Name: Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &137358770
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 137358769}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2092305660}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &137358771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 137358769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Spawn Hair
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4281479730
+  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 24
+  m_fontSizeBase: 24
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_characterHorizontalScale: 1
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &137358772
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 137358769}
+  m_CullTransparentMesh: 1
 --- !u!1 &184276359
 GameObject:
   m_ObjectHideFlags: 0
@@ -3135,7 +3516,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 935
+    m_Bits: 17319
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -5341,9 +5722,9 @@ Transform:
   m_GameObject: {fileID: 856646846}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 68.83716, y: 19.15383, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: -52.6, y: -11.9, z: 0}
+  m_LocalScale: {x: 0.1615104, y: 0.1615104, z: 0.1615104}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2029646012}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5385,7 +5766,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 60.000004, y: 45.000004}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -5496,7 +5877,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 89cfe67ca0a304e49bf76547737da9ec, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -6316,8 +6697,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -38, y: -23.1, z: -100}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1269135146}
   - {fileID: 1092377929}
@@ -9832,6 +10213,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1492866323
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1492866324}
+  m_Layer: 0
+  m_Name: ReturnButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1492866324
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1492866323}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2029646012}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1512339718
 GameObject:
   m_ObjectHideFlags: 0
@@ -9933,6 +10345,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1564906998}
   - component: {fileID: 1564906997}
+  - component: {fileID: 1564906999}
+  - component: {fileID: 1564907000}
   m_Layer: 0
   m_Name: Capsule (2)
   m_TagString: Untagged
@@ -9989,8 +10403,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.57254905}
+  m_Sprite: {fileID: 21300000, guid: cbec220fdd319eb44b85812d64c06e57, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.9019608}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -10009,11 +10423,71 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -63.6, y: -19.8, z: 35.74}
-  m_LocalScale: {x: 10.483884, y: 10.483884, z: 10.483884}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.3224939, y: 1.3224939, z: 1.3224939}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1564906999
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1564906996}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0.2861528, y: -1.2385302}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 15.36, y: 20.48}
+    newSize: {x: 1, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1.7095485, y: 22.95706}
+  m_EdgeRadius: 0
+--- !u!114 &1564907000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1564906996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a57cd599d2dac464da207dabb8e2816b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  targetObject: {fileID: 1195183070}
+  targetObject2: {fileID: 1245142686}
 --- !u!1 &1566950514
 GameObject:
   m_ObjectHideFlags: 0
@@ -10047,6 +10521,7 @@ RectTransform:
   - {fileID: 93469541}
   - {fileID: 981201126}
   - {fileID: 1195183074}
+  - {fileID: 2092305660}
   - {fileID: 1245142690}
   m_Father: {fileID: 1083810769}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10265,9 +10740,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1688764155}
   - component: {fileID: 1688764154}
+  - component: {fileID: 1688764156}
+  - component: {fileID: 1688764157}
   m_Layer: 0
   m_Name: Capsule (1)
-  m_TagString: Untagged
+  m_TagString: ghost
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10321,8 +10798,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.57254905}
+  m_Sprite: {fileID: 21300000, guid: cbec220fdd319eb44b85812d64c06e57, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.9019608}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -10341,11 +10818,84 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -46.5, y: -29.2, z: -4.45}
-  m_LocalScale: {x: 14.801055, y: 14.801055, z: 14.801055}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.8, y: 1.8, z: 1.8}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1688764156
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1688764153}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0.40874177, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 15.36, y: 20.48}
+    newSize: {x: 1, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 2.6889935, y: 20.48}
+  m_EdgeRadius: 0
+--- !u!50 &1688764157
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1688764153}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1696312880
 GameObject:
   m_ObjectHideFlags: 0
@@ -11678,6 +12228,7 @@ Transform:
   - {fileID: 856646847}
   - {fileID: 79962294}
   - {fileID: 357137449}
+  - {fileID: 1492866324}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2043154257
@@ -11771,6 +12322,151 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!1 &2092305659
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2092305660}
+  - component: {fileID: 2092305663}
+  - component: {fileID: 2092305662}
+  - component: {fileID: 2092305661}
+  m_Layer: 5
+  m_Name: spawnHair
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &2092305660
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2092305659}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
+  m_LocalScale: {x: 0.153252, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 137358770}
+  m_Father: {fileID: 1566950515}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 38.1, y: -199}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0, y: 1}
+--- !u!114 &2092305661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2092305659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 2092305662}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 550289036}
+        m_TargetAssemblyTypeName: HairSpawnBridge, Assembly-CSharp
+        m_MethodName: KillHair
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 550289036}
+        m_TargetAssemblyTypeName: HairSpawnBridge, Assembly-CSharp
+        m_MethodName: spawnTutorialHair
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2092305662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2092305659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &2092305663
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2092305659}
+  m_CullTransparentMesh: 1
 --- !u!1 &2123633941
 GameObject:
   m_ObjectHideFlags: 0

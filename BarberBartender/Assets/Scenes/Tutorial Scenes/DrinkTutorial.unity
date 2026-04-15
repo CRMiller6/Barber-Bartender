@@ -765,6 +765,8 @@ MonoBehaviour:
     purpleTrigger: 0
     MoveCamera: 0
     hasMovedCamera: 0
+    spawnHairCustomer: 0
+    hasSpawnedHairCustomer: 0
   - name: 
     text: They used to be my customers...
     uncleSpeaking: 0
@@ -781,6 +783,8 @@ MonoBehaviour:
     purpleTrigger: 0
     MoveCamera: 0
     hasMovedCamera: 0
+    spawnHairCustomer: 0
+    hasSpawnedHairCustomer: 0
   - name: 
     text: Anyway, I guess its time I actually teach you how to do this
     uncleSpeaking: 0
@@ -797,6 +801,8 @@ MonoBehaviour:
     purpleTrigger: 0
     MoveCamera: 0
     hasMovedCamera: 0
+    spawnHairCustomer: 0
+    hasSpawnedHairCustomer: 0
   - name: 
     text: 'Look at the skinny bottle and small glass on the right shelf.
 
@@ -816,6 +822,8 @@ MonoBehaviour:
     purpleTrigger: 0
     MoveCamera: 0
     hasMovedCamera: 0
+    spawnHairCustomer: 0
+    hasSpawnedHairCustomer: 0
   - name: 
     text: 'See the bottle with the blue label over there?
 
@@ -835,6 +843,8 @@ MonoBehaviour:
     purpleTrigger: 0
     MoveCamera: 0
     hasMovedCamera: 0
+    spawnHairCustomer: 0
+    hasSpawnedHairCustomer: 0
   - name: 
     text: 'Anyway, grab the bottle and use Q or E to rotate it.
 
@@ -855,6 +865,8 @@ MonoBehaviour:
     purpleTrigger: 0
     MoveCamera: 0
     hasMovedCamera: 0
+    spawnHairCustomer: 0
+    hasSpawnedHairCustomer: 0
   - name: 
     text: Great job, I think you might be ready for the most difficult part of this
       job.
@@ -872,6 +884,8 @@ MonoBehaviour:
     purpleTrigger: 0
     MoveCamera: 0
     hasMovedCamera: 0
+    spawnHairCustomer: 0
+    hasSpawnedHairCustomer: 0
   - name: 
     text: I'm loaning you my bottle of mysterious red liquid just for training, but
       you'll have to get your own after we're done here today.
@@ -889,6 +903,8 @@ MonoBehaviour:
     purpleTrigger: 0
     MoveCamera: 0
     hasMovedCamera: 0
+    spawnHairCustomer: 0
+    hasSpawnedHairCustomer: 0
   - name: 
     text: anyway, you need to learn how to mix drinks, so, go ahead and pour some
       red and some blue in that cup.
@@ -906,6 +922,8 @@ MonoBehaviour:
     purpleTrigger: 1
     MoveCamera: 0
     hasMovedCamera: 0
+    spawnHairCustomer: 0
+    hasSpawnedHairCustomer: 0
   - name: 
     text: As you might expect, it turned into purple, which is my favorite flavor,
       so now, I'll show you how to give the drinks to customers.
@@ -923,6 +941,8 @@ MonoBehaviour:
     purpleTrigger: 0
     MoveCamera: 0
     hasMovedCamera: 0
+    spawnHairCustomer: 0
+    hasSpawnedHairCustomer: 0
   - name: 
     text: Ok, now, put the drink on the tray in front of me and pop my thought bubble
       to give it to me.
@@ -940,6 +960,8 @@ MonoBehaviour:
     purpleTrigger: 0
     MoveCamera: 0
     hasMovedCamera: 0
+    spawnHairCustomer: 0
+    hasSpawnedHairCustomer: 0
   - name: 
     text: Great Job, I don't think there's anything else I can teach you
     uncleSpeaking: 0
@@ -956,6 +978,8 @@ MonoBehaviour:
     purpleTrigger: 0
     MoveCamera: 0
     hasMovedCamera: 0
+    spawnHairCustomer: 0
+    hasSpawnedHairCustomer: 0
   nextButton: {fileID: 1195183071}
   backButton: {fileID: 1245142687}
   typingDelay: 0.05
@@ -975,6 +999,7 @@ MonoBehaviour:
   uncleColor: {r: 0.70980394, g: 0.93333334, b: 0.91764706, a: 1}
   dadColor: {r: 1, g: 0.8666667, b: 0.654902, a: 1}
   nextSceneName: BetweenTutorials
+  hairSpawner: {fileID: 0}
 --- !u!114 &93469539
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8291,8 +8316,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.57254905}
+  m_Sprite: {fileID: 21300000, guid: 8032dbd124a784e488072e68f996384d, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.9019608}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -8311,8 +8336,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -62.9, y: -29.2, z: -4}
-  m_LocalScale: {x: 14.801055, y: 14.801055, z: 14.801055}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.8, y: 1.8, z: 1.8}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9059,9 +9084,9 @@ Transform:
   m_GameObject: {fileID: 1688764153}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -31.2, y: -21.4, z: 24}
-  m_LocalScale: {x: 12.446207, y: 12.446207, z: 12.446207}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: -30.72, y: -21.8, z: 24}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

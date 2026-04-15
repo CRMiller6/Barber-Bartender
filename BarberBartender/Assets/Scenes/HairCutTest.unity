@@ -1033,6 +1033,8 @@ MonoBehaviour:
   - {fileID: 1273085518}
   spawnPoint: {fileID: 678778109}
   scoreDisplay: {fileID: 2109694500}
+  timer: 0
+  timeLimit: 10
 --- !u!4 &678778109
 Transform:
   m_ObjectHideFlags: 0

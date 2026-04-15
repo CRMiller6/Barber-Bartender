@@ -16,10 +16,30 @@ public class HairGameManager : MonoBehaviour
     private HairData currentHairData;
     private bool isRoundActive = false;
 
+    public float timer;
+    public float timeLimit;
+    private bool waiting;
+
     void Start()
     {
         UpdateScoreUI(); // Initialize UI
         StartNewRound();
+    }
+
+    void Update()
+    {
+        timer += Time.deltaTime;
+        if (timer > timeLimit && waiting == false)
+        {
+            EndRound();
+            waiting = true;
+        }
+        else if (timer > timeLimit/2 && waiting == true)
+        {
+            StartNewRound();
+            waiting = false;
+            timer = 0;
+        }
     }
 
     public void StartNewRound()
@@ -63,6 +83,8 @@ public class HairGameManager : MonoBehaviour
         Destroy(currentHairInstance);
         currentHairInstance = null; // Clear reference
         isRoundActive = false;
+
+        timer = 0;
         
         UpdateScoreUI();
     }

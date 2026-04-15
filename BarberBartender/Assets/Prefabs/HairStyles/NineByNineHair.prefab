@@ -14,8 +14,9 @@ GameObject:
   - component: {fileID: 3697135980466047865}
   - component: {fileID: 8026991978760878932}
   - component: {fileID: 4689500868826143273}
+  - component: {fileID: 8160999659232545486}
   m_Layer: 7
-  m_Name: Square (29)
+  m_Name: Q5
   m_TagString: Cutable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -85,8 +86,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 6c3842639601f407b8a668d737185907, type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -133,7 +134,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.28, y: 1.28}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -167,7 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61922c348607845bc8814a73ed24491d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestroyDanglingHair
-  target: {fileID: 5232361256595945676}
+  target: {fileID: 1276842148236634481}
 --- !u!114 &4689500868826143273
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,6 +181,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2b459163da734a128c4b3c03e5a195e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TargetScript
+--- !u!114 &8160999659232545486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1272972396834702041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e64ec5e4715004bed871a9133a13905b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HairData
+  isWet: 0
+  basePoints: 1
+  wetToDryReward: 4
+  leftWetPenalty: -2
+  spriteRenderer: {fileID: 0}
+  wetColor: {r: 0, g: 0, b: 1, a: 1}
+  dryColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1380258394677968197
 GameObject:
   m_ObjectHideFlags: 0
@@ -193,8 +213,9 @@ GameObject:
   - component: {fileID: 6775672133087414491}
   - component: {fileID: 5976001109156539997}
   - component: {fileID: 2784530329090609419}
+  - component: {fileID: 6323461143905465920}
   m_Layer: 7
-  m_Name: Square (35)
+  m_Name: Q6
   m_TagString: Cutable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -264,8 +285,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 6c3842639601f407b8a668d737185907, type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -312,7 +333,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.28, y: 1.28}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -346,7 +367,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61922c348607845bc8814a73ed24491d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestroyDanglingHair
-  target: {fileID: 4689500868826143273}
+  target: {fileID: 8160999659232545486}
+--- !u!114 &6323461143905465920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1380258394677968197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e64ec5e4715004bed871a9133a13905b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HairData
+  isWet: 0
+  basePoints: 1
+  wetToDryReward: 4
+  leftWetPenalty: -2
+  spriteRenderer: {fileID: 0}
+  wetColor: {r: 0, g: 0, b: 1, a: 1}
+  dryColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1566085898076677700
 GameObject:
   m_ObjectHideFlags: 0
@@ -360,8 +400,9 @@ GameObject:
   - component: {fileID: 24168504231051762}
   - component: {fileID: 8852932906950212631}
   - component: {fileID: 6750970119501215643}
+  - component: {fileID: 2104379146784317911}
   m_Layer: 7
-  m_Name: Square (34)
+  m_Name: W6
   m_TagString: Cutable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -431,8 +472,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 6c3842639601f407b8a668d737185907, type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -479,7 +520,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.28, y: 1.28}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -513,7 +554,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61922c348607845bc8814a73ed24491d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestroyDanglingHair
-  target: {fileID: 6161065613657382744}
+  target: {fileID: 2860585954144633293}
+--- !u!114 &2104379146784317911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1566085898076677700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e64ec5e4715004bed871a9133a13905b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HairData
+  isWet: 0
+  basePoints: 1
+  wetToDryReward: 4
+  leftWetPenalty: -2
+  spriteRenderer: {fileID: 0}
+  wetColor: {r: 0, g: 0, b: 1, a: 1}
+  dryColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1657540068510165184
 GameObject:
   m_ObjectHideFlags: 0
@@ -527,8 +587,9 @@ GameObject:
   - component: {fileID: 7264403401655518876}
   - component: {fileID: 95595144980703617}
   - component: {fileID: 4910857482459399458}
+  - component: {fileID: 7413707025779850997}
   m_Layer: 7
-  m_Name: Square (33)
+  m_Name: E6
   m_TagString: Cutable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -598,8 +659,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 6c3842639601f407b8a668d737185907, type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -646,7 +707,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.28, y: 1.28}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -680,7 +741,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61922c348607845bc8814a73ed24491d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestroyDanglingHair
-  target: {fileID: 1539123115714421898}
+  target: {fileID: 4163029534205096201}
+--- !u!114 &7413707025779850997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1657540068510165184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e64ec5e4715004bed871a9133a13905b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HairData
+  isWet: 0
+  basePoints: 1
+  wetToDryReward: 4
+  leftWetPenalty: -2
+  spriteRenderer: {fileID: 0}
+  wetColor: {r: 0, g: 0, b: 1, a: 1}
+  dryColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1676819346639358968
 GameObject:
   m_ObjectHideFlags: 0
@@ -695,8 +775,9 @@ GameObject:
   - component: {fileID: 9165116473906528441}
   - component: {fileID: 5106333821236169763}
   - component: {fileID: 4060209364905938717}
+  - component: {fileID: 9108462462614850572}
   m_Layer: 7
-  m_Name: Square (25)
+  m_Name: Y5
   m_TagString: Cutable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -766,8 +847,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 6c3842639601f407b8a668d737185907, type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -814,7 +895,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.28, y: 1.28}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -848,7 +929,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61922c348607845bc8814a73ed24491d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestroyDanglingHair
-  target: {fileID: 8053263181134936206}
+  target: {fileID: 1130318533457172207}
 --- !u!114 &4060209364905938717
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -861,6 +942,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2b459163da734a128c4b3c03e5a195e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TargetScript
+--- !u!114 &9108462462614850572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1676819346639358968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e64ec5e4715004bed871a9133a13905b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HairData
+  isWet: 0
+  basePoints: 1
+  wetToDryReward: 4
+  leftWetPenalty: -2
+  spriteRenderer: {fileID: 0}
+  wetColor: {r: 0, g: 0, b: 1, a: 1}
+  dryColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1965182779019989382
 GameObject:
   m_ObjectHideFlags: 0
@@ -875,8 +975,9 @@ GameObject:
   - component: {fileID: 8707516109107821683}
   - component: {fileID: 8608520377782291518}
   - component: {fileID: 1540506319591752831}
+  - component: {fileID: 7410291082334803308}
   m_Layer: 7
-  m_Name: Square (6)
+  m_Name: Y3
   m_TagString: Cutable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -946,8 +1047,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 6c3842639601f407b8a668d737185907, type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -994,7 +1095,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.28, y: 1.28}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -1028,7 +1129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61922c348607845bc8814a73ed24491d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestroyDanglingHair
-  target: {fileID: 3679826641980705407}
+  target: {fileID: 4039016231934892308}
 --- !u!114 &1540506319591752831
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1041,6 +1142,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2b459163da734a128c4b3c03e5a195e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TargetScript
+--- !u!114 &7410291082334803308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1965182779019989382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e64ec5e4715004bed871a9133a13905b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HairData
+  isWet: 0
+  basePoints: 1
+  wetToDryReward: 4
+  leftWetPenalty: -2
+  spriteRenderer: {fileID: 0}
+  wetColor: {r: 0, g: 0, b: 1, a: 1}
+  dryColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &2071456860400878869
 GameObject:
   m_ObjectHideFlags: 0
@@ -1054,8 +1174,9 @@ GameObject:
   - component: {fileID: 289783685615183996}
   - component: {fileID: 6813929528738015405}
   - component: {fileID: 189913454970053294}
+  - component: {fileID: 2584506959500593850}
   m_Layer: 7
-  m_Name: Square (7)
+  m_Name: R2
   m_TagString: Cutable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1125,8 +1246,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 6c3842639601f407b8a668d737185907, type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1173,7 +1294,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.28, y: 1.28}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -1207,6 +1328,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2b459163da734a128c4b3c03e5a195e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TargetScript
+--- !u!114 &2584506959500593850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2071456860400878869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e64ec5e4715004bed871a9133a13905b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HairData
+  isWet: 0
+  basePoints: 1
+  wetToDryReward: 4
+  leftWetPenalty: -2
+  spriteRenderer: {fileID: 0}
+  wetColor: {r: 0, g: 0, b: 1, a: 1}
+  dryColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &2456208519923457792
 GameObject:
   m_ObjectHideFlags: 0
@@ -1236,42 +1376,42 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 8396899977659246462}
-  - {fileID: 5924845917787395151}
-  - {fileID: 933948971236381038}
-  - {fileID: 2347213452386350099}
-  - {fileID: 7395602136226030803}
   - {fileID: 4097660906799249120}
-  - {fileID: 3723993474598791530}
-  - {fileID: 6204981797933214795}
-  - {fileID: 6866688986797304954}
-  - {fileID: 7601608817868578243}
-  - {fileID: 6316228702429864870}
   - {fileID: 6135874122168415962}
-  - {fileID: 4644636101647566743}
-  - {fileID: 6966775037472871489}
-  - {fileID: 6753382855848005719}
-  - {fileID: 2708345253237714158}
-  - {fileID: 5118098304356258079}
   - {fileID: 7406665748372382243}
-  - {fileID: 1919846034865272022}
-  - {fileID: 3176699500493657838}
-  - {fileID: 8488315067848475807}
-  - {fileID: 8283188385802397183}
-  - {fileID: 1697886280053503443}
   - {fileID: 4961949806900232423}
-  - {fileID: 3103904306974924051}
-  - {fileID: 5471526590636321213}
-  - {fileID: 1379889247473560235}
-  - {fileID: 6116712286393615601}
-  - {fileID: 4135011517071754435}
   - {fileID: 6043996553733817644}
-  - {fileID: 923420763000004651}
-  - {fileID: 8143810781026939741}
-  - {fileID: 2818907206440476104}
-  - {fileID: 4753704039667819410}
-  - {fileID: 6393174087067854101}
   - {fileID: 3383448895893823282}
+  - {fileID: 7395602136226030803}
+  - {fileID: 6316228702429864870}
+  - {fileID: 5118098304356258079}
+  - {fileID: 1697886280053503443}
+  - {fileID: 4135011517071754435}
+  - {fileID: 6393174087067854101}
+  - {fileID: 2347213452386350099}
+  - {fileID: 7601608817868578243}
+  - {fileID: 2708345253237714158}
+  - {fileID: 8283188385802397183}
+  - {fileID: 6116712286393615601}
+  - {fileID: 4753704039667819410}
+  - {fileID: 933948971236381038}
+  - {fileID: 6866688986797304954}
+  - {fileID: 6753382855848005719}
+  - {fileID: 8488315067848475807}
+  - {fileID: 1379889247473560235}
+  - {fileID: 2818907206440476104}
+  - {fileID: 8396899977659246462}
+  - {fileID: 3723993474598791530}
+  - {fileID: 4644636101647566743}
+  - {fileID: 1919846034865272022}
+  - {fileID: 3103904306974924051}
+  - {fileID: 923420763000004651}
+  - {fileID: 5924845917787395151}
+  - {fileID: 6204981797933214795}
+  - {fileID: 6966775037472871489}
+  - {fileID: 3176699500493657838}
+  - {fileID: 5471526590636321213}
+  - {fileID: 8143810781026939741}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3082471012135722049
@@ -1288,8 +1428,9 @@ GameObject:
   - component: {fileID: 4797717584448323495}
   - component: {fileID: 6072487463428060423}
   - component: {fileID: 6161065613657382744}
+  - component: {fileID: 2860585954144633293}
   m_Layer: 7
-  m_Name: Square (28)
+  m_Name: W5
   m_TagString: Cutable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1359,8 +1500,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 6c3842639601f407b8a668d737185907, type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1407,7 +1548,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.28, y: 1.28}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -1441,7 +1582,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61922c348607845bc8814a73ed24491d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestroyDanglingHair
-  target: {fileID: 3696571938311180168}
+  target: {fileID: 4542304306568626025}
 --- !u!114 &6161065613657382744
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1454,6 +1595,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2b459163da734a128c4b3c03e5a195e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TargetScript
+--- !u!114 &2860585954144633293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3082471012135722049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e64ec5e4715004bed871a9133a13905b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HairData
+  isWet: 0
+  basePoints: 1
+  wetToDryReward: 4
+  leftWetPenalty: -2
+  spriteRenderer: {fileID: 0}
+  wetColor: {r: 0, g: 0, b: 1, a: 1}
+  dryColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &3558962917135444737
 GameObject:
   m_ObjectHideFlags: 0
@@ -1468,8 +1628,9 @@ GameObject:
   - component: {fileID: 8203301846595573843}
   - component: {fileID: 5232361256595945676}
   - component: {fileID: 9056605068565735861}
+  - component: {fileID: 1276842148236634481}
   m_Layer: 7
-  m_Name: Square (23)
+  m_Name: Q4
   m_TagString: Cutable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1539,8 +1700,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 6c3842639601f407b8a668d737185907, type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1587,7 +1748,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.28, y: 1.28}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -1633,7 +1794,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61922c348607845bc8814a73ed24491d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestroyDanglingHair
-  target: {fileID: 4839238695326608891}
+  target: {fileID: 2146920714484374135}
+--- !u!114 &1276842148236634481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3558962917135444737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e64ec5e4715004bed871a9133a13905b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HairData
+  isWet: 0
+  basePoints: 1
+  wetToDryReward: 4
+  leftWetPenalty: -2
+  spriteRenderer: {fileID: 0}
+  wetColor: {r: 0, g: 0, b: 1, a: 1}
+  dryColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &3595981001832187932
 GameObject:
   m_ObjectHideFlags: 0
@@ -1645,8 +1825,9 @@ GameObject:
   - component: {fileID: 2347213452386350099}
   - component: {fileID: 7134131363597033721}
   - component: {fileID: 8924023554263847520}
+  - component: {fileID: 967250817769089079}
   m_Layer: 7
-  m_Name: Square (9)
+  m_Name: E1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1716,8 +1897,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 92c71ff83b63c4318ae1e6d77b10aeef, type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1764,7 +1945,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.28, y: 1.28}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -1772,6 +1953,25 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &967250817769089079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3595981001832187932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e64ec5e4715004bed871a9133a13905b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HairData
+  isWet: 0
+  basePoints: 1
+  wetToDryReward: 4
+  leftWetPenalty: -2
+  spriteRenderer: {fileID: 0}
+  wetColor: {r: 0, g: 0, b: 1, a: 1}
+  dryColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &3631060600244722781
 GameObject:
   m_ObjectHideFlags: 0
@@ -1785,8 +1985,9 @@ GameObject:
   - component: {fileID: 4731797322784610302}
   - component: {fileID: 2092690780382553958}
   - component: {fileID: 2816575972537292001}
+  - component: {fileID: 8270298611710966111}
   m_Layer: 7
-  m_Name: Square (3)
+  m_Name: T2
   m_TagString: Cutable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1856,8 +2057,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 6c3842639601f407b8a668d737185907, type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1904,7 +2105,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.28, y: 1.28}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -1938,6 +2139,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2b459163da734a128c4b3c03e5a195e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TargetScript
+--- !u!114 &8270298611710966111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3631060600244722781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e64ec5e4715004bed871a9133a13905b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HairData
+  isWet: 0
+  basePoints: 1
+  wetToDryReward: 4
+  leftWetPenalty: -2
+  spriteRenderer: {fileID: 0}
+  wetColor: {r: 0, g: 0, b: 1, a: 1}
+  dryColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &3774298305558190976
 GameObject:
   m_ObjectHideFlags: 0
@@ -1952,8 +2172,9 @@ GameObject:
   - component: {fileID: 1264968351022696483}
   - component: {fileID: 871020371852394969}
   - component: {fileID: 3574468170605087004}
+  - component: {fileID: 1789580156823788054}
   m_Layer: 7
-  m_Name: Square (11)
+  m_Name: E3
   m_TagString: Cutable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2023,8 +2244,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 6c3842639601f407b8a668d737185907, type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2071,7 +2292,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.28, y: 1.28}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -2105,7 +2326,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61922c348607845bc8814a73ed24491d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestroyDanglingHair
-  target: {fileID: 8933173825632525348}
+  target: {fileID: 5103466353570736527}
 --- !u!114 &3574468170605087004
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2118,6 +2339,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2b459163da734a128c4b3c03e5a195e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TargetScript
+--- !u!114 &1789580156823788054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3774298305558190976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e64ec5e4715004bed871a9133a13905b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HairData
+  isWet: 0
+  basePoints: 1
+  wetToDryReward: 4
+  leftWetPenalty: -2
+  spriteRenderer: {fileID: 0}
+  wetColor: {r: 0, g: 0, b: 1, a: 1}
+  dryColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &4236414154576969036
 GameObject:
   m_ObjectHideFlags: 0
@@ -2131,8 +2371,9 @@ GameObject:
   - component: {fileID: 6390885206726008031}
   - component: {fileID: 855024891912002296}
   - component: {fileID: 3712736620726627778}
+  - component: {fileID: 8911398628269164181}
   m_Layer: 7
-  m_Name: Square (13)
+  m_Name: W2
   m_TagString: Cutable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2202,8 +2443,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 6c3842639601f407b8a668d737185907, type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2250,7 +2491,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.28, y: 1.28}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -2284,6 +2525,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2b459163da734a128c4b3c03e5a195e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TargetScript
+--- !u!114 &8911398628269164181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4236414154576969036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e64ec5e4715004bed871a9133a13905b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HairData
+  isWet: 0
+  basePoints: 1
+  wetToDryReward: 4
+  leftWetPenalty: -2
+  spriteRenderer: {fileID: 0}
+  wetColor: {r: 0, g: 0, b: 1, a: 1}
+  dryColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &4249368474355769001
 GameObject:
   m_ObjectHideFlags: 0
@@ -2298,8 +2558,9 @@ GameObject:
   - component: {fileID: 5340671461510651565}
   - component: {fileID: 4475652937108357328}
   - component: {fileID: 8008311564534932624}
+  - component: {fileID: 340354210515657241}
   m_Layer: 7
-  m_Name: Square (8)
+  m_Name: R3
   m_TagString: Cutable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2369,8 +2630,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 6c3842639601f407b8a668d737185907, type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2417,7 +2678,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.28, y: 1.28}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -2451,7 +2712,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61922c348607845bc8814a73ed24491d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestroyDanglingHair
-  target: {fileID: 189913454970053294}
+  target: {fileID: 2584506959500593850}
 --- !u!114 &8008311564534932624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2464,6 +2725,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2b459163da734a128c4b3c03e5a195e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TargetScript
+--- !u!114 &340354210515657241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4249368474355769001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e64ec5e4715004bed871a9133a13905b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HairData
+  isWet: 0
+  basePoints: 1
+  wetToDryReward: 4
+  leftWetPenalty: -2
+  spriteRenderer: {fileID: 0}
+  wetColor: {r: 0, g: 0, b: 1, a: 1}
+  dryColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &5420597133981371419
 GameObject:
   m_ObjectHideFlags: 0
@@ -2475,8 +2755,9 @@ GameObject:
   - component: {fileID: 4097660906799249120}
   - component: {fileID: 7122598305645891647}
   - component: {fileID: 3160987799725360906}
+  - component: {fileID: 6301800659203980720}
   m_Layer: 7
-  m_Name: Square (15)
+  m_Name: Q1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2546,8 +2827,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 92c71ff83b63c4318ae1e6d77b10aeef, type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2594,7 +2875,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.28, y: 1.28}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -2602,6 +2883,25 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &6301800659203980720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5420597133981371419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e64ec5e4715004bed871a9133a13905b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HairData
+  isWet: 0
+  basePoints: 1
+  wetToDryReward: 4
+  leftWetPenalty: -2
+  spriteRenderer: {fileID: 0}
+  wetColor: {r: 0, g: 0, b: 1, a: 1}
+  dryColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &5453306470657236583
 GameObject:
   m_ObjectHideFlags: 0
@@ -2615,8 +2915,9 @@ GameObject:
   - component: {fileID: 6794150935857723483}
   - component: {fileID: 2287506719688816889}
   - component: {fileID: 8891893616340797494}
+  - component: {fileID: 174105198551061081}
   m_Layer: 7
-  m_Name: Square (32)
+  m_Name: R6
   m_TagString: Cutable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2686,8 +2987,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 6c3842639601f407b8a668d737185907, type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2734,7 +3035,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.28, y: 1.28}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -2768,7 +3069,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61922c348607845bc8814a73ed24491d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestroyDanglingHair
-  target: {fileID: 5499309378506358911}
+  target: {fileID: 7443631377551157590}
+--- !u!114 &174105198551061081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5453306470657236583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e64ec5e4715004bed871a9133a13905b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HairData
+  isWet: 0
+  basePoints: 1
+  wetToDryReward: 4
+  leftWetPenalty: -2
+  spriteRenderer: {fileID: 0}
+  wetColor: {r: 0, g: 0, b: 1, a: 1}
+  dryColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &5676632390069374617
 GameObject:
   m_ObjectHideFlags: 0
@@ -2783,8 +3103,9 @@ GameObject:
   - component: {fileID: 1434278661368487326}
   - component: {fileID: 1422529735631877235}
   - component: {fileID: 6461195763610261398}
+  - component: {fileID: 1175756247654766397}
   m_Layer: 7
-  m_Name: Square (24)
+  m_Name: T5
   m_TagString: Cutable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2854,8 +3175,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 6c3842639601f407b8a668d737185907, type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2902,7 +3223,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.28, y: 1.28}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -2936,7 +3257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61922c348607845bc8814a73ed24491d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestroyDanglingHair
-  target: {fileID: 8943349496857337270}
+  target: {fileID: 8807502242102443129}
 --- !u!114 &6461195763610261398
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2949,6 +3270,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2b459163da734a128c4b3c03e5a195e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TargetScript
+--- !u!114 &1175756247654766397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5676632390069374617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e64ec5e4715004bed871a9133a13905b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HairData
+  isWet: 0
+  basePoints: 1
+  wetToDryReward: 4
+  leftWetPenalty: -2
+  spriteRenderer: {fileID: 0}
+  wetColor: {r: 0, g: 0, b: 1, a: 1}
+  dryColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &6573240604756359352
 GameObject:
   m_ObjectHideFlags: 0
@@ -2960,8 +3300,9 @@ GameObject:
   - component: {fileID: 8396899977659246462}
   - component: {fileID: 7152908022759598042}
   - component: {fileID: 2679049949783425264}
+  - component: {fileID: 9103987369859920642}
   m_Layer: 7
-  m_Name: Square
+  m_Name: T1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3031,8 +3372,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 92c71ff83b63c4318ae1e6d77b10aeef, type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -3079,7 +3420,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.28, y: 1.28}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -3087,6 +3428,25 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &9103987369859920642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6573240604756359352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e64ec5e4715004bed871a9133a13905b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HairData
+  isWet: 0
+  basePoints: 1
+  wetToDryReward: 4
+  leftWetPenalty: -2
+  spriteRenderer: {fileID: 0}
+  wetColor: {r: 0, g: 0, b: 1, a: 1}
+  dryColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &6587708574893743665
 GameObject:
   m_ObjectHideFlags: 0
@@ -3100,8 +3460,9 @@ GameObject:
   - component: {fileID: 9068378984691381854}
   - component: {fileID: 8106306988541105450}
   - component: {fileID: 8933173825632525348}
+  - component: {fileID: 5103466353570736527}
   m_Layer: 7
-  m_Name: Square (10)
+  m_Name: E2
   m_TagString: Cutable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3171,8 +3532,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 6c3842639601f407b8a668d737185907, type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -3219,7 +3580,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.28, y: 1.28}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -3253,6 +3614,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2b459163da734a128c4b3c03e5a195e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TargetScript
+--- !u!114 &5103466353570736527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6587708574893743665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e64ec5e4715004bed871a9133a13905b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HairData
+  isWet: 0
+  basePoints: 1
+  wetToDryReward: 4
+  leftWetPenalty: -2
+  spriteRenderer: {fileID: 0}
+  wetColor: {r: 0, g: 0, b: 1, a: 1}
+  dryColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &6814390965815164088
 GameObject:
   m_ObjectHideFlags: 0
@@ -3267,8 +3647,9 @@ GameObject:
   - component: {fileID: 8559379318953513059}
   - component: {fileID: 1434305849024952516}
   - component: {fileID: 4045189086679693029}
+  - component: {fileID: 1192678941398794837}
   m_Layer: 7
-  m_Name: Square (14)
+  m_Name: W3
   m_TagString: Cutable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3338,8 +3719,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 6c3842639601f407b8a668d737185907, type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -3386,7 +3767,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.28, y: 1.28}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -3420,7 +3801,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61922c348607845bc8814a73ed24491d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestroyDanglingHair
-  target: {fileID: 3712736620726627778}
+  target: {fileID: 8911398628269164181}
 --- !u!114 &4045189086679693029
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3433,6 +3814,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2b459163da734a128c4b3c03e5a195e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TargetScript
+--- !u!114 &1192678941398794837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6814390965815164088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e64ec5e4715004bed871a9133a13905b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HairData
+  isWet: 0
+  basePoints: 1
+  wetToDryReward: 4
+  leftWetPenalty: -2
+  spriteRenderer: {fileID: 0}
+  wetColor: {r: 0, g: 0, b: 1, a: 1}
+  dryColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &6819020690189833305
 GameObject:
   m_ObjectHideFlags: 0
@@ -3446,8 +3846,9 @@ GameObject:
   - component: {fileID: 7456739877784174400}
   - component: {fileID: 98040197773616233}
   - component: {fileID: 6956863648780859215}
+  - component: {fileID: 3236794511740516905}
   m_Layer: 7
-  m_Name: Square (31)
+  m_Name: Y6
   m_TagString: Cutable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3517,8 +3918,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 6c3842639601f407b8a668d737185907, type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -3565,7 +3966,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.28, y: 1.28}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -3599,7 +4000,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61922c348607845bc8814a73ed24491d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestroyDanglingHair
-  target: {fileID: 4060209364905938717}
+  target: {fileID: 9108462462614850572}
+--- !u!114 &3236794511740516905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6819020690189833305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e64ec5e4715004bed871a9133a13905b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HairData
+  isWet: 0
+  basePoints: 1
+  wetToDryReward: 4
+  leftWetPenalty: -2
+  spriteRenderer: {fileID: 0}
+  wetColor: {r: 0, g: 0, b: 1, a: 1}
+  dryColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &6927539161580171610
 GameObject:
   m_ObjectHideFlags: 0
@@ -3614,8 +4034,9 @@ GameObject:
   - component: {fileID: 2989540944990178112}
   - component: {fileID: 5229470517286535828}
   - component: {fileID: 5499309378506358911}
+  - component: {fileID: 7443631377551157590}
   m_Layer: 7
-  m_Name: Square (26)
+  m_Name: R5
   m_TagString: Cutable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3685,8 +4106,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 6c3842639601f407b8a668d737185907, type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -3733,7 +4154,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.28, y: 1.28}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -3767,7 +4188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61922c348607845bc8814a73ed24491d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestroyDanglingHair
-  target: {fileID: 3888185964719821305}
+  target: {fileID: 3787220091948183466}
 --- !u!114 &5499309378506358911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3780,6 +4201,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2b459163da734a128c4b3c03e5a195e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TargetScript
+--- !u!114 &7443631377551157590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6927539161580171610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e64ec5e4715004bed871a9133a13905b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HairData
+  isWet: 0
+  basePoints: 1
+  wetToDryReward: 4
+  leftWetPenalty: -2
+  spriteRenderer: {fileID: 0}
+  wetColor: {r: 0, g: 0, b: 1, a: 1}
+  dryColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &6977369231418795480
 GameObject:
   m_ObjectHideFlags: 0
@@ -3791,8 +4231,9 @@ GameObject:
   - component: {fileID: 933948971236381038}
   - component: {fileID: 6390771680627335632}
   - component: {fileID: 7263334595451377666}
+  - component: {fileID: 2686716383252059785}
   m_Layer: 7
-  m_Name: Square (2)
+  m_Name: R1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3862,8 +4303,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 92c71ff83b63c4318ae1e6d77b10aeef, type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -3910,7 +4351,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.28, y: 1.28}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -3918,6 +4359,25 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &2686716383252059785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6977369231418795480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e64ec5e4715004bed871a9133a13905b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HairData
+  isWet: 0
+  basePoints: 1
+  wetToDryReward: 4
+  leftWetPenalty: -2
+  spriteRenderer: {fileID: 0}
+  wetColor: {r: 0, g: 0, b: 1, a: 1}
+  dryColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &6981239549924739741
 GameObject:
   m_ObjectHideFlags: 0
@@ -3932,8 +4392,9 @@ GameObject:
   - component: {fileID: 2407934634022006404}
   - component: {fileID: 5375067128758248077}
   - component: {fileID: 3531874428148399230}
+  - component: {fileID: 1702874543649501578}
   m_Layer: 7
-  m_Name: Square (21)
+  m_Name: E4
   m_TagString: Cutable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4003,8 +4464,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 6c3842639601f407b8a668d737185907, type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -4051,7 +4512,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.28, y: 1.28}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -4097,7 +4558,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61922c348607845bc8814a73ed24491d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestroyDanglingHair
-  target: {fileID: 3574468170605087004}
+  target: {fileID: 1789580156823788054}
+--- !u!114 &1702874543649501578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6981239549924739741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e64ec5e4715004bed871a9133a13905b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HairData
+  isWet: 0
+  basePoints: 1
+  wetToDryReward: 4
+  leftWetPenalty: -2
+  spriteRenderer: {fileID: 0}
+  wetColor: {r: 0, g: 0, b: 1, a: 1}
+  dryColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &7055301277348127530
 GameObject:
   m_ObjectHideFlags: 0
@@ -4112,8 +4592,9 @@ GameObject:
   - component: {fileID: 2383073291604586222}
   - component: {fileID: 3707901969465614854}
   - component: {fileID: 1539123115714421898}
+  - component: {fileID: 4163029534205096201}
   m_Layer: 7
-  m_Name: Square (27)
+  m_Name: E5
   m_TagString: Cutable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4183,8 +4664,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 6c3842639601f407b8a668d737185907, type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -4231,7 +4712,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.28, y: 1.28}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -4265,7 +4746,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61922c348607845bc8814a73ed24491d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestroyDanglingHair
-  target: {fileID: 5375067128758248077}
+  target: {fileID: 1702874543649501578}
 --- !u!114 &1539123115714421898
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4278,6 +4759,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2b459163da734a128c4b3c03e5a195e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TargetScript
+--- !u!114 &4163029534205096201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7055301277348127530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e64ec5e4715004bed871a9133a13905b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HairData
+  isWet: 0
+  basePoints: 1
+  wetToDryReward: 4
+  leftWetPenalty: -2
+  spriteRenderer: {fileID: 0}
+  wetColor: {r: 0, g: 0, b: 1, a: 1}
+  dryColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &7057064007406710056
 GameObject:
   m_ObjectHideFlags: 0
@@ -4292,8 +4792,9 @@ GameObject:
   - component: {fileID: 2925385880335304134}
   - component: {fileID: 3888185964719821305}
   - component: {fileID: 3442580063326472728}
+  - component: {fileID: 3787220091948183466}
   m_Layer: 7
-  m_Name: Square (20)
+  m_Name: R4
   m_TagString: Cutable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4363,8 +4864,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 6c3842639601f407b8a668d737185907, type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -4411,7 +4912,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.28, y: 1.28}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -4457,7 +4958,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61922c348607845bc8814a73ed24491d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestroyDanglingHair
-  target: {fileID: 8008311564534932624}
+  target: {fileID: 340354210515657241}
+--- !u!114 &3787220091948183466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7057064007406710056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e64ec5e4715004bed871a9133a13905b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HairData
+  isWet: 0
+  basePoints: 1
+  wetToDryReward: 4
+  leftWetPenalty: -2
+  spriteRenderer: {fileID: 0}
+  wetColor: {r: 0, g: 0, b: 1, a: 1}
+  dryColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &7176691360334347248
 GameObject:
   m_ObjectHideFlags: 0
@@ -4472,8 +4992,9 @@ GameObject:
   - component: {fileID: 4245726473585253219}
   - component: {fileID: 3696571938311180168}
   - component: {fileID: 5905695224702581146}
+  - component: {fileID: 4542304306568626025}
   m_Layer: 7
-  m_Name: Square (22)
+  m_Name: W4
   m_TagString: Cutable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4543,8 +5064,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 6c3842639601f407b8a668d737185907, type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -4591,7 +5112,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.28, y: 1.28}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -4637,7 +5158,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61922c348607845bc8814a73ed24491d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestroyDanglingHair
-  target: {fileID: 4045189086679693029}
+  target: {fileID: 1192678941398794837}
+--- !u!114 &4542304306568626025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7176691360334347248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e64ec5e4715004bed871a9133a13905b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HairData
+  isWet: 0
+  basePoints: 1
+  wetToDryReward: 4
+  leftWetPenalty: -2
+  spriteRenderer: {fileID: 0}
+  wetColor: {r: 0, g: 0, b: 1, a: 1}
+  dryColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &7271265986997009637
 GameObject:
   m_ObjectHideFlags: 0
@@ -4652,8 +5192,9 @@ GameObject:
   - component: {fileID: 942818402372120081}
   - component: {fileID: 8053263181134936206}
   - component: {fileID: 6589074915248607776}
+  - component: {fileID: 1130318533457172207}
   m_Layer: 7
-  m_Name: Square (19)
+  m_Name: Y4
   m_TagString: Cutable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4723,8 +5264,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 6c3842639601f407b8a668d737185907, type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -4771,7 +5312,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.28, y: 1.28}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -4817,7 +5358,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61922c348607845bc8814a73ed24491d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestroyDanglingHair
-  target: {fileID: 1540506319591752831}
+  target: {fileID: 7410291082334803308}
+--- !u!114 &1130318533457172207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7271265986997009637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e64ec5e4715004bed871a9133a13905b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HairData
+  isWet: 0
+  basePoints: 1
+  wetToDryReward: 4
+  leftWetPenalty: -2
+  spriteRenderer: {fileID: 0}
+  wetColor: {r: 0, g: 0, b: 1, a: 1}
+  dryColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &7898367139524732444
 GameObject:
   m_ObjectHideFlags: 0
@@ -4832,8 +5392,9 @@ GameObject:
   - component: {fileID: 7515858159336932798}
   - component: {fileID: 5499085619854840443}
   - component: {fileID: 4140190584656408314}
+  - component: {fileID: 4144850778981957443}
   m_Layer: 7
-  m_Name: Square (5)
+  m_Name: T3
   m_TagString: Cutable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4903,8 +5464,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 6c3842639601f407b8a668d737185907, type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -4951,7 +5512,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.28, y: 1.28}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -4985,7 +5546,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61922c348607845bc8814a73ed24491d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestroyDanglingHair
-  target: {fileID: 2816575972537292001}
+  target: {fileID: 8270298611710966111}
 --- !u!114 &4140190584656408314
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4998,6 +5559,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2b459163da734a128c4b3c03e5a195e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TargetScript
+--- !u!114 &4144850778981957443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7898367139524732444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e64ec5e4715004bed871a9133a13905b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HairData
+  isWet: 0
+  basePoints: 1
+  wetToDryReward: 4
+  leftWetPenalty: -2
+  spriteRenderer: {fileID: 0}
+  wetColor: {r: 0, g: 0, b: 1, a: 1}
+  dryColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &7994408652833943250
 GameObject:
   m_ObjectHideFlags: 0
@@ -5012,8 +5592,9 @@ GameObject:
   - component: {fileID: 4364275991451448807}
   - component: {fileID: 5526367840902510801}
   - component: {fileID: 4839238695326608891}
+  - component: {fileID: 2146920714484374135}
   m_Layer: 7
-  m_Name: Square (17)
+  m_Name: Q3
   m_TagString: Cutable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5083,8 +5664,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 6c3842639601f407b8a668d737185907, type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -5131,7 +5712,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.28, y: 1.28}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -5165,7 +5746,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61922c348607845bc8814a73ed24491d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestroyDanglingHair
-  target: {fileID: 1091775947060009660}
+  target: {fileID: 8468710256388208765}
 --- !u!114 &4839238695326608891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5178,6 +5759,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2b459163da734a128c4b3c03e5a195e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TargetScript
+--- !u!114 &2146920714484374135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7994408652833943250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e64ec5e4715004bed871a9133a13905b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HairData
+  isWet: 0
+  basePoints: 1
+  wetToDryReward: 4
+  leftWetPenalty: -2
+  spriteRenderer: {fileID: 0}
+  wetColor: {r: 0, g: 0, b: 1, a: 1}
+  dryColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &8090237070121109081
 GameObject:
   m_ObjectHideFlags: 0
@@ -5189,8 +5789,9 @@ GameObject:
   - component: {fileID: 7395602136226030803}
   - component: {fileID: 6306488513018365828}
   - component: {fileID: 6627692800620975404}
+  - component: {fileID: 4452540187089949048}
   m_Layer: 7
-  m_Name: Square (12)
+  m_Name: W1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5260,8 +5861,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 92c71ff83b63c4318ae1e6d77b10aeef, type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -5308,7 +5909,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.28, y: 1.28}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -5316,6 +5917,25 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &4452540187089949048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8090237070121109081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e64ec5e4715004bed871a9133a13905b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HairData
+  isWet: 0
+  basePoints: 1
+  wetToDryReward: 4
+  leftWetPenalty: -2
+  spriteRenderer: {fileID: 0}
+  wetColor: {r: 0, g: 0, b: 1, a: 1}
+  dryColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &8252765651646763359
 GameObject:
   m_ObjectHideFlags: 0
@@ -5327,8 +5947,9 @@ GameObject:
   - component: {fileID: 5924845917787395151}
   - component: {fileID: 6474367154604104018}
   - component: {fileID: 4844962090282950941}
+  - component: {fileID: 1850877420812475970}
   m_Layer: 7
-  m_Name: Square (1)
+  m_Name: Y1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5398,8 +6019,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 92c71ff83b63c4318ae1e6d77b10aeef, type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -5446,7 +6067,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.28, y: 1.28}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -5454,6 +6075,25 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1850877420812475970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8252765651646763359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e64ec5e4715004bed871a9133a13905b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HairData
+  isWet: 0
+  basePoints: 1
+  wetToDryReward: 4
+  leftWetPenalty: -2
+  spriteRenderer: {fileID: 0}
+  wetColor: {r: 0, g: 0, b: 1, a: 1}
+  dryColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &8590562408551412311
 GameObject:
   m_ObjectHideFlags: 0
@@ -5467,8 +6107,9 @@ GameObject:
   - component: {fileID: 1005390031865819589}
   - component: {fileID: 1122104890073426854}
   - component: {fileID: 6776152052025832190}
+  - component: {fileID: 4988155950082251394}
   m_Layer: 7
-  m_Name: Square (30)
+  m_Name: T6
   m_TagString: Cutable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5538,8 +6179,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 6c3842639601f407b8a668d737185907, type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -5586,7 +6227,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.28, y: 1.28}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -5620,7 +6261,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61922c348607845bc8814a73ed24491d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestroyDanglingHair
-  target: {fileID: 6461195763610261398}
+  target: {fileID: 1175756247654766397}
+--- !u!114 &4988155950082251394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8590562408551412311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e64ec5e4715004bed871a9133a13905b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HairData
+  isWet: 0
+  basePoints: 1
+  wetToDryReward: 4
+  leftWetPenalty: -2
+  spriteRenderer: {fileID: 0}
+  wetColor: {r: 0, g: 0, b: 1, a: 1}
+  dryColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &8683300679851367876
 GameObject:
   m_ObjectHideFlags: 0
@@ -5634,8 +6294,9 @@ GameObject:
   - component: {fileID: 7173151643733145383}
   - component: {fileID: 8297346129932256719}
   - component: {fileID: 1091775947060009660}
+  - component: {fileID: 8468710256388208765}
   m_Layer: 7
-  m_Name: Square (16)
+  m_Name: Q2
   m_TagString: Cutable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5705,8 +6366,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 6c3842639601f407b8a668d737185907, type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -5753,7 +6414,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.28, y: 1.28}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -5787,6 +6448,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2b459163da734a128c4b3c03e5a195e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TargetScript
+--- !u!114 &8468710256388208765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8683300679851367876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e64ec5e4715004bed871a9133a13905b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HairData
+  isWet: 0
+  basePoints: 1
+  wetToDryReward: 4
+  leftWetPenalty: -2
+  spriteRenderer: {fileID: 0}
+  wetColor: {r: 0, g: 0, b: 1, a: 1}
+  dryColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &8856253095569731769
 GameObject:
   m_ObjectHideFlags: 0
@@ -5801,8 +6481,9 @@ GameObject:
   - component: {fileID: 7638571574905677243}
   - component: {fileID: 8943349496857337270}
   - component: {fileID: 2412926327597764060}
+  - component: {fileID: 8807502242102443129}
   m_Layer: 7
-  m_Name: Square (18)
+  m_Name: T4
   m_TagString: Cutable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5872,8 +6553,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 6c3842639601f407b8a668d737185907, type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -5920,7 +6601,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.28, y: 1.28}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -5966,7 +6647,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61922c348607845bc8814a73ed24491d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestroyDanglingHair
-  target: {fileID: 4140190584656408314}
+  target: {fileID: 4144850778981957443}
+--- !u!114 &8807502242102443129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8856253095569731769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e64ec5e4715004bed871a9133a13905b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HairData
+  isWet: 0
+  basePoints: 1
+  wetToDryReward: 4
+  leftWetPenalty: -2
+  spriteRenderer: {fileID: 0}
+  wetColor: {r: 0, g: 0, b: 1, a: 1}
+  dryColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &9222788966093592765
 GameObject:
   m_ObjectHideFlags: 0
@@ -5980,8 +6680,9 @@ GameObject:
   - component: {fileID: 853974702998272243}
   - component: {fileID: 690078204762055409}
   - component: {fileID: 3679826641980705407}
+  - component: {fileID: 4039016231934892308}
   m_Layer: 7
-  m_Name: Square (4)
+  m_Name: Y2
   m_TagString: Cutable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6051,8 +6752,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 6c3842639601f407b8a668d737185907, type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -6099,7 +6800,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.28, y: 1.28}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -6133,3 +6834,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2b459163da734a128c4b3c03e5a195e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TargetScript
+--- !u!114 &4039016231934892308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9222788966093592765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e64ec5e4715004bed871a9133a13905b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HairData
+  isWet: 0
+  basePoints: 1
+  wetToDryReward: 4
+  leftWetPenalty: -2
+  spriteRenderer: {fileID: 0}
+  wetColor: {r: 0, g: 0, b: 1, a: 1}
+  dryColor: {r: 1, g: 1, b: 1, a: 1}

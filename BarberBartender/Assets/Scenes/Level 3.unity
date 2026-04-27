@@ -3338,7 +3338,7 @@ MonoBehaviour:
   minSpawnDelay: 7
   maxSpawnDelay: 15
   maxHairPoints: 50
-  stopSpawningAtMaxPoints: 1
+  stopSpawningAtMaxPoints: 0
   possibleHairCustomerSprites:
   - {fileID: 21300000, guid: 716daffdc113a8547b84782a46b7fac4, type: 3}
   - {fileID: 21300000, guid: ef69ca071bf74bc40b1448c66d86a188, type: 3}
@@ -12319,7 +12319,7 @@ MonoBehaviour:
   minSpawnDelay: 1
   maxSpawnDelay: 5
   maxDrinkPoints: 50
-  stopSpawningAtMaxPoints: 1
+  stopSpawningAtMaxPoints: 0
   possibleCustomerSprites:
   - {fileID: 21300000, guid: 716daffdc113a8547b84782a46b7fac4, type: 3}
   - {fileID: 21300000, guid: ef69ca071bf74bc40b1448c66d86a188, type: 3}

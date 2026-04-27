@@ -2906,7 +2906,7 @@ MonoBehaviour:
   minSpawnDelay: 7
   maxSpawnDelay: 15
   maxHairPoints: 50
-  stopSpawningAtMaxPoints: 1
+  stopSpawningAtMaxPoints: 0
   possibleHairCustomerSprites:
   - {fileID: 21300000, guid: 716daffdc113a8547b84782a46b7fac4, type: 3}
   - {fileID: 21300000, guid: ef69ca071bf74bc40b1448c66d86a188, type: 3}
@@ -8586,7 +8586,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3533151312098291653, guid: 0d5be03c075a85a46a32d6f9da1f07d9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3533151312098291653, guid: 0d5be03c075a85a46a32d6f9da1f07d9, type: 3}
       propertyPath: m_LocalRotation.w
@@ -11992,10 +11992,11 @@ MonoBehaviour:
   minSpawnDelay: 1
   maxSpawnDelay: 5
   maxDrinkPoints: 50
-  stopSpawningAtMaxPoints: 1
+  stopSpawningAtMaxPoints: 0
   possibleCustomerSprites:
   - {fileID: 21300000, guid: 716daffdc113a8547b84782a46b7fac4, type: 3}
   - {fileID: 21300000, guid: ef69ca071bf74bc40b1448c66d86a188, type: 3}
+  - {fileID: 21300000, guid: db97196a2d08fb74da9cb21062ff4ca9, type: 3}
 --- !u!1 &1947756351
 GameObject:
   m_ObjectHideFlags: 0

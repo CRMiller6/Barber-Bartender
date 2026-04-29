@@ -32,7 +32,7 @@ public class HairSpawnBridge : MonoBehaviour
 
         currentHairInstance = Instantiate(prefab, spawnHairStyleRef.transform.position, spawnHairStyleRef.transform.rotation);
 
-        currentHairInstance.transform.localScale = new Vector3 (xScale, yScale, 3f);
+        currentHairInstance.transform.localScale = new Vector3 (3, 3, 1);
         Debug.Log($"hair: {currentHairInstance.transform} or {currentHairInstance.transform.localScale}");
 
         CountBools(currentHairInstance, out int startTrue, out int startFalse);
